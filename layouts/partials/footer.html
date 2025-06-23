@@ -4,3 +4,22 @@
 
     <p><i><a href="https://github.com/mrmierzejewski/hugo-theme-console/">... waiting for something to happen ? 🐱</a></i></p>
 </div>
+
+<script>
+  const toggle = document.getElementById("theme-toggle");
+    document.documentElement.setAttribute("data-theme", "dark");
+
+  // Check for saved preference
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme) {
+    document.documentElement.setAttribute("data-theme", savedTheme);
+  }
+
+  toggle.addEventListener("click", () => {
+    const current = document.documentElement.getAttribute("data-theme");
+    const newTheme = current === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
+  });
+</script>
+
