@@ -1,4 +1,4 @@
-baseURL = "https://juni-console-blog.pages.dev/"
+baseURL = "/"
 languageCode = "en-au"
 title = "juni's blog ٩(◕‿◕｡)۶"
 theme = "hugo-theme-console"
