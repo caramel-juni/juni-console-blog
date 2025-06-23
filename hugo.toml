@@ -1,0 +1,49 @@
+baseURL = "https://tech.juni-mp4.com/"
+languageCode = "en-au"
+title = "juni's blog ٩(◕‿◕｡)۶"
+theme = "hugo-theme-console"
+
+
+[params]
+  # Cutting off the page title to two chars for mobile (console-demo -> co)
+  titleCutting = true
+
+  # Set the animation style -- https://animate.style/
+  # To disable animations, please remove or comment animationStyle parameter
+  animateStyle = "hinge" 
+
+  [[params.navlinks]]
+  name = "about/"
+  url = "about/"
+
+  [[params.navlinks]]
+  name = "posts/"
+  url = "posts/"
+  
+  [[params.navlinks]]
+  name = "photos/"
+  url = "photos/"
+
+  [[params.navlinks]]
+  name = "bearblog/"
+  url = "https://juni-mp4.bearblog.dev/"
+
+
+[markup]
+defaultMarkdownHandler = "goldmark"
+    [markup.goldmark.extensions.extras]
+        [markup.goldmark.extensions.extras.delete]
+          enable = false
+        [markup.goldmark.extensions.extras.insert]
+          enable = false
+        [markup.goldmark.extensions.extras.mark]
+          enable = false
+        [markup.goldmark.extensions.extras.subscript]
+          enable = false
+        [markup.goldmark.extensions.extras.superscript]
+          enable = true
+    [markup.goldmark.renderer]
+      hardWraps = false
+    # renders HTML in markdown files
+      unsafe = true
+      xhtml = false
