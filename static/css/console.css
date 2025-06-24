@@ -56,8 +56,11 @@
     --error-color: #ff3c74;
     --progress-bar-background: #3f3f44;
     --progress-bar-fill: #62c4ff;
-    --code-bg-color: #3f3f44;
-    --code-font-color: #510084;
+    --code-bg-color: #373538;
+    --code-font-color: #ffffff;
+    --block-background-color: #151515;
+    --title-font-color: #13b2a5;
+
 }
 
 /* ☀️ Light mode — activated via <html data-theme="light"> */
@@ -71,8 +74,11 @@
     --error-color: #d20962;
     --progress-bar-background: #727578;
     --progress-bar-fill: #151515;
-    --code-bg-color: #e8eff2;
-    --code-font-color: #510084;
+    --code-bg-color: #535353;
+    --code-font-color: #ffffff;
+    --block-background-color: #151515;
+    --title-font-color: #ca3386;
+
 
 }
 
