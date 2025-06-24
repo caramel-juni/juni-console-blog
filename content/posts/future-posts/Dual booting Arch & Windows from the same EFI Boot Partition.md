@@ -213,6 +213,12 @@ All without bricking my system.
 
 ***Oh, isn't tech just oodles of fun?***
 
+> Side note: you may encounter system time discrepancies between Linux/Windows when dual booting from the same drive - this is because 
+- Windows **uses the local time on the hardware clock by default (`RTC`)**
+- Whereas Linux uses (the more reliable) **Coordinated Universal Time** (`UTC`) by default.
+Given `UTC` is generally more reliable and makes sense (is independent of timezones & Daylight Savings `DST`, a single source of truth)... and i *wanted* to switch Windows over to using RTC with a regedit... but articles like [these](https://www.howtogeek.com/323390/how-to-fix-windows-and-linux-showing-different-times-when-dual-booting/) reminded me how **Windows rarely plays nice with these kind of things,** and **I would rather fix my Arch install than my Windows one.** So, to switch Linux to `RTC`:
+- `sudo timedatectl set-local-rtc 1 --adjust-system-clock`
+- and check with `timedatectl`
 
 
 
@@ -266,95 +272,69 @@ All without bricking my system.
 	- see [dotfiles here](https://github.com/kurealnum/dotfiles)
 
 
-## Ricing steps taken:
+## Backups & Snapshots:
 
-**snapshot tool: timeshift**
+**snapshot tool: `timeshift` (as using `ext4` filesystem):**
 - `yay -S timeshift`
 - `sudo timeshift --list-devices`
 	  This tells you which partition Timeshift sees as eligible (e.g., `/dev/sda2`).
 - `sudo timeshift --check`
-- modified config to include `/home` directory in backup, and only exclude the cache: `**/home/.cache`
+- modified config (`/etc/timeshift/timeshift.json`) to include `/home` directory in backup, and only exclude the cache: `**/home/.cache`
 - `sudo timeshift --create --comments "Full system + home pre-rice" --tags D`
 - create a small file like `hello.txt` in home directory, then restore previous snapshot with: `sudo timeshift --restore`. make sure **NOT** to reinstall grub2 bootloader, as not using grub.
 
+Generally a good practice to take backups of the following folders pre-upgrading Arch's firmware:
+
+- `/etc`: System configs, network, fstab, pacman.conf
+- `/usr`: System binaries, libraries, apps
+- `/var`: Pacman cache, logs, systemd state
+- `/boot`: Kernel & initramfs (important for kernel upgrades)
+- `/lib, /lib64, /sbin, /bin`: Core system binaries
+
+To check sizes of installed snapshots:
+
+`sudo du -sh /timeshift/snapshots/*`
 
 
+## Arch: Some TLC
+- https://wiki.archlinux.org/title/System_maintenance
+
+## Arch: Upgrading & Best Practices (flags)
+
+`pacman` (**official Arch Repository**):
+- Always combine `-Syu` to [avoid partial upgrades that can break the system](https://wiki.archlinux.org/title/System_maintenance#Avoid_certain_pacman_commands).
+- `s` = `sync/install`
+- `y` = `refresh package database`
+- `u` = `upgrade ALL packages` (as Arch is a **rolling release** - *"when new [library](https://en.wikipedia.org/wiki/Library_\(computing\) "wikipedia:Library (computing)") versions are pushed to the repositories, the [Developers](https://archlinux.org/people/developers/) and [Package Maintainers](https://wiki.archlinux.org/title/Package_Maintainers "Package Maintainers") **rebuild all the packages** in the repositories that need to be rebuilt against the libraries"* - thus necessitating keeping **all packages up-to-date** to avoid dependency conflicts.)
+- `--needed`: Don't reinstall already-installed packages - prevents unnecessary downloads.
+- `-Q`: queries local database of installed packages & dependencies
+
+Same `-Syu` flags recommended for `yay`, which installs from **both** the **official Arch Repository** *and* the `Arch User Repository` (`AUR`). Also may consider:
+
+- `--removemake`: Removes make dependencies after build (cleans up space)
+
+#### Clean up space from orphaned packages:
+- `sudo pacman -Rns $(pacman -Qtdq)`
+#### Clear old package caches
+- `sudo paccache -r` (keeps 3 versions)
+- `sudo paccache -ruk0` (all except current)
+
+## TLDR:
+- Always read **Arch News** before major upgrades: https://archlinux.org/news/
+	- If you have trouble with this - use the [email list](https://lists.archlinux.org/mailman3/lists/arch-announce.lists.archlinux.org/) / [RSS feed](https://archlinux.org/feeds/news/) / a pacman hook like [informant](https://aur.archlinux.org/packages/informant/) to prevent you from updating if you haven't read the latest Arch News ;).
+- `-Syu` is king!
+- Use `timeshift` or `btrfs snapshots` before large updates
+- Use `pacman -Qdt` to find unneeded dependencies
+- 
 
 ---
 
-# NEW ARTICLE
-## Tracking & syncing dotfiles
-
-### Using Git + Github, & tracking dotfiles with an alias
-- https://wiki.archlinux.org/title/Dotfiles#Tracking_dotfiles_directly_with_Git
-
-``` bash
-# 1. Create a bare Git repo to track dotfiles
-git init --bare ~/.dotfiles
-
-# 2. Create an alias to simplify dotfiles management
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-
-# 3. Hide untracked files from cluttering status
-dotfiles config status.showUntrackedFiles no
-
-# 4. Generate SSH key for GitHub auth (one-time)
-ssh-keygen -t ed25519 -C "you@example.com"
-ssh-add ~/.ssh/id_ed25519
-# Add ~/.ssh/id_ed25519.pub to GitHub under SSH keys
-
-# 5. Force GitHub to always use SSH instead of HTTPS
-git config --global url."git@github.com:".insteadOf "https://github.com/"
-
-# 6. Set upstream branch as origin main
-dotfiles push --set-upstream origin main
-```
-
-then, upon changing my `dotfiles`, can push to github with:
-- `dotfiles status`
-- `dotfiles add XXXXX`
-- `dotfiles commit -m "Update shell and Hyprland config"`
-- `dotfiles push` (to remote, via SSH)
 
 
-### or... using `chezmoi`
-- https://www.chezmoi.io/quick-start/#concepts
-
-... which essentially creates a copy of your `dotfiles` folder ***outside*** of your `/home` directory (e.g. in `~/.local/share/chezmoi/private_dot_config/`) to act as a place to **stage**, **synchronise** (with `git`) & **manage** changes to your local `dotfiles.`
-
-I think of it as a **remotely-connected playground for your `dotfiles`**, to mess with them, pull them from remote repos etc., **before applying the changes locally** (via symlinks, copying, or templating) into your **local** home directory (e.g. `~/.config`).
-
-**To install:**
-- `sudo pacman -S chezmoi`
-- `chezmoi init`
-- ... then follow steps on [this tutorial](https://www.chezmoi.io/quick-start/#start-using-chezmoi-on-your-current-machine) to connect to your repository & get your first commit. i've linked it to the same `.dotfiles` repo, and just `rebased` my changes (overwriting old, `chezmoi`-less repo created above) to keep it clean.
-
-**You can edit your `dotfiles` in [multiple ways](https://www.chezmoi.io/user-guide/frequently-asked-questions/usage/#how-do-i-edit-my-dotfiles-with-chezmoi) with `chezmoi`.**
-
-**(`RECOMMENDED`)** You can work and make changes within the locally-created `chezmoi` copy of your `dotfiles`, after jumping to it with `chezmoi cd` (you should be able to tell that it's the `chezmoi`-managed copy - e.g. it's called `private_dot_config` for me).
-
-Then, once you've made changes and are ready to see them/apply them to your **real** `dotfiles` (e.g to see changes live made to your desktop GUI), use `chezmoi status` to list all changed files, `chezmoi diff` to check the changes, and `chezmoi apply` to copy the `chezmoi`-managed files over to your ***local*** `dotfiles.` Now, you should see any changes made reflected on your live system (after reloading the given services, if applicable)
-
-*Then²*, once you're ready to push them to your remote repo, go through the usual `git commit` process within the `chezmoi`-managed directory.
-- `git status` to see all changed (`chezmoi`-managed) files 
-- `git add .` (or whatever files you want to add)
-- `git commit -m "cool changes`
-- `git push origin main`
-
-***However***, you can also just **make changes to your dotfiles normally** (i.e. not within the `chezmoi`-managed copy of your `dotfiles`) - then once done, running:
-
-- `chezmoi status` - to see what's changed between your local `dotfiles` and `chezmoi`'s copy.
-- `chezmoi add ~/.config/path/to/file.config` - to add any locally-changed files to `chezmoi`'s tracked & `git`-managed copy.
-- `chezmoi apply -v` to write these local changes to `chezmoi's` working copy of your `dotfiles`.
-- Then switch to the `chezmoi` copy with `cd chezmoi` and go through the usual `git commit` process to update your remote repo if desired.
 
 
-**Can do more cool stuff like:**
-- Set up a new machine with a single command: 
-  `chezmoi init --apply https://github.com/$GITHUB_USERNAME/dotfiles.git` (public repo - private requires [other methods](https://docs.github.com/en/get-started/git-basics/about-remote-repositories#cloning-with-https-urls))
-- Use **[templates](https://www.chezmoi.io/reference/templates/)** to manage files between different machines/distros
-- Encrypting your `dotfiles` using **[secrets from your password manager](https://www.chezmoi.io/user-guide/password-managers/)**
-- Check what is & isn't managed by `chezmoi` with `chezmoi managed`/`chezmoi unmanaged`.
+
+
 
 
 
