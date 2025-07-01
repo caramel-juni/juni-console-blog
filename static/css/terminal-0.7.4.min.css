@@ -1,5 +1,7 @@
 :root {
     --global-font-size: 15px;
+    --terminal-logo-size: 15px;
+    --terminal-font-menu-size: 14px;
     --global-line-height: 1.4em;
     --global-space: 10px;
     --font-stack: "Menlo", "Monaco", "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", serif;
@@ -211,9 +213,16 @@ pre code {
 .terminal h4,
 .terminal h5,
 .terminal h6,
-.terminal strong,
-.terminal .logo {
+.terminal strong {
     font-size: var(--global-font-size);
+    font-style: normal;
+    font-family: var(--font-stack);
+    color: var(--font-bold-color)
+}
+
+
+.terminal .logo {
+    font-size: var(--terminal-logo-size);
     font-style: normal;
     font-family: var(--font-stack);
     color: var(--font-bold-color)
@@ -350,7 +359,7 @@ ul ul {
     flex-direction: column;
     width: 100%;
     flex-grow: 1;
-    font-size: var(--global-font-size);
+    font-size: var(--terminal-font-menu-size);
     margin-top: 0
 }
 

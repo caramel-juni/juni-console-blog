@@ -1,6 +1,5 @@
 +++
-date = "2016-11-05T21:05:33+05:30"
-title = "about"
+title = "whoami?"
 +++
 
 *much like Atlas; struggling under the weight of an imposter syndrome that will (allegedly) never cease.*

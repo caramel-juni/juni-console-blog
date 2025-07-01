@@ -26,6 +26,10 @@ ignoreFiles = ["/console-blog/content/posts/future-posts/*", "/console-blog/cont
   url = "photos/"
 
   [[params.navlinks]]
+  name = "caramel-slice/"
+  url = "caramel-slice/"
+
+  [[params.navlinks]]
   name = "bearblog/"
   url = "https://juni-mp4.bearblog.dev/"
 
