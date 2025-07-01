@@ -1,4 +1,9 @@
-
+---
+title: ""
+date: 2025-06-23
+description: ""
+draft: true
+---
 
 ### NEED TO ADD nginx WEBSERVER SETUP PORTION INSTALL
 
