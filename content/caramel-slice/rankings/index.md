@@ -1,5 +1,5 @@
 +++
-image = "tiers.png"
+image = "tiers.jpeg"
 date = "2025-01-05"
 title = "rankings"
 type = "gallery"

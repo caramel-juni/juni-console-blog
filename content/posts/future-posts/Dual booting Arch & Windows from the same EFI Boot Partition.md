@@ -130,7 +130,7 @@ use `fastfetch` and voila!
 ### install & enable bootloader
 as am booting off an existing EPS (windows-created), & whilst it *can* be used with `grub`, apparently `rEFind` is good for a simplified UI & autodetecting existing EFI boot entries (on `UEFI`), so I thought I'd try that.
 
-`pacman -S refine`
+`pacman -S refind`
 run setup script --> `refind-install`. Should set it as default boot manager. check with `efibootmgr` - `BootOrder:` line.
 
 This also runs `mkrlconf` as `root`, and will attempt to find your kernel in `/boot` and automatically generate `refind_linux.conf` accordingly.
@@ -298,6 +298,8 @@ To check sizes of installed snapshots:
 
 ## Arch: Some TLC
 - https://wiki.archlinux.org/title/System_maintenance
+- [What to do AFTER you've installed ARCH LINUX - beginner friendly post-install guide](https://www.youtube.com/watch?v=-puvglgx6Qs)
+- [A friendly guide to Pacman on Arch Linux and Arch-based Distros](https://www.youtube.com/watch?v=Napx5_6iBJ4)
 
 ## Arch: Upgrading & Best Practices (flags)
 
@@ -325,7 +327,6 @@ Same `-Syu` flags recommended for `yay`, which installs from **both** the **offi
 - `-Syu` is king!
 - Use `timeshift` or `btrfs snapshots` before large updates
 - Use `pacman -Qdt` to find unneeded dependencies
-- 
 
 ---
 
