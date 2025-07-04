@@ -5,7 +5,7 @@ title = "parties"
 type = "gallery"
 +++
 
-![](/photo-moi-6.jpg)
+![](/sage6.jpg)
 **partying** is something that i rarely do, but when i do, it is typically with a number of cool folk and beverages . . .
 
 # behold: some ephemeral moments.
@@ -15,7 +15,7 @@ type = "gallery"
 
 *captured on film by a brilliant soul by the name of* **sage**.
 
-*find more of their work (photos, essays, thoughts) @ their website [here](https://neuromantics.neocities.org/)*
+*find more of their work (photos, essays, thoughts) @ their website [here](https://neuromantics.neocities.org/)*.
 
 ![](/photos/parties/sage1.jpg)
 
