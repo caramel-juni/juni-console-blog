@@ -1,7 +1,7 @@
 +++
 image = "photo-moi-6.jpg"
 date = "2025-06-07"
-title = "/life"
+title = "life"
 type = "gallery"
 +++
 

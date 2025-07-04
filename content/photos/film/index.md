@@ -1,7 +1,7 @@
 +++
 image = "photo-moi-2.jpg"
 date = "2024-10-10"
-title = "/film"
+title = "film"
 type = "gallery"
 +++
 
