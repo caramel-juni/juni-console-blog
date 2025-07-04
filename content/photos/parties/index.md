@@ -1,7 +1,7 @@
 +++
 image = "sage6.jpg"
 date = "2025-07-03"
-title = "parties"
+title = "/parties"
 type = "gallery"
 +++
 

@@ -1,7 +1,7 @@
 +++
 image = "photo-moi-5.jpg"
 date = "2024-11-28"
-title = "korea & japan"
+title = "/korea & japan"
 type = "gallery"
 +++
 
