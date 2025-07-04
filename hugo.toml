@@ -3,6 +3,7 @@ languageCode = "en-au"
 title = "juni's blog ٩(◕‿◕｡)۶"
 theme = "hugo-theme-console"
 ignoreFiles = ["/console-blog/content/posts/future-posts/*", "/console-blog/content/template.md"]
+enableRobotsTXT = true
 
 [params]
   # Cutting off the page title to two chars for mobile (console-demo -> co)
