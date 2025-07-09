@@ -272,7 +272,7 @@ Given `UTC` is generally more reliable and makes sense (is independent of timezo
 	- see [dotfiles here](https://github.com/kurealnum/dotfiles)
 
 
-## Backups & Snapshots:
+## Backups & Snapshots - [`timeshift`](https://thelinuxcode.com/timeshift-backup-tutorial/)
 
 **snapshot tool: `timeshift` (as using `ext4` filesystem):**
 - `yay -S timeshift`
@@ -295,6 +295,18 @@ To check sizes of installed snapshots:
 
 `sudo du -sh /timeshift/snapshots/*`
 
+**Tip:** Can create a `pacman` hook to run an auto-snapshot with `timeshift` every time a full system upgrade is performed (with the options to cancel it if need be) - see [here.](https://forum.manjaro.org/t/howto-create-useful-pacman-hooks/55020)
+
+Also, to run routinely, I added an entry to my user's crontab with `sudo crontab -e -u juniarch`, because `timeshift`'s CLI documentation is unclear as to whether just setting the `schedule_monthly` to `true` in `/etc/timeshift/timeshift.json` config file is sufficient to enable this. ==Will test to see by removing crontab & just enabling via the config file - July 2025==
+
+`crontab`: 
+1. Will first need to set sudo with NOPASSWD for timeshift: 
+   `sudo visudo`
+   Add line: `juniarch ALL=(ALL) NOPASSWD: /usr/bin/timeshift`
+2. Then create/add to user crontab with:
+   `sudo crontab -e -u juniarch`
+   Add line: `0 0 1 * * sudo /usr/bin/timeshift --check --scripted --create --tags M` (for monthly snapshots)
+   
 
 ## Arch: Some TLC
 - https://wiki.archlinux.org/title/System_maintenance
@@ -310,8 +322,10 @@ To check sizes of installed snapshots:
 - `u` = `upgrade ALL packages` (as Arch is a **rolling release** - *"when new [library](https://en.wikipedia.org/wiki/Library_\(computing\) "wikipedia:Library (computing)") versions are pushed to the repositories, the [Developers](https://archlinux.org/people/developers/) and [Package Maintainers](https://wiki.archlinux.org/title/Package_Maintainers "Package Maintainers") **rebuild all the packages** in the repositories that need to be rebuilt against the libraries"* - thus necessitating keeping **all packages up-to-date** to avoid dependency conflicts.)
 - `--needed`: Don't reinstall already-installed packages - prevents unnecessary downloads.
 - `-Q`: queries local database of installed packages & dependencies
+**UNINSTALL & CLEAN UP:**
+- `-Rns` = remove package `-R`, **unneeded dependencies** `s`, and config files `n`
 
-Same `-Syu` flags recommended for `yay`, which installs from **both** the **official Arch Repository** *and* the `Arch User Repository` (`AUR`). Also may consider:
+Same `-Syu` & `-Rns` flags recommended for `yay`, which installs from **both** the **official Arch Repository** *and* the `Arch User Repository` (`AUR`). Also may consider:
 
 - `--removemake`: Removes make dependencies after build (cleans up space)
 
