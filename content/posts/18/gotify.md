@@ -1,6 +1,6 @@
 ---
 title: Setting up Gotify to monitor TrueNAS Apps & Alerts
-date: 2025-07-14
+date: 2025-07-15
 description: ""
 toc: true
 math: true
