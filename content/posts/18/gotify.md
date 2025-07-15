@@ -76,14 +76,16 @@ services:
   - Use the [Handlebars](https://handlebarsjs.com/guide/) Template engine to customise alert notifications. See also some samply Gotify-specific templates [here](https://github.com/jellyfin/jellyfin-plugin-webhook/tree/master/Jellyfin.Plugin.Webhook/Templates). For example, my configuration for the relevant alerts in my setup is below:
   ``` json
   {
-  "title": "{{#if_equals NotificationType 'AuthenticationSuccess'}}✅ Login Success: {{NotificationUsername}}{{else if_equals NotificationType 'AuthenticationFailure'}}🚫 Login Failed: {{NotificationUsername}}{{else if_equals NotificationType 'UserCreated'}}👤 User Created: {{NotificationUsername}}{{else if_equals NotificationType 'UserUpdated'}}✏️ User Updated: {{NotificationUsername}}{{else if_equals NotificationType 'UserLockedOut'}}🔒 User Locked Out: {{NotificationUsername}}{{else if_equals NotificationType 'UserPasswordChanged'}}🔑 Password Changed: {{NotificationUsername}}{{else if_equals NotificationType 'TaskCompleted'}}✅ Task Completed: {{Name}}{{else}}🔔 {{NotificationType}}{{/if_equals}}",
-  "message": "**User:** {{NotificationUsername}}\n**Type:** {{NotificationType}}\n**Client:** {{Client}}\n**Device:** {{DeviceName}}\n**IP:** {{RemoteEndPoint}}\n**Server:** {{ServerName}}",
-  "priority": {{#if_equals NotificationType "AuthenticationFailure"}}5{{else}}3{{/if_equals}},
+  "title": "{{#if NotificationUsername}}🎬 {{NotificationType}} (User: {{NotificationUsername}}){{else}}🔔 {{NotificationType}}{{/if}}",
+  "message": "**Type:** {{NotificationType}}\n**User:** {{NotificationUsername}}\n**Title:** {{Name}}\n**Client:** {{Client}}\n**Device:** {{DeviceName}}\n**IP:** {{RemoteEndPoint}}\n**Server:** {{ServerName}}",
+  "priority": 3,
   "extras": {
     "client::display": {
       "contentType": "text/markdown"
     }
   }
+}
+
   ```
   - Your Gotify `Jellyfin App Token` (==IMPORTANT==)
   - `Priority Type` for messages. 
