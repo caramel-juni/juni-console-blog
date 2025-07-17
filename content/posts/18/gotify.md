@@ -99,3 +99,8 @@ services:
   -H "Content-Type: application/json" \
   -d '{"title":"Jellyfin","message":"Test alert!","priority":4}'
 ```
+
+- ***See some other ideas for Gotify [here](https://www.xda-developers.com/gotify-is-my-favorite-utility-for-receiving-notifications/)!***
+- For the future: [integrate with Crowdsec](https://www.youtube.com/watch?v=Ft69PY7iitw)
+
+
