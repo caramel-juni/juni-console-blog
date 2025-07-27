@@ -5,6 +5,8 @@ title = "korea & japan"
 type = "gallery"
 +++
 
+# NOVEMBER, 2024: 
+
 'twas a rather **life-changing, trip**, i'd say.
 
 ![](/photos/korea-japan/photo-moi-4.jpg)
