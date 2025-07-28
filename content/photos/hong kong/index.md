@@ -15,10 +15,10 @@ type = "gallery"
 
 ![](/photos/hong-kong/photo-moi-3.jpg)
 
-![](/photos/hong-kong/hongkong1.jpg)
+![](/photos/hong-kong/hongkong-1.jpg)
 
-![](/photos/hong-kong/hongkong2.jpg)
+![](/photos/hong-kong/hongkong-2.jpg)
 
-![](/photos/hong-kong/hongkong3.jpg)
+![](/photos/hong-kong/hongkong-3.jpg)
 
-![](/photos/hong-kong/hongkong4.jpg)
+![](/photos/hong-kong/hongkong-4.jpg)
