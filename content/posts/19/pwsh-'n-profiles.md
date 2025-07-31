@@ -9,6 +9,13 @@ categories:
 tags:
 ---
 
+# *Finished Setup - a Sneak Peak:*
+![](/posts/19/Pasted%20image%2020250731224132.png)
+
+Appealing? Disgusting? Well, you can **completely change it, and customise to your heart's content** - so let's **dive into the basics, from scratch**!
+
+---
+
 One of these days, I'll **tame the ferociously verbose beast and learn how to properly use Powershell**, the long-feared and disgusted language by many a *nix user... but, unfortunately, a necessary evil to at least become familiar with. 
 
 Today was not *exactly* "**that day**", but perhaps... the early morning leading *up* to "**the day**". Or something like that. I fell asleep before I learnt too many useful commands.
@@ -16,11 +23,6 @@ Today was not *exactly* "**that day**", but perhaps... the early morning leading
 **Here's the process that I embarked on to setup & customise my Powershell 7 environment** in an attempt to make learning it *that* much more appealing.
 
 **Yes, I know that this is a form of procrastination. But now it looks nicer to... Not Learn 💕🎓😎.**
-
-# *Finished Setup - a Sneak Peak:*
-![](/posts/19/Pasted%20image%2020250731224132.png)
-
-Appealing? Disgusting? Well, you can **completely change it, and customise to your heart's content** - so let's **dive into the basics, from scratch**!
 
 ---
 
