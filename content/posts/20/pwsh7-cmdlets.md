@@ -9,6 +9,13 @@ categories:
   - powershell
 tags:
 ---
+
+The constitutes as the first of (perhaps a few) posts within which I will document my learnings of the mythical, wonderous world of **`Powershell (7)`**, and the troubles and toils that i will (inevitably) encounter on the way there.
+
+*I'll try and keep the depiction of said inevitable toils as brief and to myself as possible; however, containing such a beast fully is, I suspect, more than a little beyond me...*
+
+---
+
 # What's a Cmdlet?
 A lightweight script (in a `Verb-Noun` form) that performs a function. Can be installed, or come pre-installed (typically on *Windows*).
 
