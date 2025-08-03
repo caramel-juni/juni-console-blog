@@ -9,6 +9,24 @@ type = "gallery"
 
 timestamped to perfection, and updated routinely *(AKA whenever i remember)*.
 
+---
+
+## 3/08/2025
+
+<div style="display: flex; align-items: center; justify-content: center; height: 100px;"> 
+<img src="https://web.archive.org/web/20090808103710im_/http://www.geocities.com/friz_b2002/osakaflag1.gif" style="width:100px">
+<i>~~ a smol celebration for this gallery's <em>100th slice</em> ~~</i>
+<img src="https://web.archive.org/web/20090808103710im_/http://www.geocities.com/friz_b2002/osakaflag1.gif" style="width:100px"> 
+</div>
+
+![](/caramel-slice/gallery/slice100.jpeg)
+
+
+---
+
+## 2/08/2025
+
+![](/caramel-slice/gallery/slice99.jpeg)
 
 ---
 
