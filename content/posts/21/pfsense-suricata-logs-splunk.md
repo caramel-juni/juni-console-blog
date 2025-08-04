@@ -9,7 +9,7 @@ categories:
 tags:
 ---
 
-Below lays out my adventures setting up syslog-ng as a pfSense package to get pfSense (&/or Suricata - the same process can be applied) logs into a Splunk (Cloud) instance!
+Below lays out my adventures setting up syslog-ng as a pfSense package to get pfSense (&/or Suricata - the same process can be applied, see [the very helpful guide here](https://www.unsafehex.com/index.php/2023/10/11/forward-pfsense-suricata-splunk/)) logs into a Splunk (Cloud) instance!
 
 ---
 
