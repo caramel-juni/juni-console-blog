@@ -1,9 +1,19 @@
+---
+title: "Getting ESXi Logs into Splunk"
+date: 2025-08-03
+description: ""
+toc: true
+math: true
+draft: true
+categories: 
+tags:
+---
 
-This is part 3 of my "pretending-to-know-how-to-play-nicely-with-Splunk-Cloud" series - getting some more "criticval infrastructure" logs in, namely, for `ESXi` servers!
+This is part 3 of my "pretending-to-know-how-to-play-nicely-with-Splunk-Cloud" series - getting some more "critical infrastructure" logs in, namely, for `ESXi` servers!
 
 # Overall Architecture:
 As per the [Splunk Documentation](https://docs.splunk.com/Documentation/AddOns/released/VMWesxilogs/InstallOverview#Install_Splunk_Add-on_for_VMware_ESXi_Logs_in_a_Cloud_environment):
-![](posts/future-posts/20/attachments/Pasted%20image%2020250801164815.png)
+![](posts/future-posts/22/Pasted%20image%2020250801164815.png)
 So in terms of the physical endpoints we need to configure:
 ```
 ESXi Server syslog daemon
@@ -67,12 +77,12 @@ log {
 - To configure the URL of your HEC, read the docs [here](https://help.splunk.com/en/splunk-cloud-platform/get-started/get-data-in/9.3.2408/get-data-with-http-event-collector/set-up-and-use-http-event-collector-in-splunk-web#ariaid-title6). As I'm using the SplunkCloud platform, mine takes the format: `<protocol>://http-inputs-<host>.splunkcloud.com:<port>/<endpoint>`, with `<endpoint>` being `services/collector/event`.
   *Be sure to replace the relevant fields in the above example tailored to your specific splunk server's settings (`<HOST>`, `<HEC-TOKEN>` with the HEC token created in Step 1, etc.)*
 
-3. Test it by running `sudo syslog-ng -Fev`, inspect for any errors thrown by your config file. ![](posts/future-posts/20/attachments/Pasted%20image%2020250730134418.png)
+3. Test it by running `sudo syslog-ng -Fev`, inspect for any errors thrown by your config file. ![](posts/future-posts/22/Pasted%20image%2020250730134418.png)
 4. If nothing urgent crops up (as this is a bare bones install, just monitoring the local VM's logging indexes `system();` and `internal();`, just to test functionality), terminate `syslog-ng` with `Ctr+C` and then generate a test alert with:
    `logger -p local0.info "Test from syslog-ng to HEC"`
 5. Restart `syslog-ng` in the foreground with `sudo syslog-ng -Fev`
 6. Head into Splunk to see whether the alerts are getting sent over!
-   ![](posts/future-posts/20/attachments/Pasted%20image%2020250730135417.png)
+   ![](posts/future-posts/22/Pasted%20image%2020250730135417.png)
 
 ---
 ### 3. Configure ESXi to send *its* `syslogs` to `syslog-ng` --> Splunk
@@ -96,13 +106,13 @@ Once done, run `esxcli system syslog reload`.
 
 For me, this involved running `tail -f /var/log/esxi.log` and inspecting that events were regularly coming in. As a test, you can also generate a custom log message with `logger "Test message from ESXi"`, and check it shows up in there.
 
-![](posts/future-posts/20/attachments/Pasted%20image%2020250801171255.png)
+![](posts/future-posts/22/Pasted%20image%2020250801171255.png)
 
 Now we know the logs are being written to the file, we can hope (and check) that they're being sent over to our remote `syslog-ng` VM we specified in 3.2! 
 
 Unfortunately, as the ESXi host is on a minimal `busybox` install, it lacks a few of the tools like `tcpdump` commonly used to easily monitor/listen to outgoing traffic... but we can check from the other *side* (out `syslog-ng` VM) to see if the connection has been made, with:
 - `sudo netstat -tnp | grep :514`
-![](posts/future-posts/20/attachments/Pasted%20image%2020250801172729.png)
+![](posts/future-posts/22/Pasted%20image%2020250801172729.png)
 
 Success! My `ESXi` host (`172.16.16.2`, on port `24770` ) is connected & sending traffic to my `syslog-ng` server (`172.16.16.5`, listening on port `514`).
 
@@ -153,11 +163,27 @@ log {
 **And from here, just alternate between:**
 - Checking the format of the local debug logs with `sudo tail /var/log/splunk-debug.log`
 - Checking whether the Splunk HEC is dummy spitting at the format they're in, using the following index/component **SPL**: `index=_internal component=HttpInputDataHandler`
-  ![](posts/future-posts/20/attachments/Pasted%20image%2020250801174519.png)
+  ![](posts/future-posts/22/Pasted%20image%2020250801174519.png)
 
 Make any `JSON`-specific formatting adjustments as you go, with the help of AI (ain't nobody got time for parsing `JSON`)
 
 ***And hopefully, you should soon have it all coming through and into Splunk!***
 
-# Next time... Parsing the ESXi logs with the multiple Splunk add-ons required to do so 💀
-**(or giving up and just doing custom field extraction**
+# Finally... Enabling field extraction with the Splunk ESXi Add-On(s...) or not 💀
+
+The inital setup diagram made out this final hurdle to look a *bit* convoluted.... **and that turned out to be *exactly* the case, at least whilst working with Splunk Cloud**. I never managed to get this working, potentially due to an (unknown) combination of the following variables:
+- Parsing & extracting certain fields with `syslog-ng` on the VM before sending it to the splunk HEC (in order for it to be accepted....)
+- The ambiguous state of whether you need to *also* [run a Splunk UF](https://docs.splunk.com/Documentation/AddOns/released/VMWesxilogs/Install#Configure_the_Splunk_Add-on_for_VMware_to_receive_ESXi_syslog_data) on the `syslog-ng` server, and how that interacts with the `syslog-ng` service itself...
+- **Having to seemingly [install like 4-5 different add-ons](https://docs.splunk.com/Documentation/AddOns/released/VMW/Cloudinstall)** (depending on where in the documentation you look...) to get custom field extraction working, some of which are **not even natively available for install in Splunk Cloud at this time...**
+- The actual **[Splunk Add-on for VMware](https://docs.splunk.com/Documentation/AddOns/released/VMW/About)** not being natively available via the Splunk Cloud "app store", having to be installed manually... which *also* failed.
+  ![](Pasted%20image%2020250804142926.png)
+
+Whether I set  the `sourcetype=vmware-esxilog`, or `sourcetype=syslog`, the **same (largely unhelpful/generic) fields seemed to be being extracted**, with no real intelligent parsing of the data in a way that it could be ingested into the VMWare for Splunk app (if that could even be installed....).
+![](Pasted%20image%2020250804133729.png)
+
+**So, custom field extraction it will be 🫠.**
+
+Here are some links to the "relevant" (how much of it is *actually* relevant to Splunk Cloud is extremely questionable, though...) documentation for getting this to work, in hopes that a future poor soul who is tasked with setting this up can figure it out.
+- [Install and configure the Splunk Add-on for VMware ESXi Logs - Splunk Documentation](https://docs.splunk.com/Documentation/AddOns/released/VMWesxilogs/Install#Configure_the_Splunk_Add-on_for_VMware_to_receive_ESXi_syslog_data)
+- [Install the Splunk Add-on for VMware in a cloud environment - Splunk Documentation](https://docs.splunk.com/Documentation/AddOns/released/VMW/Cloudinstall)
+- [Syslog data collection - Splunk Documentation](https://docs.splunk.com/Documentation/SVA/current/Architectures/Syslog) (collecting syslogs without the add-ons - what I *think* is currently happening in my setup)
