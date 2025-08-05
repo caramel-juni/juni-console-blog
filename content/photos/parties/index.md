@@ -11,12 +11,29 @@ type = "gallery"
 # behold: some ephemeral moments.
 
 ---
-## 12/07/2025
+# 12/07/2025
 
 *captured on film by a brilliant soul by the name of* **sage**.
 
 *find more of their work (photos, essays, thoughts) @ their website [here](https://neuromantics.neocities.org/)*.
 
+![](/photos/parties/Sage-Party-5.jpeg)
+
+![](/photos/parties/Sage-Party-3.jpeg)
+
+![](/photos/parties/Sage-Party-1.jpeg)
+
+![](/photos/parties/Sage-Party-2.jpeg)
+
+![](/photos/parties/Sage-Party-4.jpeg)
+
+![](/photos/parties/Sage-Party-6.jpeg)
+
+![](/photos/parties/Sage-Party-7.jpeg)
+
+![](/photos/parties/Sage-Party-8.jpeg)
+
+![](/photos/parties/Sage-Party-9.jpeg)
 
 ![](/photos/parties/june22nd-1.jpg)
 
@@ -33,7 +50,7 @@ type = "gallery"
 ![](/photos/parties/june22nd-7.jpg)
 
 ---
-## 14/06/2025
+# 14/06/2025
 
 *captured on film by a brilliant soul by the name of* **sage**.
 
