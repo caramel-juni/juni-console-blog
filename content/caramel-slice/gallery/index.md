@@ -11,6 +11,12 @@ timestamped to perfection, and updated routinely *(AKA whenever i remember)*.
 
 ---
 
+## 5/08/2025
+
+![](/caramel-slice/gallery/slice101.jpeg)
+
+---
+
 ## 3/08/2025
 
 <div style="display: flex; align-items: center; justify-content: center; height: 100px;"> 

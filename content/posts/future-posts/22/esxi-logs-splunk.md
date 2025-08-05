@@ -9,7 +9,7 @@ categories:
 tags:
 ---
 
-This is part 3 of my "pretending-to-know-how-to-play-nicely-with-Splunk-Cloud" series - getting some more "critical infrastructure" logs in, namely, for `ESXi` servers!
+This is part 2 of my "pretending-to-know-how-to-play-nicely-with-Splunk-Cloud" series - getting some more "critical infrastructure" logs in, namely, for `ESXi` servers!
 
 # Overall Architecture:
 As per the [Splunk Documentation](https://docs.splunk.com/Documentation/AddOns/released/VMWesxilogs/InstallOverview#Install_Splunk_Add-on_for_VMware_ESXi_Logs_in_a_Cloud_environment):
