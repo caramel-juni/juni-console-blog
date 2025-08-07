@@ -1,56 +1,58 @@
 ---
-title: ""
-date: 2025-06-15
-description: ""
+title: Dual booting Arch & Windows from the same EFI Boot Partition
+date: 2025-08-07
+description: aka Living Hell
 toc: true
 math: true
-draft: true
-categories: 
+draft: false
+categories:
+  - arch
 tags:
+  - arch
+  - windows
+  - dual-boot
+  - efi
+  - bootloader
 ---
 
-- https://github.com/silentz/arch-linux-install-guide
-- https://www.youtube.com/watch?v=5DHz23VQJxk
-- https://www.youtube.com/watch?v=1J_Z_pzzbMo&t=549s
+A while ago, my friend had played around with installing [Arch linux](https://archlinux.org/), and I warned her against choosing *it* as an OS for dual-booting due to how notoriously difficult.... Windows can be when playing with other OS's *rudely* occupying its boot drive... let alone one that's as DIY as Arch (comparatively) for the install, and a rolling release model lending to it being somewhat... *unpredictable*.
 
-
-Recently, my friend had played around with installing arch, and I warned her against choosing *it* as an OS for dual-booting due to how notoriously difficult.... Windows can be when playing with other OS's *rudely* occupying its boot drive... let alone one that's as DIY as Arch (comparatively) for the install, and a rolling release model lending to it being somewhat... *unpredictable*.
-
-So, naturally, upon arriving home, I **decided to do exactly that on my main PC.**
+So, naturally, upon arriving home, I... *decided to do exactly that, on my main PC.*
 
 Why? Because, like many people in this industry, I'm a masochist and like pain. Or I'm just crazy. And of course, the rose-tinted allure of "*arch btw*." Gotta try it at least once properly, right? So why not go full insane mode.
 
-Now, the first step:
+Now, to the first (& endlessly memed) step...
 
-## Reading the Arch Wiki
+# 0. - Reading the Arch Wiki
 Yes, I made the mistake (i jest; *blessing*) of **properly reading the Arch Wiki**. It only took me a dozen tries, and my, was it a ride. I learnt a lot, cried a bit, and **puzzled over the discrepancies between it and the myriad of existing, recent YouTube tutorials/install guides for dual booting Arch with Windows** (all advising to create an additional EFI partition to boot Linux from, when on the same disk).
 
 Now, I was **cross-referencing like crazy**, given i was (crazy enough to be) doing this with my desktop workstation despite *very much* realising this was an extremely risky idea. However, after many back-and-forths, the long and short of it came down to: **Read The Fucking Wiki.** It's the **source of truth.**
 
 **YouTube tutorials only get you *so* far** when dealing with edge cases, and *boy* were there a lot of edge cases. And it's *entirely* worth the extra few minutes of your time, *especially* when attempting to dual boot properly and minimise the risk of a Windows update freaking the fuck out after discovering another `EFI` partition and bricking one (if not both) OS's. *Please* make sure to follow the below recommendations to prevent a *lot* of potential future pain:
 
-## Pre-requisites
+# 1. - Pre-requisite checks:
 
-1. Do **NOT** create another `EFI` partition to boot `Arch` from when there is an existing one created by Windows. 
-Even if only a *chance*, with Microsoft's history, the line: *"An additional EFI system partition should not be created, as it may [prevent Windows from booting](https://support.microsoft.com/en-us/help/2879602/unable-to-boot-if-more-than-one-efi-system-partition-is-present)."* [from the Wiki](https://wiki.archlinux.org/title/Dual_boot_with_Windows) **should very much be heeded.**
-
+1. Do **NOT** create another `EFI` partition to boot `Arch` from when there is an existing one created by Windows. Even if only a *chance*, with Microsoft's history, the line: *"An additional EFI system partition should not be created, as it may [prevent Windows from booting](https://support.microsoft.com/en-us/help/2879602/unable-to-boot-if-more-than-one-efi-system-partition-is-present)."* [from the Wiki](https://wiki.archlinux.org/title/Dual_boot_with_Windows) **should very much be heeded.**
 
 2. To *ensure* that your **existing Windows** `EFI` partition **has enough space to store the Arch bootloader and any other future ones that you wish to install**.
    
-As Windows typically creates a piddly `100MiB` `EFI` partition by default (only `30MiB` of which is typically used by Windows, it leaves little room for expansion or the potential for other bootloaders. Whist linux-based bootloaders don't take up anywhere *near* as much space as Windows' does... they can get large when including `initramfs`, your kernel and any CPU fixes needed per distro... 
-Plus, I wanted to try and do it by the book, especially when running out of space on your `EFI` partition increases the risk of boot loaders misbehaving over time, and in some cases, Windows [nuking your desired Arch bootloader](https://www.reddit.com/r/archlinux/comments/1ca2uyk/why_should_i_or_should_i_not_share_efi_in_a/) upon updates)
+   As Windows typically creates a piddly `100MiB` `EFI` partition by default (only `30MiB` of which is typically used by Windows, it leaves little room for expansion or the potential for other bootloaders. Whist linux-based bootloaders don't take up anywhere *near* as much space as Windows' does... they can get large when including `initramfs`, your kernel and any CPU fixes needed per distro... 
    
-To do this, if you're unfortunate enough to be stuck with the default `100MiB` `EFI` Windows-created partition, I'd recommend using either [MiniTool Partiton Wizard](https://www.partitionwizard.com/partitionmanager/increase-efi-system-partition-size.html) (as spammy and icky as it comes across - *you can uninstall it right after*) or [GParted](https://pureinfotech.com/resize-partition-windows-10-gparted/#resize_partition_gparted_windows10) (advanced use cases - be careful) to **resize your `EFI` boot partition to something like `4GiB` to be safe.** 
-	- Now, full disclosure - this is **not to be done lightly**, and you should **definitely make a backup of the EFI partition before you do this**... and not subsist on crossed fingers and good vibes alone, like I did. (thankfully, I haven't run into any issues... *yet*.) 
-	- However, I did so after reading & noting down the `EFI System Partition` (`ESP`'s) `PARTUUID` & `UUID` values - which are typically stored in a `NVRAM` firmware entry and ***thus*** are the main values **used to correctly identify the newly-expanded `EFI` partition**, so if anything *did* go wrong, I could still point Windows to find and boot from it.
+   Plus, I wanted to try and do it by the book, especially when running out of space on your `EFI` partition increases the risk of boot loaders misbehaving over time, and in some cases, Windows [nuking your desired Arch bootloader](https://www.reddit.com/r/archlinux/comments/1ca2uyk/why_should_i_or_should_i_not_share_efi_in_a/) upon updates)
+   
+   To do this, if you're unfortunate enough to be stuck with the default `100MiB` `EFI` Windows-created partition, I'd recommend using either [MiniTool Partiton Wizard](https://www.partitionwizard.com/partitionmanager/increase-efi-system-partition-size.html) (as spammy and icky as it comes across - *you can uninstall it right after*) or [GParted](https://pureinfotech.com/resize-partition-windows-10-gparted/#resize_partition_gparted_windows10) (advanced use cases - be careful) to **resize your `EFI` boot partition to something like `4GiB` to be safe.** 
+   
+   Now, full disclosure - this is **not to be done lightly**, and you should **definitely make a backup of the EFI partition before you do this**... and not subsist on crossed fingers and good vibes alone, like I did.... *(thankfully, I haven't run into any issues... **yet**.)* 
+   
+   However, I did so after reading & noting down the `EFI System Partition` (`ESP`'s) `PARTUUID` & `UUID` values - which are typically stored in a `NVRAM` firmware entry and ***thus*** are the main values **used to correctly identify the newly-expanded `EFI` partition**, so if anything *did* go wrong, I could still point Windows to find and boot from it.
 
-3. Ensure to **Disable Fast Startup and Hibernation** modes on Windows via `powercfg /H off` in an elevated Powershell prompt, then power cycle (full shutdown) and check Windows registry keys for this feature to ensure they are off. **See [here](https://wiki.archlinux.org/title/Dual_boot_with_Windows#Disable_Fast_Startup_and_disable_hibernation) as to why.**
+3.  Ensure to **Disable Fast Startup and Hibernation** modes on Windows via `powercfg /H off` in an elevated Powershell prompt, then power cycle (full shutdown) and check Windows registry keys for this feature to ensure they are off. **See [here](https://wiki.archlinux.org/title/Dual_boot_with_Windows#Disable_Fast_Startup_and_disable_hibernation) as to why.**
 
 Now, once my `EFI` partition was resized, listed as "healthy" in the Windows disk manager, and showing up as `4.1G` in the live Arch install, I proceeded to the fun part - **setting up my Arch system**, guided by both [The Wiki](https://wiki.archlinux.org/title/Dual_boot_with_Windows) (read **the entire dual-booting with Windows article before proceeding**) and this (incomplete) guide [here](according to the guide [here](https://nic96.dev/blog/beginners-guide-dual-booting-arch-linux-windows/).).
 
----
-## The "fun" part - Installing Arch!
 
+---
+# 2. - The "fun" part - Installing Arch!
 
 ### Partitioning drives, creating the filesystem, setting the SWAP
 (no need to create an `EFI` partition, as will be using expanded windows one)
@@ -74,10 +76,15 @@ Then, I made and activated the `SWAP` partition:
 - `swapon /dev/nvme1n1p7`
 
 Now... for the `EFI` partition!
-## [Check whether existing EFI partition is the ESP](https://wiki.archlinux.org/title/EFI_system_partition#Check_for_an_existing_partition)
-#### Some Terminology:
-- **EFI:** 
-- **ESP:** 
+
+But first, reading the Arch wiki... *If you are installing Arch Linux on an UEFI-capable computer with an installed operating system, like Windows 10 for example, it is very likely that you already have an EFI system partition.*
+
+> **Some Terminology:**
+> **EFI (or ESP):** The `EFI` system partition (also called `ESP`) is an OS independent partition that acts as the storage place for the UEFI boot loaders, applications and drivers to be launched by the UEFI firmware. It is mandatory for UEFI boot. 
+
+## So - be sure to [check whether existing EFI partition is the ESP - see here for detais!](https://wiki.archlinux.org/title/EFI_system_partition#Check_for_an_existing_partition)
+
+Start with:
 
 `fdisk -l`
 
@@ -85,7 +92,7 @@ Now... for the `EFI` partition!
 mount it to local FS to check that it check it contains `EFI` directory
 mount `/dev/nvme1n13` `/mnt`
 `ls /mnt`
-if it does, good to go! if not see the link above.
+if it does, good to go! if not, see the link above.
 
 ### mount root partition to `/mnt`
 
@@ -155,7 +162,7 @@ Check and fix it manually by filling in your corresponding new `/root` system's 
 Then, feel free to edit any further settings you'd like to change (default boot order, icons, etc.) in `/efi/EFI/refind/refind.conf
 
 
-#### One extra step: Check that you didn't overwrite or delete any existing EFI entries (like`/EFI/Microsoft` - that would be bad)
+#### One extra step: Check that you didn't overwrite or delete any existing EFI entries (like `/EFI/Microsoft` - that would be bad)
 
 - Mount your underlying `OS`'s `EFI` partition and check that (for example) the Windows bootloader files are still there:
 ```bash
@@ -171,14 +178,15 @@ Now - to reboot into your new Arch system!
 - Exit `chroot` environment with `exit`
 - Unmount all partitions: `umount -lR /mnt
 - Now the directories you previously mounted should no longer be listed as mountpoints when running `lsblk`.
-- Finally, `shutdown now` & **eject pendrive**
+- Finally, `shutdown now` & **eject USB boot drive**
 
-### What happened next...
+---
+# What happened next...
 And of course, as the `rEFind` boot menu loaded up (had to manually change boot order in `UEFI BIOS` as it overwrote that described by `efibootmgr`) and i selected the glorious Arch logo, I got dropped into an emergency shell with the error:
 `device "PARTUUID" not found`
 ... despite that device `PARTUUID` listed being the correct one for my `/root` drive.
 
-### Time to troubleshoot:
+# Time to troubleshoot:
 After booting into Arch live ISO, mounting disks as specified before (existing `EFI`, `/root`, and setting `SWAP` on), and then using `arch-chroot /mnt` to enter the live preview system, I tried...
 - running `mkinitcpio -P` (as boot drive is `nvme` & needs additional auto-setup)
 - uncommenting the `extra_kernel_version_strings` field in`[esp-directory]/EFI/refind/refind.conf` & adding those seen in the example on the [Arch Wiki (rEFind)](https://wiki.archlinux.org/title/REFInd#For_kernels_automatically_detected_by_rEFInd), 
@@ -187,7 +195,7 @@ After booting into Arch live ISO, mounting disks as specified before (existing `
 
 But I had not yet tried my greatest strategy.
 
-I **made a troubleshooting plan**, and then **took a break** (when it hit 2am).
+**I made a troubleshooting plan**, and then... **took a break** (when it hit 2am).
 And then **came back the next day to look over it.**
 
 Surprise surprise, the answer lay within... 
@@ -205,15 +213,29 @@ I then cleaned up & removed old boot images from my `/efi/EFI/` directory (an ol
 
 ### And then, bam! 
 - **Arch Linux** installed
-- ...Dual booting from the **same drive** with an **existing Windows 11 installation**
-- ...using the **same EFI partition** as Windows
-- ...using a bootloader (`rEFind`) capable of [launching kernels as](https://wiki.archlinux.org/title/REFInd) `EFI boot stubs` ("graceful", some might say) 
+- ... Dual booting from the **same drive** with an **existing Windows 11 installation**
+- ... using the **same EFI partition** as Windows
+- ... using a bootloader (`rEFind`) capable of [launching kernels as](https://wiki.archlinux.org/title/REFInd) `EFI boot stubs` ("graceful", some might say) 
 - ... that was made *way* harder than it needed to be by the absence of one freaking word (`PARTUUID`) 
 All without bricking my system.
 
 ***Oh, isn't tech just oodles of fun?***
 
-> Side note: you may encounter system time discrepancies between Linux/Windows when dual booting from the same drive - this is because 
+# Here are some links to some lovely & helpful Arch Install Guides, if you prefer to learn that way!:
+ (*just* Arch btw, without the Beauty and Magic of running it alongside... Windows...)
+- https://github.com/silentz/arch-linux-install-guide
+- [Beginner friendly ARCH LINUX Installation Guide and Walkthrough](https://www.youtube.com/watch?v=5DHz23VQJxk)
+
+
+# Arch/Linux Dual Boot Video (see warning!)
+- [How to Dual Boot Arch Linux and Windows 11 (2025)](https://www.youtube.com/watch?v=1J_Z_pzzbMo&t=549s) --> **WARNING: CONFLICTS WITH ARCH WIKI ADVICE AGAINST CREATING ANOTHER EFI PARTITION**
+
+
+---
+
+# Fixing Time Discrepancies (between Windows & Arch)
+
+> Side note: you may encounter system time discrepancies between Linux/Windows when dual booting from the same drive - this is because: 
 - Windows **uses the local time on the hardware clock by default (`RTC`)**
 - Whereas Linux uses (the more reliable) **Coordinated Universal Time** (`UTC`) by default.
 Given `UTC` is generally more reliable and makes sense (is independent of timezones & Daylight Savings `DST`, a single source of truth)... and i *wanted* to switch Windows over to using RTC with a regedit... but articles like [these](https://www.howtogeek.com/323390/how-to-fix-windows-and-linux-showing-different-times-when-dual-booting/) reminded me how **Windows rarely plays nice with these kind of things,** and **I would rather fix my Arch install than my Windows one.** So, to switch Linux to `RTC`:
@@ -229,7 +251,7 @@ Given `UTC` is generally more reliable and makes sense (is independent of timezo
 - [Dotfiles management resources & tutorials](https://github.com/webpro/awesome-dotfiles?tab=readme-ov-file)
 - [Linux Ricing Guide](https://www.youtube.com/watch?v=jFz5gLqv-FM) (denkii)
 
-### Components:
+# Ricing Components:
 - dotfile manager
 	- [chezmoi](https://www.chezmoi.io/what-does-chezmoi-do/)
 	- [yadm](https://github.com/yadm-dev/yadm)
@@ -271,8 +293,8 @@ Given `UTC` is generally more reliable and makes sense (is independent of timezo
 	- https://www.youtube.com/watch?v=o03_cfOnl84
 	- see [dotfiles here](https://github.com/kurealnum/dotfiles)
 
-
-## Backups & Snapshots - [`timeshift`](https://thelinuxcode.com/timeshift-backup-tutorial/)
+---
+# Backups & Snapshots - [`timeshift`](https://thelinuxcode.com/timeshift-backup-tutorial/)
 
 **snapshot tool: `timeshift` (as using `ext4` filesystem):**
 - `yay -S timeshift`
@@ -307,13 +329,14 @@ Also, to run routinely, I added an entry to my user's crontab with `sudo crontab
    `sudo crontab -e -u juniarch`
    Add line: `0 0 1 * * sudo /usr/bin/timeshift --check --scripted --create --tags M` (for monthly snapshots)
    
-
-## Arch: Some TLC
+---
+# Arch: Some TLC
 - https://wiki.archlinux.org/title/System_maintenance
 - [What to do AFTER you've installed ARCH LINUX - beginner friendly post-install guide](https://www.youtube.com/watch?v=-puvglgx6Qs)
 - [A friendly guide to Pacman on Arch Linux and Arch-based Distros](https://www.youtube.com/watch?v=Napx5_6iBJ4)
 
-## Arch: Upgrading & Best Practices (flags)
+---
+# Arch: Upgrading & Best Practices (flags)
 
 `pacman` (**official Arch Repository**):
 - Always combine `-Syu` to [avoid partial upgrades that can break the system](https://wiki.archlinux.org/title/System_maintenance#Avoid_certain_pacman_commands).
@@ -352,23 +375,3 @@ Same `-Syu` & `-Rns` flags recommended for `yay`, which installs from **both** t
 
 
 
-
-
-## further steps to troubleshoot:
-- [x] [Arch Wiki rEFind](https://wiki.archlinux.org/title/REFInd#For_kernels_automatically_detected_by_rEFInd) - *"For `rEFInd` to support the naming scheme of Arch Linux [kernels](https://wiki.archlinux.org/title/Kernels "Kernels") and thus allow matching them with their respective initramfs images, you must uncomment and edit `extra_kernel_version_strings` option in `efi/EFI/refind/refind.conf`"* 
-  ``` bash
-extra_kernel_version_strings "linux-hardened,linux-rt-lts,linux-zen,linux-lts,linux-rt,linux"
-	```
-	- ***Warning:** Without `extra_kernel_version_strings` set, rEFInd will incorrectly pass the first initramfs it finds as the `initrd=` kernel parameter, instead of using the correct initramfs for the kernel. This will result in a failure to boot since the matching loadable kernel modules will not be available.*
-	- *Without the above `extra_kernel_version_strings` line, the `%v` variable in `refind_linux.conf` will not work for Arch Linux [kernels](https://wiki.archlinux.org/title/Kernels "Kernels").*
-
-
-
-- try `UUID` instead of `PARTUUID`, as seen below:
-	- https://www.youtube.com/watch?v=KW1jbeLdzB8&t=29s
-	- https://www.rodsbooks.com/refind/linux.html#efistub
-- [x] run `efibootmgr -v` to check EFI partition layout
-- check - [You must place your kernels in a directory other than the one that holds the main rEFInd .efi file. This is because rEFInd does not scan its own directory for boot loaders.](https://www.rodsbooks.com/refind/linux.html#efistub)
-- check if using encryption or LVM
---> ==try and install grub instead
-- https://www.youtube.com/watch?v=tCGL_FY3xeM&t=1750s
