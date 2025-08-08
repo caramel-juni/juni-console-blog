@@ -11,6 +11,13 @@ timestamped to perfection, and updated routinely *(AKA whenever i remember)*.
 
 ---
 
+## 8/08/2025
+
+![](/caramel-slice/gallery/slice103.jpeg)
+
+
+---
+
 ## 7/08/2025
 
 ![](/caramel-slice/gallery/slice102.jpeg)
@@ -649,3 +656,8 @@ timestamped to perfection, and updated routinely *(AKA whenever i remember)*.
 
 ---
 
+## 02/06/2024
+
+![](/caramel-slice/gallery/slice0.jpeg)
+
+---
