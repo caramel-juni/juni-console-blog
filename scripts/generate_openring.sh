@@ -5,6 +5,7 @@ set -euo pipefail
 FEEDLIST="config/openring/feeds.txt"
 TEMPLATE="config/openring/in.html"
 OUT="static/openring.html"
+export PATH=$HOME/go/bin:$PATH
 
 # Pick binary
 if command -v openring >/dev/null 2>&1; then
