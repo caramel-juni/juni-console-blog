@@ -51,7 +51,10 @@
               color:#ccc;
               overflow:hidden;
               display:-webkit-box;
-              -webkit-box-orient:vertical;
+              -webkit-box-orient: vertical;
+              -webkit-line-clamp: 8;
+              line-clamp: 8;
+              max-height: calc(1.2em * 8);
             ">
               {{ .Summary }}
             </p>

@@ -5,3 +5,4 @@ content/.trash/*
 content/template.md
 resources/**
 content/posts/future-posts/*/*.png
+scripts/**
