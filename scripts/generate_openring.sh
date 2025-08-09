@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+echo "Running generate_openring.sh"
+echo "PATH: $PATH"
+echo "which openring: $(which openring || echo 'not found')"
+echo "which openring-rs: $(which openring-rs || echo 'not found')"
+
+
 # Paths
 FEEDLIST="config/openring/feeds.txt"
 TEMPLATE="config/openring/in.html"
