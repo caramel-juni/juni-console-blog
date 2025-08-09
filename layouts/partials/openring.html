@@ -1,0 +1,5 @@
+{{/* layouts/partials/openring.html */}}
+{{ $path := "static/openring.html" }}
+{{ if fileExists $path }}
+  {{ readFile $path | safeHTML }}
+{{ end }}

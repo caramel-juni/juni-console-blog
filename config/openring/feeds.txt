@@ -1,0 +1,8 @@
+# config/openring/feeds.txt
+https://drewdevault.com/blog/index.xml
+https://マリウス.com/index.xml
+https://meadow.cafe/feeds/blog_rss.xml
+https://blog.avas.space/feed/?type=rss.xml
+https://sylvia.bearblog.dev/rss.xml
+https://tala.bearblog.dev/feed.xml
+https://doqmeat.com/rss.xml

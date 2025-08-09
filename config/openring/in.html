@@ -1,0 +1,68 @@
+<section class="webring" style="margin-top:2rem;">
+  <h3 style="font-family:monospace; font-size:1.2rem; margin-bottom:0.5rem;">
+    from other interweb places that i frequent ~ !
+  </h3>
+  <div style="
+    display:flex;
+    overflow-x:auto;
+    gap:1rem;
+    padding-bottom:0.5rem;
+    scrollbar-width:none;      /* Firefox hide */
+    -ms-overflow-style:none;   /* IE/Edge hide */
+  " 
+    onscroll="this.style.scrollbarColor='transparent transparent'">
+    <style>
+      .webring div::-webkit-scrollbar { display:none; } /* Chrome/Safari hide */
+    </style>
+
+    {{ range .Articles }}
+      <article style="
+        flex: 0 0 auto;
+        width: 220px;
+        max-height: 250px;
+        background-color:#111;
+        border:1px solid #444;
+        padding:0.75rem;
+        font-family:monospace;
+        display:flex;
+        flex-direction:column;
+        justify-content:space-between;
+        overflow:hidden;
+      ">
+        <div>
+          <h4 style="
+            margin:0 0 0.5rem 0;
+            font-size:0.95rem;
+            white-space:nowrap;
+            overflow:hidden;
+            text-overflow:ellipsis;
+          ">
+            <a href="{{ .Link }}" target="_blank" rel="noopener noreferrer" style="
+              color:#0ff;
+              text-decoration:none;
+            ">
+              {{ .Title }}
+            </a>
+          </h4>
+          {{ if .Summary }}
+            <p style="
+              margin:0 0 0.5rem 0;
+              font-size:0.85rem;
+              color:#ccc;
+              overflow:hidden;
+              display:-webkit-box;
+              -webkit-box-orient:vertical;
+            ">
+              {{ .Summary }}
+            </p>
+          {{ end }}
+        </div>
+        <small style="color:#888; font-size:0.75rem;">
+          <a href="{{ .SourceLink }}" target="_blank" rel="noopener noreferrer" style="color:#888;">
+            {{ .SourceTitle }}
+          </a>
+        </small>
+      </article>
+    {{ end }}
+  </div>
+</section>
