@@ -1,6 +1,6 @@
 ---
-title: Minecraft Server From Scratch (Proxmox LXC, Docker Compose + itzg)
-date: 2025-04-13
+title: (Updated) Minecraft Server From Scratch (Proxmox LXC, Docker Compose + itzg)
+date: 2025-08-11
 description: spinning up a minecraft server with docker-compose in proxmox
 toc: true
 math: true
@@ -15,7 +15,7 @@ tags:
   - itzg
 ---
 
-Just a smol lil guide for myself to set up a minecraft server from scratch, *as I cannot count the number of times I've had to re-learn this when I migrate from server to server*. 
+Just a smol lil guide for myself **(that will be periodically updated over time as i return to the self-imposed joys of small-scale mc server admin :3)** to set up a minecraft server from scratch, *as I cannot count the number of times I've had to re-learn this when I migrate from server to server*. 
 
 I've opted for services that *should* (for the most part) be supported long-term and are relatively secure & lightweight. However, as any good netizen should do, ***please take my advice with a granule of sugar***...
 
@@ -132,3 +132,50 @@ services:
 ## - For any further troubleshooting
 - [itzg Docker Minecraft Server Documentation](https://docker-minecraft-server.readthedocs.io/en/latest/#using-docker-compose)
 - [`docker-compose.yaml` configuration generator (SetupMC)](https://setupmc.com/java-server/)
+
+---
+# More hot tips & trix for server management:
+
+Below are a collection of helpful (for me) things to remember for server management/hopping/etc.!
+
+# Backing up a pre-existing world & spinning up a new one:
+
+**EITHER:**
+
+1. Backup the main 3 world folders, and move them to a safe location outside the main `/data` folder with: 
+`tar -czvf world-backup-$(date +%Y%m%d).tar.gz world world_nether world_the_end`
+
+2. Make a backup of the **whole `/data` folder** (preserves plugins, server properties, logs etc.) with `tar -czvf world-backup-$(date +%Y%m%d).tar.gz data`
+	
+You can always check the relative sizes of these folders with `du -h` (specify `-d X` to get `X` layers of directory depth - *e.g. `du -h -d 1` will list sizes of immediate two subdirectories.*
+
+# Starting the new world:
+After backing up your old world files (& optionally moving them out of `/data` folder, but can rename &/or keep in there for simplicity and to switch between easily) simply:
+
+1. Modify `server.properties` to specify the new `level-name` (generates world folder files) & `server-name`.
+
+2. Modify `docker-compose.yaml` to include:
+	``` yaml
+	environment:
+    	LEVEL: "new-world-name"
+    ```
+    *Ensure this matches the new `level-name` set in `server.properties`.*
+
+3. Delete your previous `paper-X.XX-XX.jar` file, and restart your server by navigating to the folder with your `docker-compose.yaml` file and running: `sudo docker compose up -d` or `sudo docker compose restart`!
+Can now switch between worlds using these techniques (*both* may not be needed - haven't tested that yet).
+
+
+# Ensure docker starts upon container reboot!
+
+1. `sudo systemctl enable docker` (enables docker service to start at VM/container boot)
+2. `sudo systemctl start docker`
+3. Ensure that `docker-compose.yaml` includes:
+   ``` yaml
+	services:
+		mc:
+			restart: unless-stopped
+	```
+	This means that Docker will automatically restart the container on VM boot or if it crashes, unless you manually stop it.
+4. Ensure the proxmox container *itself* is set to automatically start on server boot-up:
+   `Container ID > Options > Start at boot > Edit > Yes`
+   ![](Screenshot%202025-08-11%20at%209.51.55%20pm.png)
