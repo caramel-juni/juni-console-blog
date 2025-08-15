@@ -27,3 +27,16 @@ As you can see above, these snapshots originally took up `5.45TB` of space (whic
 **Total savings:** `8.5TB` free space --> `14.29TB` free space
 
 ***Hope that helps for future pruning!*** 
+
+
+#### Bonus: mount external `exfat` SSD and copy directly to internal `HDDs`:
+
+1. connect external SSD
+2. find it, and check filesystem with `lsblk -f`. note down its `NAME` (e.g. `/dev/sde1`)
+3. create mount point `sudo mkdir /mnt/kup`
+4. mount the drive `sudo mount -t exfat /dev/sde1 /mnt/kup`
+5. copy files with `rsync`: 
+   `sudo rsync -avh /mnt/kup/source-folder /mnt/tank/data/destination-folder`
+6. once done, make sure you're outside of the mounted directory and `rsync` is done (if your shell's current directory is `/mnt/kup` or somewhere inside it, `umount` will fail) then unmount it with:
+   `sudo umount /mnt/kup`, then unplug!
+
