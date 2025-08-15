@@ -328,7 +328,14 @@ Also, to run routinely, I added an entry to my user's crontab with `sudo crontab
 2. Then create/add to user crontab with:
    `sudo crontab -e -u juniarch`
    Add line: `0 0 1 * * sudo /usr/bin/timeshift --check --scripted --create --tags M` (for monthly snapshots)
-   
+
+# General use commands:
+- **Create snapshot:** `sudo timeshift --create --comments "comment here" --tags D`
+- **Delete snapshot:** `sudo timeshift --delete` and selecting the number of the snapshot on prompt.
+	- **Delete specific snapshot:** `sudo timeshift --delete --snapshot "name"
+- **List snapshots:** `sudo timeshift --list`
+- **List size of all snapshots:** `sudo du -sh /timeshift/snapshots/*` (or wherever yours are located, if custom)
+
 ---
 # Arch: Some TLC
 - https://wiki.archlinux.org/title/System_maintenance
