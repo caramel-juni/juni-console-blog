@@ -345,6 +345,9 @@ Also, to run routinely, I added an entry to my user's crontab with `sudo crontab
 - `u` = `upgrade ALL packages` (as Arch is a **rolling release** - *"when new [library](https://en.wikipedia.org/wiki/Library_\(computing\) "wikipedia:Library (computing)") versions are pushed to the repositories, the [Developers](https://archlinux.org/people/developers/) and [Package Maintainers](https://wiki.archlinux.org/title/Package_Maintainers "Package Maintainers") **rebuild all the packages** in the repositories that need to be rebuilt against the libraries"* - thus necessitating keeping **all packages up-to-date** to avoid dependency conflicts.)
 - `--needed`: Don't reinstall already-installed packages - prevents unnecessary downloads.
 - `-Q`: queries local database of installed packages & dependencies
+- `--ignore PACKAGE`: sometimes useful to ensure certain packages are installed **in the correct order, i.e. not before their dependencies** 
+	- *may not matter: as are just "warnings* from `pacman`. likely best to just take a snapshot --> check arch news --> roll with update.
+
 **UNINSTALL & CLEAN UP:**
 - `-Rns` = remove package `-R`, **unneeded dependencies** `s`, and config files `n`
 
@@ -366,12 +369,3 @@ Same `-Syu` & `-Rns` flags recommended for `yay`, which installs from **both** t
 - Use `pacman -Qdt` to find unneeded dependencies
 
 ---
-
-
-
-
-
-
-
-
-

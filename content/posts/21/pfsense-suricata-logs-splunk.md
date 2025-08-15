@@ -29,7 +29,7 @@ Create it via `Settings > Data Inputs`, then select `Add New` next to `HTTP Even
 - `Name` : `pfSense-Splunk` (or up to you)
 - `Sourcetype`: `Automatic` (will be specified on the `syslog-ng` message body on our `pfsense` router.)
 - `Index`: A pre-created index, where you want the logs stored on your Splunk server. For me, it's: `security_network`.
-![](/posts/21//posts/21/Pasted%20image%2020250728165154.png)Once generated, **copy the HEC's unique `<TOKEN>`** & save for later use.
+![](/posts/21/posts/21/Pasted%20image%2020250728165154.png)Once generated, **copy the HEC's unique `<TOKEN>`** & save for later use.
 
 ---
 
