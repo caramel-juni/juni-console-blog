@@ -32,48 +32,108 @@ If arrive on "yes", try...
 - Follow [this video guide](https://www.youtube.com/watch?v=82vrj22omyQ) - boot and install nixOS FROM debian.
 
 
+Now for my next stupid adventure: installing `NixOS` (for the first time) on a 2011 MacBook Air, that *already* has `debian` installed with `GRUB` on an **encrypted (with Linux Unified Key Setup, or `LUKS`) volume**.
+
+**Here we go.**
+
+---
+
+# 1. - Creating a bootable USB installer
+I started with the typical attempt of downloading the NixOS graphical installer `.iso` (to try easy mode) as well as the minimal install `.iso` & popping both on my Ventoy USB. 
+
+*However*, I ran into the following slew of errors even *trying* to get *any* of these to work via Ventoy...
+
+- `Not a secure boot platform 14` + infinite hang or kernel panik
+- Crashing into shell after `Stage 1` of `NixOS` installer `CLI` bootup process, & then... kernel panik after selecting any option.
+
+After some research, and seeing that this was also encountered by a few other folks who had the same esoteric idea that I did a while back... I resorted to flashing the installer to a fresh USB with good 'ol balenaEtcher, and... it worked perfectly. 
+
+I selected the `Linux LTS kernel` when booting into the installer (a precautionary measure, due to the 2011 hardware... please note that *I haven't tested the most recent kernel on this*).
 
 
 
 
 
-
-1. Set up your mountpoints for the NixOS system:
-
+1. When booting from your live USB, open a terminal session & set up your mountpoints for the NixOS system again
 ```
 # Unencrypt LUKS container
 sudo cryptsetup open /dev/sda3 debian-crypt
 
-# Check can see inside it:
+# Check that you can see inside it - should reveal the discrete volumes & not just "/dev/sda3"
 lsblk -f
 
-# Mount your NixOS root LV
+# Mount whichever LV is your NixOS root partition 
 sudo mount /dev/juni-debian-vg/nixos-root /mnt
 
-# Mount EFI partition for systemd-boot
+# Mount the EFI partition you're booting from
 sudo mkdir -p /mnt/boot
 sudo mount /dev/sda1 /mnt/boot
 
 # Enable swap
 sudo swapon /dev/juni-debian-vg/swap_1
 
-# Get the UUID of the encrypted partition, copy output & save for later
+# Get the UUID of the encrypted partition, copy output & save for later. Can also use lsblk -f.
 sudo blkid -s UUID -o value /dev/sda3
+# OR
+lsblk -f
 
 # Enter the installed nixOS system (chroot)
 sudo nixos-enter --root /mnt
 ```
 
-2. 
-3. Edit `hardware-configuration.nix` file (see [here](https://nixos.wiki/wiki/Full_Disk_Encryption))
+2. Edit `hardware-configuration.nix` file (see [here](https://nixos.wiki/wiki/Full_Disk_Encryption)), to ensure it can unlock your encrypted LUKS partition, then activate LVM to read its contents & boot into the correct one.
+   
+   Replace the `<UUID>` part of each `device = "/dev/disk/by-uuid/<UUID>"` entry with the UUID (e.g. `73d8ad4c-c3b6-4ea7-98d5-f04a3ca36c11`) of your corresponding partition for each mountpoint, discovered in step `1.` with `lsblk -f`.
+   
+   Further, ensure to add the following packages listed below to `boot.initrd.availableKernelModules` so the kernel can access & decrypt the volume.
+
 ```
-# Ensure initrd can unlock LUKS *before* LVM is activated.
+{ config, lib, pkgs, modulesPath, ... }:
 
-boot.initrd.lvm.enable = true;
+{
+  imports =
+    [ (modulesPath + "/installer/scan/not-detected.nix")
+    ];
 
-# Tell initrd which encrypted partition to unlock at boot. The name "debian-crypt" is arbitrary; using the existing name keeps things tidy.
+  # Ensure initrd can unlock LUKS before LVM is activated - THIS MAY NOT BE NEEDED (was auto-commented out after re-generation)
+  # boot.initrd.luks.enable = true;
 
-boot.initrd.luks.devices."debian-crypt".device = "/dev/disk/by-uuid/PUT-UUID-OF-SDA3-HERE";
+  boot.initrd.availableKernelModules = [ "uhci_hcd" "ehci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" "dm-snapshot" "cryptd" "aesni_intel" "dm_mod" "dm_crypt" ];
+
+  # Tells initrd which encrypted partition to unlock at boot
+  boot.initrd.luks.devices = {
+    luksroot = {
+      device = "/dev/disk/by-uuid/73d8ad4c-c3b6-4ea7-98d5-f04a3ca36c11";
+      preLVM = true;
+    };
+  };
+
+# Specifies further variables for initrd
+  boot.initrd.supportedFilesystems = [ "ext4" ];
+  boot.initrd.kernelModules = [ "dm-snapshot" ];
+  boot.kernelModules = [ "kvm-intel" ];
+  boot.extraModulePackages = [ ];
+
+# Sets up & points to filesystems to mount on boot
+  fileSystems."/" =
+    { device = "/dev/disk/by-uuid/6526e9ec-dff7-41f3-93d7-daa77c3ce211";
+      fsType = "ext4";
+    };
+
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/D5DC-9F01";
+      fsType = "vfat";
+      options = [ "fmask=0022" "dmask=0022" ];
+    };
+
+  swapDevices =
+    [ { device = "/dev/disk/by-uuid/66450e28-0163-4c74-a190-2fa22eb69045"; }
+    ];
+
+... [SNIP]
 ```
 
+![](Screenshot%202025-08-17%20at%206.47.03%20pm.png)
 
+
+![](70451.png)
