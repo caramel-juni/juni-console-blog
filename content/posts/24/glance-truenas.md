@@ -15,6 +15,8 @@ tags:
 ---
 Installing the super cool [glance](https://github.com/glanceapp/glance) homepage within a custom TrueNAS app (`TrueNAS SCALE Fangtooth 25.04.01`) via `YAML`.
 
+![Glance Homepage Setup](/posts/24/27284.png)
+
 # Steps:
 1. Within the TrueNAS `GUI`, create a dataset `glance`, with child datasets (or folders via the CLI, just make sure permissions are set so `apps` user can access it) of `config` and `assets`.
 2. Using the TrueNAS CLI to be safe, `cd` into the newly-created folder & run `curl` to [generate the startup folder & file structure](https://github.com/glanceapp/glance/tree/main?tab=readme-ov-file#installation). 
@@ -56,7 +58,6 @@ You can view & troubleshoot any config-related errors via the TrueNAS `CLI` - fi
 
 
 You'll probably run into a few of these as you tweak the `YAML` file, but it'll get easier over time!
-
 
 Here are my `glance.yml` (where all the server-level configs lie) and `home.yml` (your dashboard layout/config) files, as of the time of writing:
 
