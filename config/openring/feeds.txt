@@ -8,3 +8,7 @@ https://drewdevault.com/blog/index.xml
 https://lunamouse.bearblog.dev/feed.xml
 https://jem-on-jem.bearblog.dev/feed.xml
 https://marisabel.nl/feeds/combined.php
+https://notes.jeddacp.com/feed/
+https://brainbaking.com/index.xml
+https://xeiaso.net/blog.rss
+https://www.conscienceround.com/feed
