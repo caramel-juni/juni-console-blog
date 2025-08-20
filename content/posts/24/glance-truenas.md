@@ -7,6 +7,7 @@ math: true
 draft: false
 categories:
   - glance
+  - truenas
 tags:
   - trueNAS
   - glance

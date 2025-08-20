@@ -8,6 +8,15 @@ type = "gallery"
 *an addiction: in pictures*. 
 
 timestamped to perfection, and updated routinely *(AKA whenever i remember)*.
+
+---
+
+## 20/08/2025
+
+![](/caramel-slice/gallery/slice109.jpg)
+
+*note: moving to using [OpenCamera](https://opencamera.org.uk/) to take purposefully-downscaled & compressed `.jpeg` photos, not only for the retro feel that I'm in love with, but also to just... **see the world in a few less pixels.***
+
 ---
 
 ## 17/08/2025
