@@ -12,15 +12,16 @@ tags:
 1. [x] Inspect for visual scuffs, dents & scratches (top & bottom) 
 2. [x] Remove chassis & check for any damage/corrosion/bent pins/disconnected components etc.
 3. [x] `BIOS checks` - see below. **BEFORE** connecting to internet.
-4. [ ] Boot into OS, & ensure that every USB/USB-C/peripheral port works as intended (lights to indicate charging, connecting & registering devices when plugged in etc.)
+4. [x] Boot into OS, & ensure that every USB/USB-C/peripheral port works as intended (lights to indicate charging, connecting & registering devices when plugged in etc.)
 5. [x] Run `powerconfg /batteryreport` to determine battery wear.
 6. [x] Flash `MemTest86+` onto a `USB` flash drive & boot from it to run a series of memory tests - allow at least an hour.
-7. [ ] CPU, GPU & Disk tests. Use `HWinfo` to monitor temperature & download [OCCT](https://www.ocbase.com/) for all-in-one tests.
-	1. [ ] Run `SMART` tests & r/w speeds with **[CrystalDiskMark](https://crystalmark.info/en/software/crystaldiskmark/)** ([guide](https://www.howtogeek.com/134735/check-ssd-or-hdd-health-with-smart/))
-	2. [ ] **GPU/CPU:** either [OCCT](https://www.ocbase.com/) for all-in-one tests, or:
-		1. [ ] **Performance:** **[Cinebench R23](https://apps.microsoft.com/detail/9pgzkjc81q7j?hl=en-us&gl=US)** (Microsoft store)
-		2. [ ] ~~**Sustained Performance:** **3D mark Timespy** (Steam)~~ (overkill)
-		3. [ ] **CPU Thermals:** [Prime95](https://www.mersenne.org/download/) (may be overkill)
+7. [x] CPU, GPU & Disk tests. Use `HWinfo` to monitor temperature & download [OCCT](https://www.ocbase.com/) for all-in-one tests.
+	1. [x] Check `SMART` tests & total host r/w's & overall disk health with a [CrystalDiskInfo](https://crystalmark.info/en/software/crystaldiskinfo/) scan ([guide](https://www.howtogeek.com/134735/check-ssd-or-hdd-health-with-smart/)) 
+	2. [x] Run **[CrystalDiskMark](https://crystalmark.info/en/software/crystaldiskmark/)** for quick r/w tests ([video guide for CrystalDiskMark](https://www.youtube.com/watch?v=JI8QS74Xz38)), and compare to those [advertised by manufacturer](https://www.micron.com/about/blog/storage/ssd/new-micron-2200-pcie-ssd-delivers-nvme-to-go) or [reported online](https://www.harddrivebenchmark.net/hdd.php?hdd=Micron%202200%20NVMe%20256GB) (see linked examples for my drive).
+	3. [x] **GPU/CPU:** either [OCCT](https://www.ocbase.com/) for all-in-one tests, or:
+		1. [x] **Performance:** **[Cinebench R23](https://apps.microsoft.com/detail/9pgzkjc81q7j?hl=en-us&gl=US)** (Microsoft store)
+		2. [x] ~~**Sustained Performance:** **3D mark Timespy** (Steam)~~ (overkill)
+		3. [x] **CPU Thermals:** [Prime95](https://www.mersenne.org/download/) (may be overkill)
 8. [ ] **Wipe device, partitions & set up for multi-booting Windows & Linux:** 
        - Only use [`dban`](https://dban.org/) if using HDDs, as modern SSDs benefit little from it & instead use wear levelling + secure erase/TRIM to delete data (TRIM is not perfect, though). [Securely erase SSD data using strategies in the tutorial here - BIOS-level secure erase, or diskpart should be good enough.](https://www.tomshardware.com/how-to/secure-erase-ssd-or-hard-drive).
 	       - Try via [UEFI BIOS](https://www.youtube.com/watch?v=VsP-A2ZM8t0)
