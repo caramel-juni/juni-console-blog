@@ -29,6 +29,26 @@ tags:
        - **Reinstall via a fresh & [official Windows ISO](https://www.microsoft.com/en-us/software-download/windows11)** (flashed with rufus to disable telemetry) --> [follow video here to pre-debloat ISO](https://www.youtube.com/watch?v=0PA1wgdMeeI)
        - **Wipe all previous partitions** in the install & **re-partition carefully** according to plan (large enough `EFI` boot partition to boot multiple OS's).
 
+
+## Cleaning new SSD - via Manufacturer's `NAND`-wiping tool.
+
+- Download [sandisk dashboard](https://support-en.sandisk.com/app/answers/detailweb/a_id/31759) (as secure erase on SSDs is built into the drive firmware — resets all NAND cells back to factory state instantly, no hours of zero-writing and does not wear out the drive) & create bootable USB image to securely erase. Boot into this, and select the desired disk (by `SN`), and then erase! Should only take a few seconds.
+	- **Note** - make sure you **know the target-to-erase device serial number**, as this tool will only let you select the disk by `SN` and you... don't want to erase your boot drive. Trust me on that.
+- Once it's been wiped & is done, reboot into your `OS`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Plan for doing so (AI... eh):
 
 1. How to create installation media

@@ -35,6 +35,8 @@ As you can see above, these snapshots originally took up `5.45TB` of space (whic
 2. find it, and check filesystem with `lsblk -f`. note down its `NAME` (e.g. `/dev/sde1`)
 3. create mount point `sudo mkdir /mnt/kup`
 4. mount the drive `sudo mount -t exfat /dev/sde1 /mnt/kup`
+	1. adjust `exfat` for the file system of the USB - e.g., `vfat` for `FAT32` filesystem
+	   ![](Screenshot%202025-08-29%20at%204.22.17%20pm.png)
 5. copy files with `rsync`: 
    `sudo rsync -avh /mnt/kup/source-folder /mnt/tank/data/destination-folder`
 6. once done, make sure you're outside of the mounted directory and `rsync` is done (if your shell's current directory is `/mnt/kup` or somewhere inside it, `umount` will fail) then unmount it with:
