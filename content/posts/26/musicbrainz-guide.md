@@ -1,10 +1,10 @@
 ---
 title: Music Metadata Identification - in MusicBrainz Picard
-date: 2025-08-29
+date: 2025-08-30
 description: Music Metadata Identification - in MusicBrainz Picard
 toc: true
 math: true
-draft: true
+draft: false
 categories:
   - metadata
   - musicbrainz picard
@@ -12,37 +12,47 @@ tags:
   - musicbrainz
   - navidrome
 ---
-For identifying metadata sassociated with plain `.mp3`s based on filenames, audio fingerprints, and more!
+For a number of reasons (notably... well, ***fuck*** streaming services and how they treat artists & their customers alike), I have begun to collect & self host my music library, in an attempt to **Ditch Spotify Completely** and switch to spending the equivalent amount of money that I'd line *their* pockets with a year for **actually supporting artists** through buying merch, concert tickets, as well as directly buying albums for smaller artists on places like [Bandcamp](https://bandcamp.com/).
 
-Say you have a large library of esoteric tunes, all of a manner of poorly-named files and few containing complete (or any!) metadata at all, making indexing via something like jellyfin or navidrome borderline impossible.
+To hear some other nuanced takes on this issue, there are plenty of good videos on YouTube of various creators covering this topic, but here are a few of my favs:
+- [It's time to de-Spotify your life](https://www.youtube.com/watch?v=EYRfDxLH9JY)
+- [The music streaming dilemma](https://www.youtube.com/watch?v=Zwwi5wPVIbY)
+- [I Got A Problem With Music Streaming...](https://www.youtube.com/watch?v=AlEOUYqPU2k)
+- [This iPod is built different](https://www.youtube.com/watch?v=AOad4ncEJkc)
+- [Hello, old friend… - Media Ripping Explained](https://www.youtube.com/watch?v=GdQ5bClEgHg)
 
-Well, try out musicbrainz picard!
+So, after I'd obtained the music to start adding to my library, my next task was where needed, **identifying metadata associated with the plain audio files based on filenames, audio fingerprints, and more!** 
+
+Now, to take the first steps to tame your ever-expanding library of esoteric tunes–all existing in various states of metadata & filename accuracy–so you can index them with something like Jellyfin or [Navidrome](https://www.navidrome.org/)... try out [Musicbrainz Picard](https://picard.musicbrainz.org/)!
+
 
 # Pre-requisites:
 
 Ensure your base folder (wherever files will be **MOVED TO** when saving) is set within **Preferences**. This defaults to your **user's home music folder on your computer**, which can be annoying if you're accessing files remotely on your `NAS` like I am over SMB, as it results in unecessary network R/Ws. I've set my base folder to a **staging folder on my NAS** (accessed via SMB) so I don't have to re-copy them over the network after Picard has bulk-renamed & sorted them.
-   ![](Screenshot%202025-08-29%20at%2010.29.33%20pm.png)
-
+   ![](/posts/26/Screenshot%202025-08-29%20at%2010.29.33%20pm.png)
 
 
 # Now, for the workflow:
 
 1. Import files/folder of files, which will appear as `Unclustered Files`. Select the desired files, and press `Lookup`. Tracks that are identified via the filename + musicbrainz lookup, will have metadata added & be **classified in the right hand pane** - **sorted by album** by default (just for viewing - these are not yet saved like this).
 2. Files that are left ***unidentified*** by `Lookup` will remain within `Unclustered Files` on the left pane. 
-   Re-select them, and click `Scan`. This will perform a more detailed lookup by `AcoustID` audio fingerprint, and add any it finds to the right pane.
+Re-select them, and click `Scan`. This will perform a more detailed lookup by `AcoustID` audio fingerprint, and add any it finds to the right pane.
 3. Once that's identified any stragglers, and they're automatically organised by album with metadata added from `MusicBrainz` in the right pane, **select your file/folder renaming script of choice.** For me, I want to use my `Artist/Album/Track - Title` script for easy identification in Navidrome --> **SEE BELOW FOR CREATING THIS, OR USE THE `Preset 1: Default File Naming Script`**. **Select your script of choice**, and ensure that the `Move Files`, `Rename Files` and `Save Tags` options are ticked in `Options`. 
    **For me, my final config looks like this:**
-   ![](Screenshot%202025-08-29%20at%2011.30.34%20pm.png)
+   ![](/posts/26/Screenshot%202025-08-29%20at%2011.30.34%20pm.png)
 4. **Select the MusicBrainz-metadata-enriched titles in the right pane**, and click `Save` to **rename** & **move** based on your script structure + base file path, and **write the smart-identified, MusicBrainz-enriched tags** to the file metadata.
 5. **For any stubborn files that `Lookup` & `Scan` fail to identify** (still in left pane) - if they have **SOME** metadata (i.e. that required by your script - for me, `albumartist`, `album`, `tracknumber` and `title` tags) - just **select them** and press **Save** to **rename** & **move** them based on your script structure & **re-write their existing tags.**
-6. For any **completely unidentifiable files**, you'll... **have to add the missing metadata manually yourself.** I just stick with the basics i mentioned before to get them into Navidrome. **You can always follow the following workflow to triage them for later categorisation on a rainy day, though:** 
-	- `Cluster` them, `Tag` them with your dummy tag linked in a script for unsorted files (for me, `Mood`) with a value like `[UNSORTED] `.
-	- **Select & activate** your `Unsorted Files` file naming script (see below for details on how to create this)
-	- **Select** the problematic files, then press `Save` to have `[UNSORTED] ` appended to them + relocated for later manual identification!
 
+For any **completely unidentifiable files**, you'll... **have to add the missing metadata manually yourself.** I just stick with the basics I mentioned before to get them into Navidrome. **You can always follow the following workflow to triage them for later categorisation on a rainy day, though:** 
+1. `Cluster` them, `Tag` them with your dummy tag linked in a script for unsorted files (for me, `Mood`) with a value like `[UNSORTED] `.
+2. **Select & activate** your `Unsorted Files` file naming script (see below for details on how to create this)
+3. **Select** the problematic files, then press `Save` to have `[UNSORTED] ` appended to them + relocated for later manual identification!
+
+---
 
 # Setting your custom folder/file structure naming script:
 As I'm aiming to import these into my music manager, `Navidrome`, I want the files to be organised like so: 
+
 ``` bash
 	Artist/
 	  Album/
@@ -50,21 +60,23 @@ As I'm aiming to import these into my music manager, `Navidrome`, I want the fil
 	    02 TRACKNAME1.mp3
 	    ... etc.
 ```
+
 For this, I could either use the default file naming script, as it includes a bunch of extra conditionals to try and get *roughly* this from the variously-formatted & identified files, metadata & filenames. But a simple custom saved script to achieve the above layout would be:
 	`%albumartist%/%album%/$num(%tracknumber%,2) - %title%`
-	![](Screenshot%202025-08-29%20at%2011.21.34%20pm.png)
+	
+  ![](/posts/26/Screenshot%202025-08-29%20at%2011.21.34%20pm.png)
    Please note these scripts rely on the presence of metadata (the `albumartist`, `album`, `tracknumber` and `title` tags) so be sure to try and identify them using the `Scan` & `Lookup` tools first (or... manually).
 
 # Triaging unidentified files by appending [UNSORTED] to their filename (Script):
 1. Mark any unidentifiable files (from `Lookup` and `Scan`) with a set tag you'd never use (for me, `Mood`).
-   ![](Screenshot%202025-08-29%20at%2010.40.25%20pm.png)
+   ![](/posts/26/Screenshot%202025-08-29%20at%2010.40.25%20pm.png)
 2. Create a custom filenaming script that appends the value of `Mood` to each filename upon **Saving**, in `Options - Open File Naming Script Editor`, then ensuring the `File Naming Script Editor` is selected, and going again to `Script --> Add a new script`.
    Then, to append your chosen tag whilst keeping the filenames intact, use the following script: `%tagname-here%%_filename%`. This will just append the tag to the filename, but leave it functionally unchanged if that leading tag (for me, `mood`) is not present. *Check the preview down the bottom to see how this would affect your files.*
-   ![](Screenshot%202025-08-29%20at%2011.06.13%20pm.png)
+   ![](/posts/26/Screenshot%202025-08-29%20at%2011.06.13%20pm.png)
    Make sure to give this script a name, and just click `Make It So!` to save it for future use.
 3. Ensure your newly-created file renaming script is selected in `Options --> Select file naming script`, **AND** that `Rename Files` is ticked. **These options will be applied upon selecting your files & clicking `Save`** in the UI.
-   ![](Screenshot%202025-08-29%20at%2010.51.33%20pm.png)
-4. Then, once you're all done, select the files and click `Save`, and voila! They should be renamed with the `[UNSORTED]` tag in my case, and saved/moved wherever your base folder is (see above for setting that).    ![](Screenshot%202025-08-29%20at%2010.54.37%20pm.png)
+   ![](/posts/26/Screenshot%202025-08-29%20at%2010.51.33%20pm.png)
+4. Then, once you're all done, select the files and click `Save`, and voila! They should be renamed with the `[UNSORTED]` tag in my case, and saved/moved wherever your base folder is (see above for setting that).    ![](/posts/26/Screenshot%202025-08-29%20at%2010.54.37%20pm.png)
 
 ---
 # For any files that don't get properly sorted into folders:
@@ -192,6 +204,6 @@ for f in *.mp3; do
     echo "/music/[0] playlists/$(basename "$PWD")/$f"
 done > "$(basename "$PWD").m3u"
 ```
-5. Then, just copy the playlist over into `/music/[0] playlists/` and am good to go!
-   ![](Screenshot%202025-08-30%20at%202.53.50%20am.png)
+Then, just copy the playlist over into `/music/[0] playlists/` and am good to go!
+   ![](/posts/26/Screenshot%202025-08-30%20at%202.53.50%20am.png)
 
