@@ -1,6 +1,6 @@
 ---
 title: Music Metadata Identification - in MusicBrainz Picard
-date: 2025-08-30
+date: 2025-08-29
 description: Music Metadata Identification - in MusicBrainz Picard
 toc: true
 math: true
@@ -208,3 +208,5 @@ done > "$(basename "$PWD").m3u"
 Then, just copy the playlist over into `/music/[0] playlists/` and am good to go!
    ![](/posts/26/Screenshot%202025-08-30%20at%202.53.50%20am.png)
 
+
+---
