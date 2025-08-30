@@ -19,6 +19,7 @@ To hear some other nuanced takes on this issue, there are plenty of good videos 
 - [The music streaming dilemma](https://www.youtube.com/watch?v=Zwwi5wPVIbY)
 - [I Got A Problem With Music Streaming...](https://www.youtube.com/watch?v=AlEOUYqPU2k)
 - [This iPod is built different](https://www.youtube.com/watch?v=AOad4ncEJkc)
+- [Why Are People Buying iPods Again?](https://www.youtube.com/watch?v=00lLrwHQPns)
 - [Hello, old friend… - Media Ripping Explained](https://www.youtube.com/watch?v=GdQ5bClEgHg)
 
 So, after I'd obtained the music to start adding to my library, my next task was where needed, **identifying metadata associated with the plain audio files based on filenames, audio fingerprints, and more!** 
