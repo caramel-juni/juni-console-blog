@@ -15,6 +15,7 @@ tags:
 For a number of reasons (notably... well, ***fuck*** streaming services and how they treat artists & their customers alike), I have begun to collect & self host my music library, in an attempt to **Ditch Spotify Completely** and switch to spending the equivalent amount of money that I'd line *their* pockets with a year for **actually supporting artists** through buying merch, concert tickets, as well as directly buying albums for smaller artists on places like [Bandcamp](https://bandcamp.com/).
 
 To hear some other nuanced takes on this issue, there are plenty of good videos on YouTube of various creators covering this topic, but here are a few of my favs:
+- [The Importance of Inconvenience](https://www.youtube.com/watch?v=a8iOJkqYNpc)
 - [It's time to de-Spotify your life](https://www.youtube.com/watch?v=EYRfDxLH9JY)
 - [The music streaming dilemma](https://www.youtube.com/watch?v=Zwwi5wPVIbY)
 - [I Got A Problem With Music Streaming...](https://www.youtube.com/watch?v=AlEOUYqPU2k)
