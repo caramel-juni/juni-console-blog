@@ -37,14 +37,18 @@
             <div class="logo terminal-prompt">
               <a href="{{ .Site.BaseURL }}" class="no-style {{ with .Site.Params.TitleCutting }}site-name{{ end }}">
                 {{ .Site.Title }}
-              </a>:~# 
-              {{ $url := .RelPermalink }}
-              {{ $scratch := newScratch }}
-              {{ $scratch.Set "path" "" }}
-              {{ range $index, $element := split $url "/" }}
-                {{ if ne $element "" }}
-                  {{ $scratch.Add "path" (print "/" $element) }}
-                  <a href="{{ $scratch.Get "path" | relURL }}">{{ $element }}</a>/{{ end }}{{ end }}</div></header>
+              </a>:~#
+              {{- $url := .RelPermalink -}}
+              {{- $scratch := newScratch -}}
+              {{- $scratch.Set "path" "" -}}
+              {{- range $index, $element := split $url "/" -}}
+                {{- if ne $element "" -}}
+                  {{- $scratch.Add "path" (print "/" $element) -}}
+                  <a href="{{ $scratch.Get "path" | relURL }}">{{ $element }}</a>/
+                {{- end -}}
+              {{- end -}}
+            </div>
+            </header>
           <nav class="terminal-menu">
             <ul vocab="https://schema.org/" typeof="BreadcrumbList">
                 {{ range $index, $element := .Site.Params.navlinks }}
