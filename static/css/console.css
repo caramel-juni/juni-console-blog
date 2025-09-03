@@ -59,6 +59,19 @@
     }
 }
 
+/* Removes backticks from code blocks */
+code::before,
+code::after {
+  content: none;
+}
+
+/* Fixes bold/italic font conflicts */
+
+.terminal em strong,
+.terminal strong em {
+  font-style: italic !important;
+}
+
 .sidebar-heading {
     text-transform: none;
     letter-spacing: 0;
