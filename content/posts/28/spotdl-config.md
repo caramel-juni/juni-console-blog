@@ -70,10 +70,14 @@ WARNING: [youtube] The provided YouTube account cookies are no longer valid. The
 
 As `spotdl` doesn't have a native `CLI` flag, afaik, to read current cookies from browser, we can utilise the dynamic `--cookies-from-browser` flag that `yt-dlp` has to grab cookies from your current YoutubeMusic session without relying on a static `cookes.txt` file generated with something like the [`cookies.txt extension.`](https://addons.mozilla.org/en-US/firefox/addon/cookies-txt/)
 
-To do this, I created a small folder within my user's `PATH` to hold this script, and any other future wrappers i make:
+To do this, I created a small folder within my user's `PATH` (& `~/.zshrc`) to hold this script, and any other future wrappers I make:
 ``` bash
 ## making & adding ~/bin (for my private user scripts) to $PATH
 mkdir ~/bin
+export PATH="$HOME/bin:$PATH"
+# check is in $PATH
+echo $PATH | tr ":" "\n" | grep /Users/youruser/bin
+# add the following to your ~/.zshrc to have it persist across new shells:
 export PATH="$HOME/bin:$PATH"
 
 ```
