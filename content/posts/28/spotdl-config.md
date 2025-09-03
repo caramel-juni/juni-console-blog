@@ -23,7 +23,7 @@ spotdl download URLHERE --format opus --cookie-file ~/Documents/SpotifyRips/cook
 into **this**:
 
 ``` yaml
-spotdl URLHERE
+spotdl.sh URLHERE
 ```
 
 **ALSO:** This largely, if not COMPLETELY, **negates** my need to **post-process with MusicBrainz Picard...** as much as I has loved my time with it. This is, quite frankly... ***massive*** for me, as Navidrome seems to do well enough with the metadata pulled natively with `spotdl`, and saves ***actual hours*** of my time and bandwidth with musicbrainz API calls (for negligible benefit), so... **yippee!!!!!**
@@ -115,3 +115,5 @@ Now, all that's left to do is **sail away**, and, most importantly, **use your c
 
 # *extra!! extra!!:* see this [excellent article](https://lunamouse.bearblog.dev/day110/) by my good friend on a related topic:
 It's *somewhat* the "inverse" to my article (which is largely digital) but... I still feel holds relevance. Taking back control of **what "ownership" means**, in the ways & formats that are **unique to the individual using them.** To make a larger difference overall through small steps that lead to greater pushback. Be it `DVDs`, or `.mp3s` (or, `opus`'s, lol) - one rip at a time. **[What would clippy do?](https://www.youtube.com/watch?v=2_Dtmpe9qaQ)**
+
+Further, here's another spectacular video (part of a series) on [a more mindful/intentional use of media & assessing the notion of "consumption"](https://youtu.be/VzKr-tMr8qQ?si=uJFdcvmkx3b6jpRr) in the modern era.
