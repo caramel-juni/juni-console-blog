@@ -42,7 +42,6 @@ I began by saving my "regular" flags into my `config.json`, by generating it wit
     "output": "{album}/{track-number} - {title}.{output-ext}",
     "print_errors": true,
     "save_errors": "/Users/kupteraz/Documents/SpotifyRips/spotdl-errors.txt",
-    "album-type": "album",
 
 ```
 
@@ -53,7 +52,6 @@ I began by saving my "regular" flags into my `config.json`, by generating it wit
 - **create a `m3u` playlist file for all the artist's albums** (optional, personal preference). **Note:** it doesn't seem to dynamically generate the artist name with `{artist}`, so filling this in after generation is now the ONLY extra step.
 - specify the **output filename/folder structure to save files in**, e.g `OK Computer/01 - Airbag.opus`
 - **saves any errors** to a `.txt` file
-- limits downloads to **main albums only** (no singles/EPs - optional, personal preference)
 
 ---
 
