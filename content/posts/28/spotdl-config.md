@@ -1,5 +1,5 @@
 ---
-title: spotdl cookie wrappers, and further configuration!
+title: part 3 - spotdl cookie wrappers, and further configuration!
 date: 2025-09-02
 description: ""
 toc: true

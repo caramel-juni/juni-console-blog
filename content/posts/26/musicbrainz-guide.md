@@ -1,5 +1,5 @@
 ---
-title: Music Metadata Identification - in MusicBrainz Picard
+title: part 1 - Music Metadata Identification & Tagging, with MusicBrainz Picard
 date: 2025-08-29
 description: Music Metadata Identification - in MusicBrainz Picard
 toc: true

@@ -8,6 +8,13 @@ type = "gallery"
 *an addiction: in pictures*. 
 
 timestamped to perfection, and updated routinely *(AKA whenever i remember)*.
+
+---
+
+## 5/09/2025
+
+![](/caramel-slice/gallery/slice118.jpeg)
+
 ---
 
 ## 3/09/2025

@@ -1,5 +1,5 @@
 ---
-title: uh... *liberating* your spotify library!
+title: part 2 - uh... *liberating* your spotify library!
 date: 2025-08-30
 description: ""
 toc: true
