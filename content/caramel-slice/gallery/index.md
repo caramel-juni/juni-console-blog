@@ -11,13 +11,23 @@ timestamped to perfection, and updated routinely *(AKA whenever i remember)*.
 
 ---
 
+## 6/09/2025
+*slice 119!*
+
+![](/caramel-slice/gallery/slice119.jpeg)
+
+
+---
+
 ## 5/09/2025
+*slice 118!*
 
 ![](/caramel-slice/gallery/slice118.jpeg)
 
 ---
 
 ## 3/09/2025
+*slice 117!*
 
 ![](/caramel-slice/gallery/slice117.jpg)
 
@@ -25,6 +35,7 @@ timestamped to perfection, and updated routinely *(AKA whenever i remember)*.
 ---
 
 ## 1/09/2025
+*slice 116!*
 
 ![](/caramel-slice/gallery/slice116.jpg)
 
@@ -32,18 +43,21 @@ timestamped to perfection, and updated routinely *(AKA whenever i remember)*.
 ---
 
 ## 31/08/2025
+*slice 115!*
 
 ![](/caramel-slice/gallery/slice115.jpg)
 
 ---
 
 ## 30/08/2025
+*slice 114!*
 
 ![](/caramel-slice/gallery/slice114.jpg)
 
 ---
 
 ## 29/08/2025
+*slice 113!*
 
 ![](/caramel-slice/gallery/slice113.jpg)
 
@@ -51,6 +65,7 @@ timestamped to perfection, and updated routinely *(AKA whenever i remember)*.
 ---
 
 ## 24/08/2025
+*slice 112!*
 
 ![](/caramel-slice/gallery/slice112.jpg)
 
@@ -58,6 +73,7 @@ timestamped to perfection, and updated routinely *(AKA whenever i remember)*.
 ---
 
 ## 23/08/2025
+*slice 111!*
 
 ![](/caramel-slice/gallery/slice111.jpg)
 
@@ -66,6 +82,7 @@ timestamped to perfection, and updated routinely *(AKA whenever i remember)*.
 ---
 
 ## 21/08/2025
+*slice 110!*
 
 ![](/caramel-slice/gallery/slice110.jpg)
 
@@ -73,6 +90,7 @@ timestamped to perfection, and updated routinely *(AKA whenever i remember)*.
 ---
 
 ## 20/08/2025
+*slice 109!*
 
 ![](/caramel-slice/gallery/slice109.jpg)
 
@@ -81,12 +99,13 @@ timestamped to perfection, and updated routinely *(AKA whenever i remember)*.
 ---
 
 ## 17/08/2025
-
+*slice 108!*
 ![](/caramel-slice/gallery/slice108.jpeg)
 
 ---
 
 ## 15/08/2025
+*slice 107!*
 
 ![](/caramel-slice/gallery/slice107.jpeg)
 
@@ -94,6 +113,7 @@ timestamped to perfection, and updated routinely *(AKA whenever i remember)*.
 ---
 
 ## 14/08/2025
+*slice 106!*
 
 ![](/caramel-slice/gallery/slice106.jpeg)
 
@@ -102,6 +122,7 @@ timestamped to perfection, and updated routinely *(AKA whenever i remember)*.
 ---
 
 ## 10/08/2025
+*slice 105!*
 
 ![](/caramel-slice/gallery/slice105.jpeg)
 
@@ -109,13 +130,14 @@ timestamped to perfection, and updated routinely *(AKA whenever i remember)*.
 ---
 
 ## 9/08/2025
-
+*slice 104!*
 ![](/caramel-slice/gallery/slice104.jpeg)
 
 
 ---
 
 ## 8/08/2025
+*slice 103!*
 
 ![](/caramel-slice/gallery/slice103.jpeg)
 
@@ -123,18 +145,21 @@ timestamped to perfection, and updated routinely *(AKA whenever i remember)*.
 ---
 
 ## 7/08/2025
+*slice 102!*
 
 ![](/caramel-slice/gallery/slice102.jpeg)
 
 ---
 
 ## 5/08/2025
+*slice 101!*
 
 ![](/caramel-slice/gallery/slice101.jpeg)
 
 ---
 
 ## 3/08/2025
+*slice 100!*
 
 <div style="display: flex; align-items: center; justify-content: center; height: 100px;"> 
 <img src="https://web.archive.org/web/20090808103710im_/http://www.geocities.com/friz_b2002/osakaflag1.gif" style="width:100px">
