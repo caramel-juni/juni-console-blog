@@ -12,9 +12,18 @@ timestamped to perfection, and updated routinely *(AKA whenever i remember)*.
 ---
 
 ## 6/09/2025
+*slice 120!*
+
+goodbye, william! safe travels, my love <33
+
+![](/caramel-slice/gallery/slice120.jpg)
+
+---
+
+## 6/09/2025
 *slice 119!*
 
-![](/caramel-slice/gallery/slice119.jpeg)
+![](/caramel-slice/gallery/slice119.jpg)
 
 
 ---
