@@ -22,12 +22,13 @@ tags:
 		1. [x] **Performance:** **[Cinebench R23](https://apps.microsoft.com/detail/9pgzkjc81q7j?hl=en-us&gl=US)** (Microsoft store)
 		2. [x] ~~**Sustained Performance:** **3D mark Timespy** (Steam)~~ (overkill)
 		3. [x] **CPU Thermals:** [Prime95](https://www.mersenne.org/download/) (may be overkill)
-8. [ ] **Wipe device, partitions & set up for multi-booting Windows & Linux:** 
+8. [x] **Wipe device, partitions & set up for multi-booting Windows & Linux:** 
        - Only use [`dban`](https://dban.org/) if using HDDs, as modern SSDs benefit little from it & instead use wear levelling + secure erase/TRIM to delete data (TRIM is not perfect, though). [Securely erase SSD data using strategies in the tutorial here - BIOS-level secure erase, or diskpart should be good enough.](https://www.tomshardware.com/how-to/secure-erase-ssd-or-hard-drive).
-	       - Try via [UEFI BIOS](https://www.youtube.com/watch?v=VsP-A2ZM8t0)
-	       - For Lenovo T480s: [ThinkPad Drive Erase Utility](https://support.lenovo.com/us/en/downloads/ds019026-thinkpad-drive-erase-utility-for-resetting-the-cryptographic-key-and-erasing-the-solid-state-drive-thinkpad)
-       - **Reinstall via a fresh & [official Windows ISO](https://www.microsoft.com/en-us/software-download/windows11)** (flashed with rufus to disable telemetry) --> [follow video here to pre-debloat ISO](https://www.youtube.com/watch?v=0PA1wgdMeeI)
-       - **Wipe all previous partitions** in the install & **re-partition carefully** according to plan (large enough `EFI` boot partition to boot multiple OS's).
+	- [x] Try via [UEFI BIOS](https://www.youtube.com/watch?v=VsP-A2ZM8t0)
+	- [x] For Lenovo T480s: [ThinkPad Drive Erase Utility](https://support.lenovo.com/us/en/downloads/ds019026-thinkpad-drive-erase-utility-for-resetting-the-cryptographic-key-and-erasing-the-solid-state-drive-thinkpad)
+    - **Reinstall via a fresh & [official Windows ISO](https://www.microsoft.com/en-us/software-download/windows11)** (flashed with rufus to disable telemetry) --> [follow video here to pre-debloat ISO](https://www.youtube.com/watch?v=0PA1wgdMeeI)
+    - **Wipe all previous partitions** in the install & **re-partition carefully** according to plan (large enough `EFI` boot partition to boot multiple OS's).
+    - Apply [battery power management settings specified here](https://www.youtube.com/watch?v=DmZdTTUsGRM&list=TLPQMDgwOTIwMjXW03Y1zRWbqQ&index=5), and then for [linux](https://www.youtube.com/watch?v=kTFnGwW2e_Y), [too](https://www.youtube.com/watch?v=kTFnGwW2e_Y).
 
 
 ## Cleaning new SSD - via Manufacturer's `NAND`-wiping tool.
@@ -165,7 +166,6 @@ After reboot, GRUB will let you pick **Windows or Linux**.
 - `powercfg /batteryreport`, then calculate the battery capacity with `Full Charge Capacity/Design Capacity`. 
   For me, `48,370/57,020 = 84.8%`, which isn't bad!
 
-
 ## After testing...
 - Wipe with something like `dban`, & then do a **fresh install of your preferred OS**.
 	- However, if using windows, take down a copy of the activation key/code *just in case* - should be embedded within firmware on modern laptops but better safe than sorry.
@@ -178,7 +178,7 @@ After reboot, GRUB will let you pick **Windows or Linux**.
 		- **[Backup/Generic/Default Product Key](https://www.tenforums.com/tutorials/95922-generic-product-keys-install-windows-10-editions.html):** Allows users to install or upgrade to a specific Windows 10 [**edition**](https://www.tenforums.com/tutorials/22749-see-windows-10-edition-you-have-installed.html), but **will not activate** it.
 		  **Can be found in registry:** `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\SoftwareProtectionPlatform`.
 			- *My **ThinkPad t480s:** ==`VK7JG-NPHTM-C97JM-9MPGT-3V66T`==* (found [here](https://www.tenforums.com/tutorials/95922-generic-product-keys-install-windows-10-editions.html))
-
+- Install fresh 
 
 
 

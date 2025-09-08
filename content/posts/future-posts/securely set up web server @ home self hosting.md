@@ -1,3 +1,17 @@
+---
+title: "securely set up web server @ home self hosting"
+date: "2024-12-25"
+description: "a distro hopper's delight"
+toc: true
+math: false
+draft: true
+categories:
+  - linux
+tags: 
+
+---
+
+
 1. debian 12 container install inside proxmox
 2. `sudo apt update && sudo apt upgrade -y
 3. network settings: If your router supports subnets/VLANs, connect this to the isolated VLAN. within proxmox, assign static IP not in use and point to your router's gateway.![[Screenshot 2024-07-08 at 8.40.32 PM.png]]

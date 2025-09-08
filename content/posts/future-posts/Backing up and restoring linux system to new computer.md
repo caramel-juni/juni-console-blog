@@ -1,4 +1,15 @@
+---
+title: "Backing up linux .config & apps to move to a new device/distro"
+date: "2024-12-25"
+description: "a distro hopper's delight"
+toc: true
+math: false
+draft: true
+categories:
+  - linux
+tags: 
 
+---
 
 
 basically to preserve user settings, if all installed under user juni-low, config files are at `/home/juni-low/.config/
