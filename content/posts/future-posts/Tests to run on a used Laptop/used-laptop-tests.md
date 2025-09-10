@@ -29,6 +29,7 @@ tags:
     - **Reinstall via a fresh & [official Windows ISO](https://www.microsoft.com/en-us/software-download/windows11)** (flashed with rufus to disable telemetry) --> [follow video here to pre-debloat ISO](https://www.youtube.com/watch?v=0PA1wgdMeeI)
     - **Wipe all previous partitions** in the install & **re-partition carefully** according to plan (large enough `EFI` boot partition to boot multiple OS's).
     - Apply [battery power management settings specified here](https://www.youtube.com/watch?v=DmZdTTUsGRM&list=TLPQMDgwOTIwMjXW03Y1zRWbqQ&index=5), and then for [linux](https://www.youtube.com/watch?v=kTFnGwW2e_Y), [too](https://www.youtube.com/watch?v=kTFnGwW2e_Y).
+    - apply some windows UI tweaks - see [here](https://www.youtube.com/watch?v=RmD26V5Dh1o)
 
 
 ## Cleaning new SSD - via Manufacturer's `NAND`-wiping tool.

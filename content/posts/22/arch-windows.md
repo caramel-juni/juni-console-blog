@@ -68,7 +68,7 @@ I then set my partitions: the `root` (`/`) system, and the `SWAP`. If I were sta
 - `/dev/nvme1n1p6 --> 100G Linux Filesystem` --> to be used as `root` system.
 - `/dev/nvme1n1p7 --> 30G Linux SWAP` --> to be used as `SWAP`.
 
-I then **initialised the filesystem type**: choosing `ext4` for my `root` (for general balance of performance, reliability and features; but do consider snapshot-friendly alternatives like `brtfs`). 
+I then **initialised the filesystem type**: choosing `ext4` for my `root` (for general balance of performance, reliability and features; but do consider snapshot-friendly alternatives like `btrfs`). 
 - `mkfs.ext4 /dev/nvme1n1p6`
 
 Then, I made and activated the `SWAP` partition:
