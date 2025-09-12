@@ -26,16 +26,16 @@ Partition with cfdisk:
 - `8GB` Linux SWAP partition (swap partition vs swapfile [comparison here](https://tecadmin.net/swapfile-vs-swap-partition/))
 - `229.9` Linux Filesystem (can use btrfs subvolumes to separate /home and /boot, instead of rigid partitioning seen on ext4. Goes hand in hand with mounting the ESP to `/efi`, as it allows both **rollback** & **encryption** of BOTH `/home` and `/boot` volumes.
 
-### **==Then run the following in minimal install iso to make the filesystem:==**
+### **Then run the following in minimal install iso to make the filesystem:**
 
 ### FOLLOW [THIS GODSEND GUIDE](https://mt-caret.github.io/blog/posts/2020-06-29-optin-state.html) & MAKE SMALL ADJUSTMENTS FROM CHATGPT
  - follow this guide to [get encrypted SWAP file with hibernation working](https://discourse.nixos.org/t/is-it-possible-to-hibernate-with-swap-file/2852/4)
 
 ### 1. - Partitioning layout (using `cfdisk`)
 - `/dev/nvme0n1p1` → `512 MiB` `EFI` System Partition
-- ~~`/dev/nvme0n1p2` → Linux backup SWAP partition (16 GiB) for paging (main hibernation SWAP lives within encrypted filesystem)~~
 - `/dev/nvme0n1p2` → `btrfs` root filesystem (nearly the whole rest of disk, encrypted with LUKS).
 	- `swap` (17GB) lives inside here, to store `RAM` on sleep to support hibernation.
+	- Instead of partitioning, we'll use `btrfs` **subvolumes** to segregate and create/rollback snapshots.
 - `1GB free space` (for the lols)
 
 ### 2. - Making the boot filesystem & setting up LUKS2 encryption

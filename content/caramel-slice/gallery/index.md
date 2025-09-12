@@ -11,6 +11,17 @@ timestamped to perfection, and updated routinely *(AKA whenever i remember)*.
 
 ---
 
+## 12/09/2025
+*slice 124!*
+
+**slice from the [aldinga bakery](https://maps.app.goo.gl/58tDYbojAsQsFaLH6)** - courtesy of the lovely, lovely ***vira***! 
+
+find it on the ranking list [here](http://localhost:1313/caramel-slice/rankings/) ~.
+
+![](/caramel-slice/gallery/slice124.jpg)
+
+---
+
 ## 11/09/2025
 *slice 123!*
 
