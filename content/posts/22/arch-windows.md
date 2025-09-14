@@ -48,7 +48,7 @@ Now, I was **cross-referencing like crazy**, given i was (crazy enough to be) do
 
 3.  Ensure to **Disable Fast Startup and Hibernation** modes on Windows via `powercfg /H off` in an elevated Powershell prompt, then power cycle (full shutdown) and check Windows registry keys for this feature to ensure they are off. **See [here](https://wiki.archlinux.org/title/Dual_boot_with_Windows#Disable_Fast_Startup_and_disable_hibernation) as to why.**
 
-Now, once my `EFI` partition was resized, listed as "healthy" in the Windows disk manager, and showing up as `4.1G` in the live Arch install, I proceeded to the fun part - **setting up my Arch system**, guided by both [The Wiki](https://wiki.archlinux.org/title/Dual_boot_with_Windows) (read **the entire dual-booting with Windows article before proceeding**) and this (incomplete) guide [here](according to the guide [here](https://nic96.dev/blog/beginners-guide-dual-booting-arch-linux-windows/).).
+Now, once my `EFI` partition was resized, listed as "healthy" in the Windows disk manager, and showing up as `4.1G` in the live Arch install, I proceeded to the fun part - **setting up my Arch system**, guided by both [The Wiki](https://wiki.archlinux.org/title/Dual_boot_with_Windows) (read **the entire dual-booting with Windows article before proceeding**) and this (incomplete) guide [here](https://nic96.dev/blog/beginners-guide-dual-booting-arch-linux-windows/).).
 
 
 ---
