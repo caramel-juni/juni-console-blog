@@ -9,26 +9,49 @@ type = "gallery"
 
 timestamped to perfection, and updated routinely *(AKA whenever i remember)*.
 
+---
+
+# 16/09/2025 - *slice 128!*
+
+**second day at new job...** overslept **again** lol, i really need to start going to bed earlier hjhdsbjsdvjds. so yet again starting the day with a comfy slice, showed broski my work building on his way to uni. was lovely to share a small moment with him. it's unfortunately looking like it'll be the public wifi + VPN life for me going forward, with... **no functional office wifi???** 
+
+<div style="display: flex; align-items: center; justify-content: center; gap: 10px;"> 
+<img src="https://web.archive.org/web/20090728023401im_/http://es.geocities.com/tygezazo/onion-head27.gif" style="width:50px"> 
+<img src="https://web.archive.org/web/20090728023401im_/http://es.geocities.com/tygezazo/onion-head22.gif" style="width:50px"> 
+<img src="https://web.archive.org/web/20090728023401im_/http://es.geocities.com/tygezazo/onion-head30.gif" style="width:50px"> 
+<img src="https://web.archive.org/web/20090728023401im_/http://es.geocities.com/tygezazo/onion-head43.gif" style="width:50px">
+</div>
+
+*(smol side note: [what a cool lil archived personal website for gifs](https://web.archive.org/web/20090728023401/http://es.geocities.com/tygezazo/), expect more from here lol)*
+
+
+![](/caramel-slice/gallery/slice128.jpg)
 
 ---
 
-## 14/09/2025
-*slice 126!*
+# 15/09/2025 - *slice 127!*
+
+**first day at new job...** overslept, so having a comfy slice after catching a lift in with father, to steal a small moment to clear my head before the day. 
+
+![](/caramel-slice/gallery/slice127.jpg)
+
+
+---
+
+# 14/09/2025 - *slice 126!*
 
 ![](/caramel-slice/gallery/slice126.jpg)
 
 ---
 
-## 13/09/2025
-*slice 125!*
+# 13/09/2025 - *slice 125!*
 
 ![](/caramel-slice/gallery/slice125.jpg)
 
 
 ---
 
-## 12/09/2025
-*slice 124!*
+# 12/09/2025 - *slice 124!*
 
 **slice from the [aldinga bakery](https://maps.app.goo.gl/58tDYbojAsQsFaLH6)** - courtesy of the lovely, lovely ***vira***! 
 
@@ -38,31 +61,27 @@ find it on the ranking list [here](http://localhost:1313/caramel-slice/rankings/
 
 ---
 
-## 11/09/2025
-*slice 123!*
+# 11/09/2025 - *slice 123!*
 
 ![](/caramel-slice/gallery/slice123.jpg)
 
 ---
 
-## 10/09/2025
-*slice 122!*
+# 10/09/2025 - *slice 122!*
 
 ![](/caramel-slice/gallery/slice122.jpg)
 
 
 ---
 
-## 7/09/2025
-*slice 121!*
+# 7/09/2025 - *slice 121!*
 
 ![](/caramel-slice/gallery/slice121.jpg)
 
 
 ---
 
-## 6/09/2025
-*slice 120!*
+# 6/09/2025 - *slice 120!*
 
 goodbye, william! safe travels, my love <33
 
