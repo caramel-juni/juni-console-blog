@@ -54,7 +54,8 @@ $env:Path += ";$env:USERPROFILE\AppData\Local\Programs\oh-my-posh\bin"
 I also installed two commonly-used modules for **terminal icons**, & **auto-completion**. **These need to be enabled per-terminal-session**, done via your custom profile file (created further below!)
 
 ``` powershell
-`Install-Module -Name Terminal-Icons,PSReadLine -Scope CurrentUser`
+Install-Module -Name Terminal-Icons,PSReadLine -Scope CurrentUser
+
 ```
 
 ---
@@ -86,7 +87,7 @@ Inside your profile file, put something like the following - ensure to include, 
 oh-my-posh init pwsh --config "C:\Users\USER\OneDrive\Documents\CODING\Powershell7\Config\wholespace.omp.json" | Invoke-Expression
 # Auto-imports two important modules installed previously into every new session: 
 Import-Module -Name Terminal-Icons
-Import-Module -Name Terminal-Icons
+Import-Module -Name PSReadLine
 
 ```
 
@@ -109,7 +110,7 @@ And there you go! Hope this helps get people set up, rocking and rearing to go w
 
 ![](/posts/19/Pasted%20image%2020250731224132.png)
 
-***Time to throw some errors in style 😎.***
+***Now, time to throw some errors... but in style 😎.***
 
 ---
 
