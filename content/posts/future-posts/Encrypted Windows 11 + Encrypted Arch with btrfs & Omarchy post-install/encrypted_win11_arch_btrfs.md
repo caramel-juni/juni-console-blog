@@ -314,18 +314,3 @@ arch-chroot /mnt
 
 ---
 
-
-
-
-
-
-
-## TLDR; for june to do:
-
-1. Follow [THIS](https://www.youtube.com/watch?v=Q4XfaJY2TZo) video tutorial for using the same ESP boot partition for windows & arch, with GRUB. (**do it via ssh & record commands for my own tutorial**).
-2. **(See [here](https://wiki.archlinux.org/title/EFI_system_partition#Typical_mount_points) for info on EFI and ESP).** Create ONE partition for btrfs, and create a @boot subvolume and mount THAT as `/boot` to contain system files, and to enable btrfs snapshots. **OR** create `ext4`  partition for GRUB (as in tutorial [here](https://gist.github.com/n0ctu/375703184748c70c5caa4a108e96f6f7)) if don't mind `/boot` being unencrypted. Then mount the existing ESP (windows created EFI partition) to `/efi` to allow bootloader, GRUB, to access that (follow video tutorial)
-
-3. And then just switch to & follow [THIS](https://gist.github.com/n0ctu/375703184748c70c5caa4a108e96f6f7) guide for partitioning & enabling SWAP on `btrfs`:
-
-![](Screenshot%202025-09-15%20at%2012.07.47%20am.png)
-

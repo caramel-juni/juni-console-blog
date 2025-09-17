@@ -11,6 +11,28 @@ timestamped to perfection, and updated routinely *(AKA whenever i remember)*.
 
 ---
 
+# 17/09/2025 - *slice 129!*
+
+another late wakeup... so back to my (now fast-becoming) usual spot!
+
+feeling a *liiiiiittle* better about work, getting into the office banter a bit after finding & rescuing a pair of "lost, crusty headphones", as well as wrapping my head around the overall upcoming nature of the working with clients directly (whilst i wait for my team lead to get back and meet with me for my more "official" onboarding process ahaha...), as opposed to working on a team to build secure systems/striving for a unified project "goal", etc.
+
+all quite nebulous with small nuances. i'm sure i can learn how to separate work from life a bit more during this whole process, which i suspect will be necessary to tolerate "selling myself out" to other "corporations" like *i'm* the product owned by my new company, such is the (unfortunate) nature of contract work. 
+
+putting my ideals to be contributing my working time to a cause like fighting for a more **secure**, **de-corporatised-&-enshittified privacy-respecting** & **freedom-focused** online digital landscape aside ***for now*** seems to be an unfortunate yet necessary sacrifice, both make a living and gain experience to pursue these projects further down the track.
+
+anyway. soapbox aside. we'll make the most of it :3.
+
+quick PSA: ensure you haven't been hit/impacted by the recent `npm` supply-chain attack by running something like `npm ls -g --depth=0 && npm ls --depth=0` on your local dev machine & in any associated repos, & cross-referencing any packages you have with the list of affected ones [here](https://www.aikido.dev/blog/s1ngularity-nx-attackers-strike-again#:~:text=publishing%20rights.-,Impacted%20packages,-Package). further, you can always install a wrapper tool like [aikido safe-chain](https://www.npmjs.com/package/@aikidosec/safe-chain) to audit & scan any packages you install in the future for malicious compromises - pretty cool work being done here!
+
+![](/caramel-slice/gallery/aikido.png)
+
+**anyway. safe travels, lovely ones! <3** 
+
+![](/caramel-slice/gallery/slice129.jpg)
+
+---
+
 # 16/09/2025 - *slice 128!*
 
 **second day at new job...** overslept **again** lol, i really need to start going to bed earlier hjhdsbjsdvjds. so yet again starting the day with a comfy slice, showed broski my work building on his way to uni. was lovely to share a small moment with him. it's unfortunately looking like it'll be the public wifi + VPN life for me going forward, with... **no functional office wifi???** 
