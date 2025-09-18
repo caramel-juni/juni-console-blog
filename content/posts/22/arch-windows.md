@@ -11,8 +11,7 @@ tags:
   - arch
   - windows
   - dual-boot
-  - efi
-  - bootloader
+  - refind
 ---
 
 A while ago, my friend had played around with installing [Arch linux](https://archlinux.org/), and I warned her against choosing *it* as an OS for dual-booting due to how notoriously difficult.... Windows can be when playing with other OS's *rudely* occupying its boot drive... let alone one that's as DIY as Arch (comparatively) for the install, and a rolling release model lending to it being somewhat... *unpredictable*.
