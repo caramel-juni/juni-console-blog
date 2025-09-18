@@ -10,6 +10,17 @@ type = "gallery"
 timestamped to perfection, and updated routinely *(AKA whenever i remember)*.
 
 ---
+# 18/09/2025 - *slice 130!*
+
+another day, another case of oversleeping... *yep, you're getting the picture by now*.
+
+a flurry of meetings, catch-ups and introductions this morning... hoping to get some actual headway on work/training projects today, but is hard when there are *so* many resources available & options for that, and especially when my team lead isn't yet back to give me a proper intro and lay out my first few weeks here.
+
+**feeling the pressure a bit...** but likely mostly internally, from myself more than anything, so i'll try and just sit with that and go with the flow as much as i can. ***here's hoping...***
+
+![](/caramel-slice/gallery/slice130.jpg)
+
+---
 
 # 17/09/2025 - *slice 129!*
 
