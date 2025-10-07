@@ -1,11 +1,34 @@
 +++
-image = "life-cover.png"
-date = "2025-07-07"
+image = "life-cover.jpeg"
+date = "2025-10-07"
 title = "life"
 type = "gallery"
 +++
 
 **i do life.** sometimes, at least. allegedly . . .
+
+
+---
+# 05/10/2025
+
+*captured on digicam by the ever-lovely* ***vira*** *on her* ***Canon PowerShot A20:***
+
+![](/photos/life/victor6.jpeg)
+
+![](/photos/life/victor5.jpeg)
+
+![](/photos/life/victor4.jpeg)
+
+![](/photos/life/victor3.jpeg)
+
+![](/photos/life/victor2.jpeg)
+
+![](/photos/life/victor1.jpeg)
+
+---
+
+# *misc. dates*
+
 
 ![](/photos/life/photo-moi-7.jpg)
 
