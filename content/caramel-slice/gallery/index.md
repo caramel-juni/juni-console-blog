@@ -11,6 +11,12 @@ timestamped to perfection, and updated routinely *(AKA whenever i remember)*.
 
 ---
 
+# 8/10/2025 - *slice 147!*
+
+![](/caramel-slice/gallery/slice147.jpg)
+
+---
+
 # 8/10/2025 - *slice 146!*
 
 ![](/caramel-slice/gallery/slice146.jpg)
