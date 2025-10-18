@@ -11,6 +11,26 @@ timestamped to perfection, and updated routinely *(AKA whenever i remember)*.
 
 ---
 
+# 12/10/2025 - *slice 152!*
+
+![](/caramel-slice/gallery/slice152.jpg)
+
+<div style="text-align:center"> 
+<p><strong>a well needed distraction for a very difficult morning.</strong></p>
+<iframe src="https://piclog.blue/image.php?id=6955" style="width:400px; height:800px; border:none"></iframe>
+<p><i>🍪💕🐶 rest in peace my darling boy 🍪💕🐶</i></p>
+
+</div>
+
+---
+
+# 12/10/2025 - *slice 151!*
+
+![](/caramel-slice/gallery/slice151.jpg)
+
+
+---
+
 # 12/10/2025 - *slice 150!*
 
 ![](/caramel-slice/gallery/slice150.jpg)
