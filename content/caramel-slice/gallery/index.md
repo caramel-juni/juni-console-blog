@@ -11,6 +11,17 @@ timestamped to perfection, and updated routinely *(AKA whenever i remember)*.
 
 ---
 
+# 31/10/2025 - *slice 161!*
+👻🎃🍫 **a truly spoopy edition!** 👻🎃🍫
+
+a refreshingly consistent and buttery smooth texture and overall composition. it melted in my mouth to a rather delightful extent, and aside from it being a smidge oily for me (although this is likely just my own sensory issues at play), it was a real delight and feat of baking! 
+
+*endless thanks to the kind and culinar-ily skilled soul in my office, who crafted this delightfully spoopy treat to brighten a friday morning!*
+
+![](/caramel-slice/gallery/slice161.jpg)
+
+---
+
 # 28/10/2025 - *slice 160!*
 
 ![](/caramel-slice/gallery/slice160.jpg)
