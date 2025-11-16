@@ -11,8 +11,16 @@ timestamped to perfection, and updated routinely *(AKA whenever i remember)*.
 
 ---
 
-# 15/11/2025 - *slice 170!*
+# 16/11/2025 - *slice 171!*
 
+
+![](/caramel-slice/gallery/slice171.jpg)
+
+
+---
+
+# 15/11/2025 - *slice 170!*
+*New sice discovered & [ranked](https://blog.juni-mp4.com/caramel-slice/rankings/) - from the Victor Harbour born-&-bred [Ocean Street Bakehouse!](https://maps.app.goo.gl/YmZG1tkvXY7CULo89)*
 ![](/caramel-slice/gallery/slice170.jpg)
 
 ---
