@@ -30,7 +30,7 @@ now, that's not to say that the actual **architecture** of what's described belo
 
 because above all, i've learnt that **i want a system that *encourages* me to actually *use* linux, instead of wallowing within the `r/unixporn`-fuelled depths of "customisation" to find my "pertfect setup".**
 
-because, in reality, the "perfct setup" is one that **inspire you to *use* the damn thing to do what you intended.** create things, write things, play things, build things - just actually **DO all the things**, instead of trying to *facilitate* the **doing of them.**
+because, in reality, the "perfect setup" is one that **inspire you to *use* the damn thing to do what you intended.** create things, write things, play things, build things - just actually **DO all the things**, instead of trying to *facilitate* the **doing of them.**
 
 anyway. a long-winded intro, but i think it's nonetheless an important takeaway to share before diving into what will be a long and (hopefully not *too*) convoluted process. 
 
