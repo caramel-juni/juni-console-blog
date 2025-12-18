@@ -11,6 +11,14 @@ timestamped to perfection, and updated routinely *(AKA whenever i remember)*.
 
 ---
 
+# 18/12/2025 - *slice 182!*
+*ft. the lovely **vira** and her impeccable taste in choosing my first ever tarot deck for me for christmas. feeling very loved <3*
+![](/caramel-slice/gallery/slice182.jpg)
+![](/caramel-slice/gallery/slice182.5.jpg)
+*god, how i resonate with these two cards.* ***where i want to be... and where i am right now.***
+
+---
+
 # 14/12/2025 - *slice 181!*
 
 ![](/caramel-slice/gallery/slice181.jpg)
