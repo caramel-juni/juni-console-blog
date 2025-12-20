@@ -7,6 +7,12 @@ type = "gallery"
 
 **i do life.** sometimes, at least. allegedly . . .
 
+---
+# 23/11/2025
+
+*captured - on film, this time — by the ever-lovely* ***vira***!
+
+![](/photos/life/moicoffee.jpg)
 
 ---
 # 05/10/2025
