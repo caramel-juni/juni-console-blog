@@ -10,6 +10,10 @@ tags:
 ---
 
 
+
+
+
+
 ## further steps to troubleshoot:
 - [x] [Arch Wiki rEFind](https://wiki.archlinux.org/title/REFInd#For_kernels_automatically_detected_by_rEFInd) - *"For `rEFInd` to support the naming scheme of Arch Linux [kernels](https://wiki.archlinux.org/title/Kernels "Kernels") and thus allow matching them with their respective initramfs images, you must uncomment and edit `extra_kernel_version_strings` option in `efi/EFI/refind/refind.conf`"* 
   ``` bash
