@@ -14,8 +14,7 @@ tags:
   - subvolume
   - script
 ---
-
-## Auto snapshots with `btrfs`
+**Side note:** *yes, I know that very capable and feature-rich tools like [snapper](https://wiki.archlinux.org/title/Snapper) and [timeshift](https://wiki.archlinux.org/title/Timeshift) exist that can achieve similar outcomes. However, this is a small, homebrew alternative solution that i've chosen to go with out of user preference, and so your mileage and needs may vary :3 ~*
 
 Using the following script, you can create and manage periodic `btrfs` snapshots of the `/home` and `/root` subvolumes. Ensure to test the manual `sudo btrfs subvolume snapshot -r` commands until they work with your own system subvolume setup, before committing them to the script and running it!
 
