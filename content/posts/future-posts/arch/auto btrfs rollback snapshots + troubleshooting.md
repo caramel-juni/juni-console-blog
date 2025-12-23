@@ -9,6 +9,17 @@ categories:
 tags:
 ---
 
+- --> main guide https://www.dwarmstrong.org/btrfs-snapshots-rollbacks/
+	- also helpful cleanup script: https://www.dwarmstrong.org/update-arch/
+	- [full arch install with encrypted btrfs subvolumes + quality of life tweaks](https://www.dwarmstrong.org/archlinux-install/)
+
+- https://askubuntu.com/questions/1459350/how-to-restore-btrfs-snapshot-backup-of-root-partition-with-subvolume-for-home
+- https://www.reddit.com/r/archlinux/comments/1p7ibk1/okay_how_do_i_roll_back_failed_updates/
+- https://www.baeldung.com/linux/arch-boot-failure
+- [Resetting Arch Linux](https://www.youtube.com/watch?v=2vbrFZiq2Hc)
+- [Removing everything but essential packages](https://wiki.archlinux.org/title/Pacman/Tips_and_tricks#Removing_everything_but_essential_packages)
+- [I want to reinstall Arch on my btrfs without loosing data from the home directory. The system is so damaged, that I can't use pacman anymore. What would be the simplest way? I have the home directory on a separate partition. Thanks for every advice!](https://www.facebook.com/groups/archlinuxen/posts/10160068546478393/)
+- 
 
 
 
