@@ -11,6 +11,13 @@ timestamped to perfection, and updated routinely *(AKA whenever i remember)*.
 
 ---
 
+# 14/1/2026 - *slice 193!*
+*ft. vira and her legendary caramel slice rec.: from the [Aldinga Home Grain Bakery!](https://maps.app.goo.gl/58tDYbojAsQsFaLH6)*
+
+![](/caramel-slice/gallery/slice193.jpg)
+
+---
+
 # 13/1/2026 - *slice 192!*
 
 ![](/caramel-slice/gallery/slice192.jpg)
