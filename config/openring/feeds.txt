@@ -4,7 +4,6 @@ https://meadow.cafe/feeds/blog_rss.xml
 https://blog.avas.space/feed/?type=rss.xml
 https://tala.bearblog.dev/feed.xml
 https://doqmeat.com/rss.xml
-https://drewdevault.com/blog/index.xml
 https://lunamouse.bearblog.dev/feed.xml
 https://jem-on-jem.bearblog.dev/feed.xml
 https://marisabel.nl/feeds/combined.php
@@ -12,3 +11,11 @@ https://notes.jeddacp.com/feed/
 https://brainbaking.com/index.xml
 https://xeiaso.net/blog.rss
 https://www.conscienceround.com/feed
+https://emerz35.bearblog.dev/feed
+https://absurdpirate.bearblog.dev/blog/
+https://bix.blog/rss.xml
+https://joanwestenberg.com/rss/
+https://www.ystrickler.com/rss
+https://emerz35.bearblog.dev/feed
+https://livlaughlove.bearblog.dev/feed.xml
+https://tiramisu.bearblog.dev/feed
