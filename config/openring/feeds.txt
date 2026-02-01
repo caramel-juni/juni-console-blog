@@ -12,7 +12,7 @@ https://brainbaking.com/index.xml
 https://xeiaso.net/blog.rss
 https://www.conscienceround.com/feed
 https://emerz35.bearblog.dev/feed
-https://absurdpirate.bearblog.dev/blog/
+https://absurdpirate.bearblog.dev/feed
 https://bix.blog/rss.xml
 https://joanwestenberg.com/rss/
 https://www.ystrickler.com/rss
