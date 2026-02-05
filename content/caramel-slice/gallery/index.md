@@ -11,6 +11,18 @@ timestamped to perfection, and updated routinely *(AKA whenever i remember)*.
 
 ---
 
+# 5/2/2026 - *slice 202!*
+
+![](/caramel-slice/gallery/slice202.jpg)
+
+---
+
+# 4/2/2026 - *slice 201!*
+
+![](/caramel-slice/gallery/slice201.jpg)
+
+---
+
 # 1/2/2026 - *slice 200!*
 `milestone unlocked`: ***slice #200!*** *here's to... well, more, i guess* ☆*:.｡.o(≧▽≦)o.｡.:☆*
 
