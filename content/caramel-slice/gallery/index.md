@@ -5,6 +5,8 @@ title = "slice gallery"
 type = "gallery"
 +++
 
+<img src="https://juniblog.goatcounter.com/count?p=/caramel-slice/gallery/" width="0" height="0">
+
 *an addiction: in pictures*. 
 
 timestamped to perfection, and updated routinely *(AKA whenever i remember)*.

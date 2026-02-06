@@ -5,6 +5,7 @@ title = "rankings"
 type = "gallery"
 +++
 
+<img src="https://juniblog.goatcounter.com/count?p=/caramel-slice/rankings/" width="0" height="0">
 
 # caramel slice rankings:
 

@@ -5,6 +5,8 @@ title = "life"
 type = "gallery"
 +++
 
+<img src="https://juniblog.goatcounter.com/count?p=/photos/life/" width="0" height="0">
+
 **i do life.** sometimes, at least. allegedly . . .
 
 ---

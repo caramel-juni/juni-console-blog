@@ -5,6 +5,8 @@ title = "film"
 type = "gallery"
 +++
 
+<img src="https://juniblog.goatcounter.com/count?p=/photos/film/" width="0" height="0">
+
 **i am what some might consider a *"camera person"*.**
 
 ---

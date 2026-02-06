@@ -15,3 +15,5 @@ title = "whoami?"
 # > you can hopefully find me . . .
 ![amidst the cyborg flowers](/about/dreamcore-comp.gif)
 *(. . . but why would you want to?)*
+
+<img src="https://juniblog.goatcounter.com/count?p=/about/" width="0" height="0">
