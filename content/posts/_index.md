@@ -2,4 +2,4 @@
 title = "posts"
 +++
 
-<img src="https://juniblog.goatcounter.com/count?p=/posts/" width="0" height="0">
+<img src="https://juniblog.goatcounter.com/count?p=/posts/" style="display: none">

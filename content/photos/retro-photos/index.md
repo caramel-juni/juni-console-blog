@@ -5,7 +5,7 @@ title = "extra-crispy retro photos"
 type = "gallery"
 +++
 
-<img src="https://juniblog.goatcounter.com/count?p=/photos/retro-photos/" width="0" height="0">
+<img src="https://juniblog.goatcounter.com/count?p=/photos/retro-photos/" style="display: none">
 
 as noted in my [caramel slice entry 109](https://blog.juni-mp4.com/caramel-slice/gallery/), i have recently discovered the tool [OpenCamera](https://opencamera.org.uk/), which is an alternative camera app that i've been using to take purposefully-downscaled & compressed `.jpeg` photos. 
 

@@ -5,7 +5,7 @@ title = "korea & japan"
 type = "gallery"
 +++
 
-<img src="https://juniblog.goatcounter.com/count?p=/photos/korea-japan/" width="0" height="0">
+<img src="https://juniblog.goatcounter.com/count?p=/photos/korea-japan/" style="display: none">
 
 # NOVEMBER, 2024: 
 
