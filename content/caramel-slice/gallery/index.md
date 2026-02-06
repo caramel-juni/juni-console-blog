@@ -5,7 +5,7 @@ title = "slice gallery"
 type = "gallery"
 +++
 
-<img src="https://juniblog.goatcounter.com/count?p=/caramel-slice/gallery/" width="0" height="0">
+<img src="https://juniblog.goatcounter.com/count?p=/caramel-slice/gallery/" style="display: none">
 
 *an addiction: in pictures*. 
 

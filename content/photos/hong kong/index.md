@@ -4,7 +4,7 @@ date = "2023-11-28"
 title = "hong kong"
 type = "gallery"
 +++
-<img src="https://juniblog.goatcounter.com/count?p=/photos/hong-kong/" width="0" height="0">
+<img src="https://juniblog.goatcounter.com/count?p=/photos/hong-kong/" style="display: none">
 
 # NOVEMBER, 2023: 
 

@@ -16,4 +16,4 @@ title = "whoami?"
 ![amidst the cyborg flowers](/about/dreamcore-comp.gif)
 *(. . . but why would you want to?)*
 
-<img src="https://juniblog.goatcounter.com/count?p=/about/" width="0" height="0">
+<img src="https://juniblog.goatcounter.com/count?p=/about/" style="display: none">
