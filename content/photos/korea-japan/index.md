@@ -5,6 +5,8 @@ title = "korea & japan"
 type = "gallery"
 +++
 
+<img src="https://juniblog.goatcounter.com/count?p=/photos/korea-japan/" width="0" height="0">
+
 # NOVEMBER, 2024: 
 
 'twas a rather **life-changing, trip**, i'd say.

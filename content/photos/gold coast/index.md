@@ -4,6 +4,7 @@ date = "2023-12-10"
 title = "gold coast"
 type = "gallery"
 +++
+<img src="https://juniblog.goatcounter.com/count?p=/photos/gold-coast/" width="0" height="0">
 
 # DECEMBER, 2023: 
 **a (large) trip with a dear group of uni friends, an amalgamation of utter chaos and love:**

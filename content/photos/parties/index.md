@@ -5,6 +5,8 @@ title = "parties"
 type = "gallery"
 +++
 
+<img src="https://juniblog.goatcounter.com/count?p=/photos/parties/" width="0" height="0">
+
 ![](/sage6.jpg)
 **partying** is something that i rarely do, but when i do, it is typically with a number of cool folk and beverages . . .
 
