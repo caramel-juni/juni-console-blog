@@ -11,9 +11,23 @@ type = "gallery"
 
 ---
 
+# 21/12/2024 *(rediscovered 7/2/2026)*
+
+*a bit of a blast from the past, as i've just rediscovered these, but wanted to pop them at the top of the feed to reflect the date they were (re)discovered from the archives.*
+
+*from a trip i very much cherish, but a memory that pains me to recall as well.* ***a lost love. but, love nonetheless.***
+
+![](/photos/film/junebw-jarrahtrip1.JPG)
+
+![](/photos/film/junebw-jarrahtrip2.JPG)
+
+![](/photos/film/junebw-jarrahtrip3.JPG)
+
+---
+
 # 22/1/2026 - *also, [slice 193](https://blog.juni-mp4.com/caramel-slice/)!*
 
-*some photos from my recent foray down to vira's favourite caramel slice joint, and our wanderings around a lovely eco village (my first one! what an absolute, wholesome treat to so do).*
+*some photos from my recent foray down to vira's favourite caramel slice joint, and our wanderings around a lovely eco village (my first one! what an absolute, wholesome treat to do so).*
 
 ![](/photos/film/ViraAldingaWalkies3.JPG)
 
