@@ -91,6 +91,18 @@ code::after {
     font-family: var(--font-stack);
 }
 
+/* cat gif cursor */
+
+html {
+    cursor: url('/files/cursors/cat.gif'), auto;
+
+}
+
+a:hover {
+    /* change cat gif cursor for hover */
+    cursor: url('/files/cursors/cat_hover.gif'), auto;
+}
+
 body {
     font-family: var(--font-stack);
     font-size: var(--global-font-size);
