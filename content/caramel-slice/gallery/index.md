@@ -7,9 +7,15 @@ type = "gallery"
 
 <img src="https://juniblog.goatcounter.com/count?p=/caramel-slice/gallery/" style="display: none">
 
-*an addiction: in pictures*. 
+***an addiction: in pictures.***
 
 timestamped to perfection, and updated routinely *(AKA whenever i remember)*.
+
+---
+
+# 16/2/2026 - *slice 206!*
+
+![](/caramel-slice/gallery/slice206.jpg)
 
 
 ---
