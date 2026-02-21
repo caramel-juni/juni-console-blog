@@ -101,7 +101,7 @@ volumes:
 - consider **==additional security measures & configurations==** to harden the instance, such as:
 	- Securing access to the web UI behind authentication (NGINX has `BASIC` auth configurable via the web UI, which is better than *nothing*, but not state-based & thus not ideal in the long run. Could be swapped for a stronger supported authentication method)
 	- changing `environment: SEARXNG_BASE_URL=` in `docker-compose.yaml` to your domain name (NO port) to avoid leaking your internal IP and port you're hosting this on within the body of the searches (also just a little cleaner)
-	  ![](attachments/27318.png)
+	  ![](/posts/30/attachments/27318.png)
 
 ---
 # `limiter.toml`:
