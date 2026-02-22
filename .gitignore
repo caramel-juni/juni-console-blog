@@ -4,5 +4,7 @@ content/posts/.obsidian/*
 content/.trash/*
 content/template.md
 resources/**
-content/posts/future-posts/*/*.png
+content/posts/future-posts/**/*.png
+content/posts/future-posts/**/*.jpeg
+content/posts/future-posts/**/*.jpg
 scripts/**
