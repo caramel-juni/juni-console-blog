@@ -13,6 +13,20 @@ timestamped to perfection, and updated routinely *(AKA whenever i remember)*.
 
 ---
 
+# 24/2/2026 - *slice 210!*
+
+**the last slice for a long while... :(**
+
+*but... there will be more. after this journey to (eventual) freedom :).*
+
+![](/caramel-slice/gallery/slice210.jpg)
+
+---
+# 23/2/2026 - *slice 209!*
+
+![](/caramel-slice/gallery/slice209.jpg)
+
+---
 # 19/2/2026 - *slice 208!*
 
 ![](/caramel-slice/gallery/slice208.jpg)
