@@ -13,6 +13,22 @@ timestamped to perfection, and updated routinely *(AKA whenever i remember)*.
 
 ---
 
+# 15/3/2026 - *slice 212!*
+
+![](/caramel-slice/gallery/slice212.jpeg)
+
+---
+
+# 14/3/2026 - *slice 211!*
+
+**the return of the slice...!**
+
+*the result of a covert operation to infliltrate the medical institution in which i am currently (voluntarily) imprisioned, by a truly skilled operator of the highest calibre...* *the venerable* ***email smooth.***
+
+![](/caramel-slice/gallery/slice211.jpeg)
+
+---
+
 # 24/2/2026 - *slice 210!*
 
 **the last slice for a long while... :(**
