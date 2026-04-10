@@ -13,6 +13,23 @@ timestamped to perfection, and updated routinely *(AKA whenever i remember)*.
 
 ---
 
+# 10/4/2026 - *slice 214!*
+
+![](/caramel-slice/gallery/slice215.jpg)
+
+---
+
+# 8/4/2026 - *slice 214!*
+
+**first slice out of hospital...!**
+
+*...with the lovely [jemmuel](https://jem-on-jem.bearblog.dev/)!*
+
+![](/caramel-slice/gallery/slice214.jpg)
+
+
+---
+
 # 23/3/2026 - *slice 213!*
 
 ![](/caramel-slice/gallery/slice213.jpg)
