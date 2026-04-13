@@ -26,18 +26,19 @@ As i'd also watched videos like [How a Terrible Game Cracked the 3DS's Security 
 thus, i worked through the "[LazyPixie](https://github.com/TuxSH/LazyPixie)" `README.md` + went back and forth with some AI-assisted feedback to fill in any gaps & clarifications in my understanding of the source material (i'm a bit slow sometimes), and have written it up below both for posterity, and to maybe help others understand/get into the scene!
 
 <div style="text-align: center"><img src="/posts/36/attachments/3ds-me.gif" style="width:500px"></div>
-*^^ me while trying to understand this and probably still being only like 30% of the way there*
+^^ *me while trying to understand this and probably still being only like 30% of the way there*
 
 ---
 
-# LazyPixie: a Deepdive
+# What is LazyPixie?
 
 **[LazyPixie:](https://github.com/TuxSH/LazyPixie/blob/master/README.md)aka one example of how the 3DS can be rooted:** an arbitrary kernel write exploit using the PXI inter-process communication interface buffer handling code.
 - *(`PXI` being a Nintendo-based `sysmodule` containing several IPC services: see https://www.3dbrew.org/wiki/PXI_Services for more info)*
 
+# The 3DS: Inside me are two wolves (or rather, two systems...)
 In essence, there are two systems on the 3DS:
 - `Arm11 MPCore` (handling main system + games)
-- `Arm9TDMI` (handling storage device access & security tasks, with **one userland process `Process9` that can execute privileged code**)
+- `Arm9TDMI` (handling storage device access & security tasks, with **one userland process `Process9` that can perform privileged operations** - *decrypting keys, accessing protected NAND storage, and performing signature checks to verify what software/code can run*)
 
 These two systems need to talk to one another, but **can't directly share memory in a cache-coherent way**, as the **`Arm9` has no Memory Management Unit (MMU)**, and cannot process virtual addresses at all — it needs raw physical addresses. 
 
@@ -45,7 +46,7 @@ As a result, the `ARM11` kernel must **expose its physical memory addresses to t
 
 This allows userland processes (apps, etc.) to ask "*here's my buffer, please write out its physical address chunks somewhere the `ARM9` can read*". This "somewhere" is a `Static Buffer`, which is just a buffer whose **location is declared in advance** (before any IPC call is made). So, the `ARM11` kernel does the virtual→physical translation work _on behalf of_ the ARM9, which is incapable of doing it itself.
 
-# Process of reserving & using a `Static Buffer`:
+# Process of reserving & using an `Static Buffer`:
 - Service thread **pre-registers a 4KB-aligned physical-memory-backed buffer** in its **`TLS` (thread-local storage)**. The `TLS` is a list of instructions like, *"static buffer slot 0 is at address X"*, etc.)
 - Client makes a request **referencing a source buffer**
 - The `ARM11` kernel **walks the source buffer's virtual→physical mapping** (as it has an `MMU`) and **writes the resulting `{physAddr, size}` pairs** into the service's pre-registered static buffer location
