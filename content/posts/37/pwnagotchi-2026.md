@@ -193,9 +193,9 @@ cd /d "C:\Users\junip\Documents\Scripts\hashcat-7.1.2"
 hashcat.exe %*
 ```
 
-Also as I was using a NVIDIA GPU, needed to install both the latest [NVIDIA drivers](https://www.nvidia.com/en-us/drivers/) (use NVIDIA app for ease of use) and the [CUDA toolkit](developer.nvidia.com/cuda-downloads) ([archived ones here](https://developer.nvidia.com/cuda-toolkit-archive)). Ensure you're on the latest hashcat build, as can get errors about mismatched versions otherwise.
+Also as I was using a NVIDIA GPU, needed to install both the latest [NVIDIA drivers](https://www.nvidia.com/en-us/drivers/) (use NVIDIA app for ease of use) and the [CUDA toolkit](developer.nvidia.com/cuda-downloads) (see also [archived versions](https://developer.nvidia.com/cuda-toolkit-archive)). Ensure you're on the latest hashcat build, as can get errors about mismatched versions otherwise.
 
-Also, when passing the parameters to the CLI, make sure to do **both in ""** - as I was getting `Hash '.\candidates_fixed.hc22000': Separator unmatched - No hashes loaded.` error without it.
+Also, when passing the parameters to the CLI, make sure to wrap **both in `""`** - as I was getting `Hash '.\candidates_fixed.hc22000': Separator unmatched - No hashes loaded.` error without it.
 
 ### Crafting an attack:
 

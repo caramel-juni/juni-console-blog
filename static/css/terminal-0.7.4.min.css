@@ -142,22 +142,15 @@ h6 {
     font-weight: 600
 }
 
+/* Fixed blockquote context using a repeating background image of an SVG of the > character*/
 blockquote {
     position: relative;
     padding-left: calc(var(--global-space) * 2);
-    padding-left: 2ch;
-    overflow: hidden
+    background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><text y='1em' font-family='monospace' font-size='15px' fill='%239ca2ab'>></text></svg>");
+    background-repeat: repeat-y;
+    background-size: 1ch var(--global-line-height);
 }
 
-blockquote::after {
-    content: ">\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>";
-    white-space: pre;
-    position: absolute;
-    top: 0;
-    left: 0;
-    line-height: var(--global-line-height);
-    color: #9ca2ab
-}
 
 code {
     font-weight: inherit;

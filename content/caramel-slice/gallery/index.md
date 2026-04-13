@@ -13,6 +13,16 @@ timestamped to perfection, and updated routinely *(AKA whenever i remember)*.
 
 ---
 
+# 13/4/2026 - *slice 217!*
+
+![](/caramel-slice/gallery/slice217.jpg)
+*my first time baking **salted** caramel slice in a long while, for my first day back in the office. despite the chocolate turning out a little matted (i'll make sure to melt it over the stove next time), it was what i'd consider, as they say, "great success!"*
+
+here's a review from an officemate:
+> "***Base is good, caramel is sweet but not too strong. Chocolate, while looking off still tastes good. The white chocolate chips were a nice addition. Overall, as expected, delicious!***"
+
+---
+
 # 11/4/2026 - *slice 216!*
 
 ![](/caramel-slice/gallery/slice216.jpg)
