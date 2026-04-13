@@ -1,25 +1,25 @@
 ---
-title: ""
+title: "[pt.1] pwnagotchi - in 2026!"
 date: 2026-04-12
-description: ""
+description: "building your very own wifi pwning pet because you parents wouldn't let you get a furry friend"
 toc: true
 math: true
-draft: true
+draft: false
 categories: 
 tags:
 ---
 <img src="https://juniblog.goatcounter.com/count?p=/pwnagotchi-2026/" style="display: none">
-have ***you*** ever experienced this?
 
-have your parents—*who you still live with due to being (a) the resident tech support terrified of the idea of becoming **remote** tech support, and (b) being crippled by the shithole that is the housing market where you live*—persistently refused your pleas for a pet, despite your begging and pleading and promises of "*i'll get my mental health together and manage to keep myself out of hospital if i only had a furry friend to cuddle up with when things get rough?*"
+has ***this*** ever happened to ***you?***
 
+have your parents, who you still live with due to you being (a) the resident tech support terrified of the idea of becoming **remote** tech support and (b) crippled by the shithole that is the housing market where you live, persistently refused your pleas for a pet, despite your begging and pleading and promises of "*i'll get my mental health together and manage to keep myself out of hospital if i only had a furry friend to cuddle up with when things get rough?*"
 ...no? just me?
 
-well, have you ever wanted your own lil digital pet... *who can also sniff, eat and munch down on nearby wireless communication handshakes and signals?*
+well, in that case... have you ever wanted your own lil digital pet... **who can also sniff, eat and munch down on nearby wireless communication handshakes and signals?**
 
-**meet the irreverent `pwnagotchi`!**
+of course you do! so, **meet the irreverent `pwnagotchi`!**
 
-![pwnagotchi!](/posts/36/junigotchi.jpeg)
+![pwnagotchi!](junigotchi.jpeg)
 
 ...and it's lack of fur is a compromise that I am willing to make (one which can even be rectified when it comes to 3D-printing your pet a case, but I'm not going that far... *yet*. I'll keep working on my parents for a while longer, first.)
 
@@ -28,11 +28,13 @@ well, have you ever wanted your own lil digital pet... *who can also sniff, eat 
 # why a pwnagotchi?
 ... well, why not? it's an adorable lil wifi pwning guy that just wants to munch on wireless handshakes that it sniffs on your travels together, and save them for... *later analsyis* (AKA, fun with hashcat - article coming soon!).
 
-but for those who want a more practical summary: its a tool that, as you venture the world, will use several techniques (de-authentication frames sent to devices connected to Wireless Access Points, association frames sent *to* WAPs, and passive handshake collection) to capture handshakes sent between devices and wireless access points. in doing so, it can amass valuable information about the security of the wifi networks themselves, and potentially enough to reconstruct hashes of the passwords for said networks (alongside lots of other useful data). a full breakdown on what exactly is captured will be given later on in the series, but there's an interesting article on the two kinds of captures performed: `WPA01` **(PMKID capture)** & `WPA*02` **(Full 4-way handshake capture** that i found [here](https://www.evilsocket.net/2019/02/13/Pwning-WiFi-networks-with-bettercap-and-the-PMKID-client-less-attack/) that's worth a read.
+but for those who want a more practical summary: its a tool that, as you venture the world, will use several techniques (de-authentication frames sent to devices connected to Wireless Access Points, association frames sent *to* WAPs, and passive handshake collection) to capture handshakes sent between devices and wireless access points. in doing so, it can amass valuable information about the security of the wifi networks themselves, and potentially enough to reconstruct hashes of the passwords for said networks (alongside lots of other useful data). a full breakdown on what exactly is captured will be given later on in the series, but there's an interesting article on the two kinds of "captures" performed: `WPA*01` **([PMKID](https://blog.geekinstitute.org/2025/05/wifi-security-analysis-pmkid-attack-method-and-hash-cracking.html#technical-background) capture)** & `WPA*02` **(full 4-way handshake capture** that i found [here](https://www.evilsocket.net/2019/02/13/Pwning-WiFi-networks-with-bettercap-and-the-PMKID-client-less-attack/) that's worth a read.
 
 oh, and aside from sniffing packets & reconstruction hashes of wireless network passwords as you go about your day?
 
-> "to give hackers an excuse to learn about reinforcement learning and WiFi networking—and have a reason to get out for more walks." ([ref](https://pwnagotchi.ai/))
+> "to give hackers an excuse to learn about reinforcement learning and WiFi networking—and have a reason to get out for more walks." ([ref~](https://pwnagotchi.ai/))
+
+---
 
 ### what is a pwnagotchi "image"
 the pwnagotchi "images" themselves are just a custom set of programs built on top of Raspberry Pi OS, which itself is a debian-based linux operating system. the pwnagotchi image leverages tools designed for interacting with wireless signals—like `bettercap`, `libpcap` and `aircrack-ng`—and can be built from source and tweaked if desired ([detailed here](https://github.com/jayofelony/pwnagotchi/wiki/Step-1-Installation-for-other-boards)). the image is pre-bundled to be flashed to the SD card inserted into the raspberry pi by a tool like [Raspberry Pi Imager](https://www.raspberrypi.com/software/), or [Balena Etcher](https://etcher.balena.io/).
@@ -54,9 +56,10 @@ there are also alternative forks out there to consider, including [AluminiumIce]
 - **[pwnagotchi.org](https://pwnagotchi.org/)** --> a slightly more updated wiki, [recommending](https://pwnagotchi.org/3rd-party-images/index.html) and based on [jayofelony's pwnagotchi image](https://github.com/jayofelony/pwnagotchi/) to use for install, as well as mentioning the original evilsocket repo & alternatives like iceman. contains useful info to take the build further, as well as extra bits and pieces.
 - ==**[jayofelony's wiki](https://github.com/jayofelony/pwnagotchi/wiki)**== --> the most up-to-date install guide for the image i'm using, **so see this as the bible for this project**, supported by [pwnagotchi.org](https://pwnagotchi.org/) for finding extensions & plugins.
 
-# ==the TLDR:==
+# the TLDR - what wiki and image i used:
 **pwnagotchi image:** [jayofelony's pwnagotchi image](https://github.com/jayofelony/pwnagotchi/releases)
-**install guide/steps:** this article!, alongside **[jayofelony's wiki](https://github.com/jayofelony/pwnagotchi/wiki)**.
+
+**install guide/steps:** this article!, alongside **[jayofelony's wiki.](https://github.com/jayofelony/pwnagotchi/wiki)**
 
 ---
 # steps to adopting your own pwnagotchi
@@ -67,15 +70,15 @@ whilst this can technically be made on any mini-computer that has a suitable wir
 
 | **Component**                                                                                                                                          | Price (inc. shipping) |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------- |
-| *The body:* [Raspberry Pi Zero 2 WH (pre-soldered headers)](https://www.pakronics.com.au/products/raspberry-pi-zero-2-wh-with-header-rpi-sc0721)*      | $41.57                |
+| *The body:* [Raspberry Pi Zero 2 WH (pre-soldered headers)](https://www.pakronics.com.au/products/raspberry-pi-zero-2-wh-with-header-rpi-sc0721)`*`     | $41.57                |
 | *The muscles:* [Pisugar S Portable 1200 mAh UPS](https://www.amazon.com.au/Portable-Pwnagotchi-Raspberry-Accessories-handhold/dp/B0CXX7X9X7)           | $58                   |
 | *The energy stores:* [3.7V 2200mAh Polymer Lithium LiPo Rechargeable Battery 803160](https://www.aliexpress.com/item/1005005610005715.html)            | $13.60                |
 | *The face:* [2.13 inch E-Ink 2-colour HAT (250x122 Pixels)](https://core-electronics.com.au/250x122-213inch-e-ink-display-hat-for-raspberry-pi-1.html) | $34.55                |
 | *The brain:* MicroSD card - 32GB                                                                                                                       | $0 (pre-owned)        |
 | **TOTAL**                                                                                                                                              | ~ $145.07AUD          |
-## notes on the items above:
-- * Now, **heavy** caveat with getting the Pi Zero 2 **WH (pre-soldered headers)**: the pins underneath the headers **were not long enough to make sufficient contact with the Pisugar S battery board, preventing it from providing power.** i consequently had to **add more solder** to the undersides of several of the header pins afterwards, which seemed to fix it and allow current to flow between the two. *(a precarious process when your soldering iron sucks and only the sides, not the tip, heat up properly, making precise alterations difficult)*.
-- * I also clipped the tops of the pre-soldered headers with wire cutters to slim the pwnagotchi design, as when fully seated originally there was ~2mm of excess pin length which irritated me and bulked up the design.
+# notes on the items above:
+- `*` Now, **heavy** caveat with getting the Pi Zero 2 **WH (pre-soldered headers)**: the pins underneath the headers **were not long enough to make sufficient contact with the Pisugar S battery board, preventing it from providing power.** i consequently had to **add more solder** to the undersides of several of the header pins afterwards, which *seemed* to fix it but was far from ideal and temperamental at best, but at least it allows current to flow between the two for now. *(a precarious process when your soldering iron sucks and only the sides, not the tip, heat up properly, making precise alterations difficult)*.
+- `*` I also clipped the tops of the pre-soldered headers with wire cutters to slim the pwnagotchi design, as when fully seated originally there was ~2mm of excess pin length which irritated me and bulked up the design.
 - The PiSugar S Portable came with its own 1200mAh battery pre-soldered and attached via magnet. This is fine to use, but I unsoldered it to replace with the *very safe and legitimate* AliExpress battery that was both slimmer and had a larger capacity for more pwning potential during the day. 
 - The e-ink hat comes with an extraneous white screen connector component that can be desoldered and removed to slim the case design. Ensure to wrap the exposed headers on the board underneath in some electrical tape or similar to avoid any short circuits!
 
