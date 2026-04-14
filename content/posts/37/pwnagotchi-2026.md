@@ -36,11 +36,11 @@ oh, and aside from sniffing packets & reconstruction hashes of wireless network 
 
 ---
 
-### what is a pwnagotchi "image"
+## what is a pwnagotchi "image"
 the pwnagotchi "images" themselves are just a custom set of programs built on top of Raspberry Pi OS, which itself is a debian-based linux operating system. the pwnagotchi image leverages tools designed for interacting with wireless signals—like `bettercap`, `libpcap` and `aircrack-ng`—and can be built from source and tweaked if desired ([detailed here](https://github.com/jayofelony/pwnagotchi/wiki/Step-1-Installation-for-other-boards)). the image is pre-bundled to be flashed to the SD card inserted into the raspberry pi by a tool like [Raspberry Pi Imager](https://www.raspberrypi.com/software/), or [Balena Etcher](https://etcher.balena.io/).
 
 ---
-# clarification on the various images/wikis etc.
+#### clarification on the various images/wikis etc.
 now this can be an area of confusion, so i'll provide a bit of background on the various guides/wikis/images that exist within the pwnagotchi project-sphere. 
 
 since the pwnagotchi project has been around for a good long while now, with maintainers of images & wikis coming and going, there have been various forks created as both the hardware (from Rasp. Pi Zero to Zero 2W) and software itself has evolved.
@@ -216,7 +216,7 @@ Combines a strong base wordlist (e.g. `rockyou` or one from above) with common p
 	- https://weakpass.com/wordlists/dictionary_private.dic
 	- https://weakpass.com/wordlists/super_wpa
 #### Resources on WPA1/WPA2 specific cracking techniques
-- Target networks - and [use router keyspace wordlists!](https://github.com/3mrgnc3/RouterKeySpaceWordlists/blob/master/README.md) !
+- Target networks - and [use router keyspace wordlists!](https://github.com/3mrgnc3/RouterKeySpaceWordlists/blob/master/README.md)!
 - [Thread on WPA-specific cracking](https://hashcat.net/forum/thread-4431.html)
 - [Combining wordlists guide](https://eins.li/posts/make-your-own-wordlist/)
 - [How cracking WPA2 is ... kinda hard](https://www.reddit.com/r/HowToHack/comments/d1v9k1/wpa_wpa_2_psk_best_practices_hashcat_or_aircrack/)
