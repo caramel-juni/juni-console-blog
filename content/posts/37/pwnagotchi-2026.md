@@ -4,7 +4,7 @@ date: 2026-04-12
 description: "building your very own wifi pwning pet because you parents wouldn't let you get a furry friend"
 toc: true
 math: true
-draft: false
+draft: true
 categories: 
 tags:
 ---
