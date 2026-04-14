@@ -42,13 +42,7 @@ body {
     background-color: var(--background-color)
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.logo {
+h1, h2, h3, h4, h5, h6, .logo {
     line-height: var(--global-line-height)
 }
 
@@ -70,87 +64,65 @@ em {
     color: var(--font-color)
 }
 
-blockquote,
-code,
-em,
-strong {
+blockquote, code, em, strong {
     line-height: var(--global-line-height)
 }
 
-blockquote,
-code,
-footer,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-header,
-li,
-ol,
-p,
-section,
-ul,
-.logo {
+blockquote, code, footer,
+h1, h2, h3, h4, h5, h6,
+header, li, ol, p, section, ul, .logo {
     float: none;
     margin: 0;
     padding: 0
 }
 
-blockquote,
-h1,
-ol,
-p,
-ul,
-.logo {
+blockquote, h1, h2, ol, p, ul, .logo {
     margin-top: calc(var(--global-space) * 2);
     margin-bottom: calc(var(--global-space) * 2)
 }
 
-h1,
-.logo {
+h1, h2, .logo {
     position: relative;
     display: inline-block;
     display: table-cell;
-    padding: calc(var(--global-space) * 2)0;
+    padding: calc(var(--global-space) * 2) 0;
     margin: 0;
     overflow: hidden;
     font-weight: 600
 }
 
-h1::after {
-    content: "====================================================================================================";
+h1::after, h2::after {
     position: absolute;
     bottom: 5px;
     left: 0;
     display: var(--display-h1-decoration)
 }
 
-h1+*,
-.logo+* {
+h1::after {
+    content: "===================================================================================================="
+}
+
+h2::after {
+    content: "----------------------------------------------------------------------------------------------------"
+}
+
+h1+*, h2+*, .logo+* {
     margin-top: 0
 }
 
-h2,
-h3,
-h4,
-h5,
-h6 {
+h3, h4, h5, h6 {
     position: relative;
     margin-bottom: var(--global-line-height);
     font-weight: 600
 }
 
-/* Fixed blockquote context using a repeating background image of an SVG of the > character*/
 blockquote {
     position: relative;
     padding-left: calc(var(--global-space) * 2);
     background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><text y='1em' font-family='monospace' font-size='15px' fill='%239ca2ab'>></text></svg>");
     background-repeat: repeat-y;
-    background-size: 1ch var(--global-line-height);
+    background-size: 1ch var(--global-line-height)
 }
-
 
 code {
     font-weight: inherit;
@@ -158,14 +130,12 @@ code {
     font-family: var(--mono-font-stack)
 }
 
-code::after,
-code::before {
+code::after, code::before {
     content: "`";
     display: inline
 }
 
-pre code::after,
-pre code::before {
+pre code::after, pre code::before {
     content: ""
 }
 
@@ -193,26 +163,48 @@ pre code {
 }
 
 .terminal h1 {
-    font-size: var(--global-font-size);
+    font-size: 1.3em;
     font-style: normal;
     font-family: var(--font-stack);
     color: var(--title-font-color)
 }
 
+.terminal h2 {
+    font-size: 1.2em;
+    font-style: normal;
+    font-family: var(--font-stack);
+    color: var(--title-font-color);
+}
 
-.terminal blockquote,
-.terminal h2,
-.terminal h3,
-.terminal h4,
-.terminal h5,
-.terminal h6,
-.terminal strong {
-    font-size: var(--global-font-size);
+.terminal h3 {
+    font-size: 1.1em;
+    color: var(--title-font-color);
+    margin-top: calc(var(--global-space) * 2);
+    margin-bottom: var(--global-line-height)
+}
+
+.terminal h3::before {
+    content: ">> ";
+    color: var(--font-bold-color)
+}
+
+.terminal h4 {
+    font-size: 1em;
+    color: var(--title-font-color);
+    margin-top: calc(var(--global-space) * 2);
+    margin-bottom: var(--global-line-height)
+}
+
+.terminal h4::before {
+    content: "> ";
+    color: var(--font-bold-color)
+}
+
+.terminal blockquote, .terminal strong {
     font-style: normal;
     font-family: var(--font-stack);
     color: var(--font-bold-color)
 }
-
 
 .terminal .logo {
     font-size: var(--terminal-logo-size);
@@ -224,7 +216,7 @@ pre code {
 .terminal code {
     font-size: var(--global-font-size);
     font-style: normal;
-    color: var(--code-font-color);
+    color: var(--code-font-color)
 }
 
 .terminal-prompt {
@@ -247,6 +239,12 @@ pre code {
     width: 3px;
     bottom: -2px;
     position: relative
+}
+
+@keyframes cursor {
+    0%   { opacity: 0 }
+    50%  { opacity: 1 }
+    100% { opacity: 0 }
 }
 
 @keyframes cursor {
