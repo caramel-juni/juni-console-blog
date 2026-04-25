@@ -1,6 +1,7 @@
 {{ define "main" }}
-<h1>{{ .Page.Title }}</h1>
-<br/>
+<div class="page-title-wrap">
+    <h1 class="page-title">{{ .Page.Title }}</h1>
+</div>
 {{ .Content }}
 
 <div class="posts-list">

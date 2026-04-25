@@ -42,8 +42,8 @@
     --error-color: #d20962;
     --progress-bar-background: #727578;
     --progress-bar-fill: #151515;
-    --code-bg-color: #535353;
-    --code-font-color: #ffffff;
+    --code-bg-color: #e8e4b5;
+    --code-font-color: #3f1c1c;
     --block-background-color: #151515;
     --title-font-color: #ca3386;
 
@@ -58,6 +58,59 @@
         --page-width: 70em;
     }
 }
+
+/* ── Centred header layout ── */
+.terminal-nav {
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.terminal-logo {
+    text-align: center;
+}
+
+.terminal-logo .logo {
+    font-size: 1.2em;   /* slightly bigger title */
+    justify-content: center;
+}
+
+/* Nav links sit centred below title */
+.terminal-menu {
+    text-align: center;
+    margin-top: 4px;
+}
+
+.terminal-menu ul {
+    justify-content: center !important;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    margin-top: 0;
+    gap: 0;
+}
+
+.terminal-menu li {
+    margin: 0 1em !important;
+}
+
+/* Nav link colour: secondary/muted, distinct from teal title */
+.terminal-menu li a:not(.btn) {
+    color: var(--secondary-color);
+    opacity: 0.85;
+}
+
+.terminal-menu li a:not(.btn):hover {
+    color: var(--primary-color);
+    background: transparent;
+    opacity: 1;
+}
+
+/* Keep theme toggle inline with the title row */
+#theme-toggle {
+    display: inline-flex;
+    align-items: center;
+}
+
 
 /* Removes backticks from code blocks */
 code::before,

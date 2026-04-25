@@ -23,10 +23,11 @@ then, my friend sent my a tangentially-related but also [brilliant writeup on ex
 
 As i'd also watched videos like [How a Terrible Game Cracked the 3DS's Security - Early Days of 3DS Hacking](https://www.youtube.com/watch?v=ImR-TdDAIJE&t=54s) (a game that i had and played once or twice, funnily enough!), i was intrigued by how the exploits worked under the hood, 
 
-thus, i worked through the "[LazyPixie](https://github.com/TuxSH/LazyPixie)" `README.md` + went back and forth with some AI-assisted feedback to fill in any gaps & clarifications in my understanding of the source material (i'm a bit slow sometimes), and have written it up below both for posterity, and to maybe help others understand/get into the scene!
+thus, i worked through the ["LazyPixie"](https://github.com/TuxSH/LazyPixie) `README.md` + went back and forth with some AI-assisted feedback to fill in any gaps & clarifications in my understanding of the source material (i'm a bit slow sometimes), and have written it up below both for posterity, and to maybe help others understand/get into the scene!
 
 <div style="text-align: center"><img src="/posts/36/attachments/3ds-me.gif" style="width:500px"></div>
-^^ *me while trying to understand this and probably still being only like 30% of the way there*
+
+^^ *me trying to understand this and probably still being only like 30% of the way there*
 
 ---
 
@@ -81,3 +82,9 @@ just make sure to send a small prayer to those hardworking RE's in the [3DS Brew
 **they walked so we could.. *sit down and play*.**
 
 <div style="text-align: center"><img src="/posts/36/attachments/3ds-haxor.gif" style="width:600px"></div>
+
+# Supporting Resources:
+- [DEF CON 26 - smea - Jailbreaking the 3DS Through 7 Years of Hardening](https://youtu.be/WNUsKx2euFw)
+- [LazyPixie Exploit](https://github.com/TuxSH/LazyPixie)
+- [3DS Homebrew & Modding Wiki](https://www.3dbrew.org/wiki/Main_Pag)
+- [How a Terrible Game Cracked the 3DS's Security - Early Days of 3DS Hacking](https://youtu.be/WNUsKx2euFw)

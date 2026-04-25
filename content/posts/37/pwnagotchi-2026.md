@@ -12,6 +12,7 @@ tags:
 
 has ***this*** ever happened to ***you?***
 
+
 have your parents, who you still live with due to you being (a) the resident tech support terrified of the idea of becoming **remote** tech support and (b) crippled by the shithole that is the housing market where you live, persistently refused your pleas for a pet, despite your begging and pleading and promises of "*i'll get my mental health together and manage to keep myself out of hospital if i only had a furry friend to cuddle up with when things get rough?*"
 ...no? just me?
 
