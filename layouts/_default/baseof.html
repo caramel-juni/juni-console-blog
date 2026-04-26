@@ -37,7 +37,8 @@
                 <div class="logo terminal-prompt">
                     <a href="{{ .Site.BaseURL }}" class="no-style {{ with .Site.Params.TitleCutting }}site-name{{ end }}">
                     {{ .Site.Title }}
-                    </a><span class="breadcrumb">:~#
+                    </a>
+                    <span class="breadcrumb">&nbsp;&nbsp;~❯&nbsp;/
                     {{- $url := .RelPermalink -}}
                     {{- $scratch := newScratch -}}
                     {{- $scratch.Set "path" "" -}}

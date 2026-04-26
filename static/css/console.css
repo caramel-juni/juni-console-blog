@@ -21,6 +21,7 @@
     --page-width: 60em;
     --font-color: #e8e9ed;
     --invert-font-color: #222225;
+    --nav-color: #53cbcf;
     --secondary-color: #a3abba;
     --tertiary-color: #a3abba;
     --primary-color: #62c4ff;
@@ -35,12 +36,13 @@
 
 /* ☀️ Light mode — activated via <html data-theme="light"> */
 :root[data-theme="light"] {
-    --background-color: #fff;
+    --background-color: #f3e3c4;
     --page-width: 60em;
     --font-color: #151515;
     --invert-font-color: #fff;
     --primary-color: #1a95e0;
     --secondary-color: #727578;
+    --nav-color: #337575;
     --error-color: #d20962;
     --progress-bar-background: #727578;
     --progress-bar-fill: #151515;
@@ -48,6 +50,20 @@
     --code-font-color: #3f1c1c;
     --block-background-color: #151515;
     --title-font-color: #ca3386;
+}
+
+/* Nav link hover — loops endlessly like old-school selected text */
+@keyframes nav-blink {
+    0%   { opacity: 1; }
+    50%  { opacity: 0.5;}
+    100% { opacity: 1; }
+}
+ 
+/* Nav link click — brief scale-up then back to normal */
+@keyframes nav-click {
+    0%   { transform: scale(1); }
+    40%  { transform: scale(1.05); }
+    100% { transform: scale(1); }
 }
 
 
@@ -64,12 +80,11 @@
 
 /* Centre the logo/title block */
 .terminal-logo {
-    text-align: center;
-}
+    text-align: center;}
 
 /* Slightly larger title, centred.
    The logo div holds both the site title link and the
-   breadcrumb span — we keep it as inline-flex so the
+   breadcrumb span — keep it as inline-flex so the
    cursor pseudo-element on .terminal-prompt stays attached. */
 .terminal-logo .logo {
     font-size: 1.2em;
@@ -97,19 +112,38 @@
 
 .terminal-menu li {
     margin: 0 1em !important;
+    font-weight: 700;
+    font-size: 1.05em;
 }
 
-/* Nav link colour: muted secondary, distinct from teal title */
+/* Nav links — always underlined, blink on hover, scale on click */
 .terminal-menu li a:not(.btn) {
-    color: var(--secondary-color);
+    color: var(--nav-color);
     opacity: 0.85;
+    text-decoration: none;
+    border-bottom: 2px solid var(--nav-color);
+    padding-bottom: 2px;
+    display: inline-block;
+    /* transition only applies when NOT animating */
+    transition: filter 0.1s ease;
 }
-
+ 
+/* Hover — endless blink loop, saturate to intensify colour */
 .terminal-menu li a:not(.btn):hover {
-    color: var(--primary-color);
+    color: var(--nav-color);
     background: transparent;
     opacity: 1;
+    filter: saturate(2) brightness(1.15);
+    animation: nav-blink 0.6s ease infinite;
 }
+ 
+/* Click — scale up briefly, overrides hover animation */
+.terminal-menu li a:not(.btn):active {
+    animation: nav-click 0.3s ease 1;
+    filter: saturate(2) brightness(1.2);
+    opacity: 1;
+}
+
 
 /* Theme toggle button sits inline in the title row */
 #theme-toggle {
@@ -122,6 +156,11 @@
 .breadcrumb {
     display: inline;
     white-space: nowrap;
+}
+
+/* Single post page title — centred */
+h1.post-title {
+    text-align: center;
 }
 
 
@@ -137,7 +176,7 @@
     -webkit-animation: cursor 1s infinite;
     animation: cursor 1s infinite;
     width: 10px;
-    margin-left: 0;
+    margin-left: .3em;
     width: 10px;
     bottom: 0px;
     position: relative;
@@ -160,12 +199,18 @@
     border-bottom: 3px double var(--primary-color);
     padding-bottom: 1px;
     border-width: 6px;
+    text-align: center;
 }
 
 .post h1 a:hover {
     background: transparent;
     color: var(--primary-color);
     border-bottom-color: var(--primary-color);
+}
+
+.datetime {
+    padding: 4px; 
+    font-weight: bold;
 }
 
 
@@ -236,6 +281,8 @@ html {
 }
 
 a:hover {
+    filter: saturate(2) brightness(1.15);
+    background: transparent;
     cursor: url('/files/cursors/cat_hover.gif'), auto;
 }
 
@@ -342,6 +389,7 @@ figure {
     display: grid;
     grid-gap: 1em;
     grid-template-rows: auto;
+    object-fit: cover;
     grid-template-columns: repeat(
         auto-fit,
         minmax(calc(var(--page-width) / 4), 1fr)
@@ -383,7 +431,8 @@ figure {
     left: 0px;
     width: 130px;
     z-index: 400;
-    padding-top: 0;
+    padding-top: .4em;
+    font-weight: bold;
 }
 
 
@@ -443,7 +492,7 @@ figure {
         border-radius: 0;
         display: inline-block;
         height: 1em;
-        margin-left: 0;
+        margin-left: .3em;
         width: 10px;
         bottom: 0px;
         position: relative;
@@ -472,16 +521,45 @@ figure {
         margin-right: 30px;
     }
 
-    /* Remove date column indent — no room on mobile */
+    /* Posts list — date inline with title on mobile */
     .posts-list {
         position: relative;
         padding-left: 0;
         top: 0;
     }
 
+    .post {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+    }
+
+    /* Row containing date + title — wraps on word boundaries */
+    .post-header {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: center;
+        gap: 0.6em;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    /* Date — slightly smaller than title, won't break mid-word */
+    .posts-list .date {
+        display: inline-block;
+        position: static;
+        width: auto;
+        font-size: 0.9em;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
     .post h1,
     .post h2 {
         padding-top: 0;
+        margin: 0;
+        text-align: center;
     }
 
     /* Suppress ==== overflow on mobile post list.
@@ -495,11 +573,6 @@ figure {
 
     .posts-list h1::after,
     .posts-list h2::after {
-        display: none;
-    }
-
-    /* Hide date column on mobile */
-    .posts-list .date {
         display: none;
     }
 

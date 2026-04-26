@@ -1,6 +1,6 @@
 baseURL = "/"
 languageCode = "en-au"
-title = "juni's caramel café ٩(◕‿◕｡)۶"
+title = "*☆｡ﾟjuni's caramel tech café･ﾟ*☆"
 theme = "hugo-theme-console"
 ignoreFiles = ["/console-blog/content/posts/future-posts/*", "/console-blog/content/template.md"]
 enableRobotsTXT = true
