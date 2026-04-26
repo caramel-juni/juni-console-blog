@@ -1,0 +1,18 @@
+services:
+  explo:
+    container_name: explo
+    environment:
+      - TZ=COUNTRY/CITY # change to your timezone
+      - EXECUTE_ON_START=false
+      - WEEKLY_EXPLORATION_SCHEDULE=15 00 * * 2
+      - WEEKLY_EXPLORATION_FLAGS=
+      - WEEKLY_JAMS_SCHEDULE=30 00 * * 1
+      - WEEKLY_JAMS_FLAGS=--playlist=weekly-jams --download-mode=normal
+      - DAILY_JAMS_SCHEDULE=15 01 * * *
+      - DAILY_JAMS_FLAGS=--playlist=daily-jams --download-mode=skip
+    image: ghcr.io/lumepart/explo:latest
+    restart: unless-stopped
+    volumes:
+      - /mnt/tank/configs/explo/.env:/opt/explo/.env # main explo config
+      - /mnt/tank/data/media/music/00-EXPLO:/data/ # explo discovery folder
+      - /mnt/tank/configs/explo/cookies.txt:/opt/explo/cookies.txt # cookies for yt-dlp client

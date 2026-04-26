@@ -1,7 +1,9 @@
 +++
-title = "photos"
+title = "photos:"
 type = "gallery"
 +++
+
+</br>
 
 **i, and my lovely friends, occasionally partake in the act of capturing moments from this world with the magic of photochemical matter (this collection being of the 35mm form).**
 

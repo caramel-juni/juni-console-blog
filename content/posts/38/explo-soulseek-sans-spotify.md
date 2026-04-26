@@ -1,5 +1,5 @@
 ---
-title: setting up explo to "discover" weekly - without spotify!
+title: setting up explo & soulseek to "discover" weekly - without spotify!
 date: 2026-04-22
 description: ""
 toc: true
@@ -7,14 +7,79 @@ math: true
 draft: true
 categories:
 tags:
+  - self-hosted
+  - trueNAS
+  - slskd
+  - explo
+  - yt-dlp
+  - music
 ---
 
 <img src="https://juniblog.goatcounter.com/count?p=/POST-TITLE/" style="display: none">
 ^^ add post title above for tracking
 
-it all began with a brilliant video released by the venerable [Dammit Jeff](https://www.youtube.com/@DammitJeff/videos), [How to ACTUALLY quit spotify](https://youtu.be/3d2cATPt8Nk)! A fairly good introduction into the weird and wonderfully rewarding world of reclaiming ownership over our digital media, but much of what i already knew... until ***[the last 6 minutes](https://youtu.be/3d2cATPt8Nk?si=NkAIzURtSrVFasvG&t=1845)***.
+it all began with a brilliant video released by the venerable [Dammit Jeff](https://www.youtube.com/@DammitJeff/videos) - [How to ACTUALLY quit spotify](https://youtu.be/3d2cATPt8Nk)! A fairly engaging introduction into the weird and wonderfully rewarding world of reclaiming ownership over our digital media, but much of what i already knew... until ***[the last 6 minutes](https://youtu.be/3d2cATPt8Nk?si=NkAIzURtSrVFasvG&t=1845)***.
 
-**Discoverability.**
+#### Discoverability.
+
+the golden bullet to the self-hosting revolution. the word that plants the first seed of doubt into the hearts of all those who self host, well, *anything*. because streaming services and platforms have slowly become not only the dominant way to *engage with* media, but also to *discover* what is, and has, been made. 
+
+their business model is an insidiously two-pronged approach; not only controlling access to what you can *watch*, but slowly, what you even **know *exists*.**
+
+and, at risk of going down a rabbit hole utterly plastered in tinfoil, **that's a scary combination to place in the hands of several large, for-profit companies** that prove to us time and time again that their respect for their customers is akin to that issued to the mighty sea cucumber *(the unsung hero of our ocean floors.)*
+
+**so.** what i propose, and have put together is **far from perfect.** it IS **a lot more effort,** at least to get set up. but there's something akin to tending to a garden with all this for me, and above all, i've enjoyed being able to take back some control, cast my vote (through abstinence) for directional and institutional change within these monolithic media moguls. and spend the money that used to "stream" straight into the pockets of the fat cats at Netflix, Spotify and co. with the several dozen subscriptions I had, into instead **directly supporting the artists I love.** 
+concerts, merch, festivals and vinyls. ***god***, seeing `Tool` live and getting told to, *"shove our phones up our asses for the furation of the gig—and who knows, you might enjoy it, and remember it!"*
+
+**money can't buy that.**
+
+---
+# my setup:
+my (opinionated) picks below!
+## music server:
+- [Navidrome](https://www.navidrome.org/) | **Hosted:** on my TrueNAS Server, [TrueNAS Store app](https://apps.truenas.com/catalog/navidrome/) (although also achievable via a docker-compose `YAML`, which I'd do next time)
+  *Manages my music library (collection of folders with artists & playlists, needs a good cleaning & organising but 80% of the way there). Exposes it for streaming via other clients via the [Subsonic API](https://www.subsonic.org/pages/index.jsp).* 
+
+## music client/app:
+- **Mobile:** [Symfonium](https://www.symfonium.app/) (Android-only) | **7-day free trial, then `$7` one-time purchase**
+- **Web/Desktop:** [Feishin](https://github.com/jeffvli/feishin) | **Free**
+*Simply provide your Navidrome credentials for these apps to log in with, and stream your library straight from Navidrome!*
+
+## music discovery:
+***"Discover Weekly" for self-hosted music systems***
+- [explo](https://github.com/LumePart/Explo/) | **Hosted:** on my TrueNAS Server, custom app (via docker-compose `YAML`: [my `.yaml` deployment file here](/files/docker-compose/explo.yaml)) 
+
+### download clients:
+- [qbittorrent](https://www.qbittorrent.org/) | **Hosted:** on my TrueNAS Server, [TrueNAS Store app](https://apps.truenas.com/catalog/navidrome/)
+- [yt-dlp](https://github.com/yt-dlp/yt-dlp) | **Hosted:** inside the [explo](https://github.com/LumePart/Explo/) docker app, as part of the image downloaded.
+- [slskd](https://github.com/slskd/slskd/) (downloader for [Soulseek](https://www.slsknet.org/) P2P music file sharing network) | **Hosted:** on my TrueNAS Server, custom app (via docker-compose `YAML`: [my `.yaml` deployment file here](/files/docker-compose/slskd.yaml))  
+### download sources:
+**i'll be straight here** - whilst i *do* purchase & own media, the *vast* majority of my library has come from "various sources" (be it youtube downloads, "other" download sites, media ripping, etc.). this is a nuanced and complex issue, **discovering/sampling/engaging with art** and the question of **payment**, but one that i believe ultimately descends from the larger problem of media decentralisation, distribution & preservation strategies. with many artists having to compromise their values & creativity to even get their music *out there*—and partnering with lecherous contract-makers & labels to then often be treated like trash and their soulful work taken for companies/record labels/streaming services to rent out to people as they please and profit off—i don't want to be a part in supporting that exploitative process. 
+
+**but i also want to support the artists i do end up caring about.** 
+
+we do not always know whether we will *like* what we purchase, and there is just **so much music out there** that making the argument to purchase it all *before knowing* what you actually vibe with, is a bit of a ridiculous one. and there is no "perfect" answer to this, while we operate within the current music production system.
+
+so, well, **fuck that.** the system sucks, so **build a new one that doesn't hurt others, based on your own values & what you are/aren't willing to compromise**
+
+**reclaim and own your media**. discover NEW media by SAMPLING, EXPLORING and EMBRACING the impossibly large and ever-expanding world of art. and ***then,*** with your newfound liberation and heavier pockets, **MOST IMPORTANTLY**: ***go and support the artists you care about where and if you are able.*** the sad reality is that not everyone has the funds to listen to or build a music library akin to what spotify offers (*[chuckles](https://cybernews.com/security/shadow-library-releases-music-scraped-from-spotify/)*) through entirely legal means (or, if you do, you're most likely not losing sleep at night about any of this "ethical" shit anyways). and so in my eyes, the ***"try before you then buy/support what you can"*** model is my best attempt at a solution to this messy system. so at least, i know **my money** is going **directly to the people who make art that speaks to me**, and not some intermediary who siphons off 80%, dolls out the remaining pennies to the intended recipients, and then decides to remove my access to it all at the change of the wind. 
+#### ways to support artists directly:
+- **[bandcamp](https://bandcamp.com/)**
+- buying **merch**!
+- buying **physical releases** (vinyls, CDs, etc. - often come with stunning supplementary art, and**their own digital downloads** to add to your library when on the go!)
+- going to **concerts/gigs**
+- **spreading the word**
+- **sharing their music** with others
+
+#### so... the download clients?
+these sites are **always changing** as things go offline/up/down, so for the most up to date places - go check ***[the bible, here](https://www.reddit.com/r/Piracy/wiki/megathread/music/)***. and keep it quiet, and for those who *actually* want to seek it out. don't go shouting them from the rooftops (i consider my blog a fairly low garden shed, if anything, so i think this is fine). my go-to's are:
+- **direct filesharing from other audiophiles on the soulseek network** (set up slskd download client, register an account via the desktop app, and then supply those credentials to any slskd download client you set up to access the network. and in the good spirit of it all, for god's sake - **share your music library as you do so.**)
+- lucinda.to
+- squid.wtf
+- torrentleech (invite-only)
+- again, [check the bible, here](https://www.reddit.com/r/Piracy/wiki/megathread/music/). 
+
+
 
 
 - [ ] install & setup [explo](https://github.com/LumePart/Explo) on truenas with yt-dlp

@@ -1,7 +1,9 @@
 +++
-title = "caramel slice: a tribute"
+title = "caramel slice: a tribute."
 type = "gallery"
 +++
+
+</br>
 
 <img src="https://juniblog.goatcounter.com/count?p=/photos/caramel-slice/" style="display: none">
 
