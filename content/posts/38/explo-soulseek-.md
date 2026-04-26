@@ -199,30 +199,44 @@ Here is the corrected "Pro" workflow for TrueNAS:
 
 ### 1. Step One: Deploy `slskd`
 
+## resources:
+- https://github.com/slskd/slskd/blob/master/docs/docker.md
+
 In TrueNAS SCALE, create a new Custom App for `slskd`.
-
 **Docker Compose for slskd:**
-
 YAML
 
 ```
 services:
   slskd:
-    image: slskd/slskd:latest
     container_name: slskd
     environment:
+      - PUID=568
+      - PGID=568
       - SLSKD_REMOTE_CONFIGURATION=true
-      - SLSKD_HTTP_PORT=5030
-    volumes:
-      - /mnt/tank/configs/slskd:/config
-      - /mnt/tank/data/media/music/00-EXPLO-INBOX:/downloads
+      - SLSKD_USERNAME=your_soulseek_username
+      - SLSKD_PASSWORD=your_soulseek_password
+      - SLSKD_WEB_AUTHENTICATION_USERNAME=your_webui_username
+      - SLSKD_WEB_AUTHENTICATION_PASSWORD=your_webui_password
+      - SLSKD_SHARED_DIR=/music        # shares your entire library
+      - SLSKD_DOWNLOADS_DIR=/music/00-EXPLO  # downloads go into the subfolder
+    image: slskd/slskd:latest
     ports:
-      - 5030:5030 # Web UI
-      - 50300:50300 # Soulseek Port (Optional: Forward this on your router)
+      - '5030:5030' # webui HTTP
+      - '5031:5031' # webui HTTPS
+      - '50300:50300' # sharing port
+    restart: always
+    volumes:
+      - /mnt/rei/configs/slskd:/app
+      - /mnt/tank/data/media/music:/music:rw  # entire library, rw so 00-EXPLO i
 ```
 
-- **Action:** Go to `http://[TrueNAS-IP]:5030`, create your account/login, and go to **Settings > API** to generate your **API Key**.
-    
+- **Go to `http://[TrueNAS-IP]:5030`, login using your credentials in the ENV ocker compose file, and go to **Settings - API** to generate your **API Key**.
+
+### How slskd works:
+- **Shared dir** — what you _expose to others_ on the Soulseek network to browse and download from you
+- **Downloads dir** — where files others send _to you_ get saved, and also where your own downloads land
+
 
 ---
 
