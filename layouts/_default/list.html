@@ -6,10 +6,12 @@
 {{ range sort .Data.Pages "Date" "desc" }}
     {{ if not .Params.private }}
         <div class="post" style="padding-left: 20px; padding-bottom: 5px">
+            <div class="post-header">
                 <div class="date">{{ .PublishDate.Format "Jan. 2, 2006" }}</div>    
                 <h1><a href="{{ .Permalink }}" title="{{ .Title }}">{{ .Title }}</a></h1>
                 <br>
-                {{ .Summary }}
+            </div>
+            {{ .Summary }}
         </div>
     {{ end }}
 {{ end }}
