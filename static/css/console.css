@@ -1,3 +1,6 @@
+/* ============================================================
+   THEME VARIABLES — base defaults (no theme active yet)
+   ============================================================ */
 :root {
     --global-font-size: 16px;
     --global-font-color: #444;
@@ -28,7 +31,6 @@
     --code-font-color: #ffffff;
     --block-background-color: #151515;
     --title-font-color: #13b2a5;
-
 }
 
 /* ☀️ Light mode — activated via <html data-theme="light"> */
@@ -46,41 +48,45 @@
     --code-font-color: #3f1c1c;
     --block-background-color: #151515;
     --title-font-color: #ca3386;
-
-
 }
 
-@media only screen and (max-width: 850px) {
-    :root {
-        --global-font-size: 14px;
-        --global-font-color: #444;
-        --global-line-height: 1.6em;
-        --page-width: 70em;
-    }
-}
 
-/* ── Centred header layout ── */
+/* ============================================================
+   HEADER — centred nav layout (desktop + mobile base)
+   ============================================================ */
+
+/* Flex row: centres title + toggle horizontally */
 .terminal-nav {
     justify-content: center;
     align-items: center;
     gap: 12px;
 }
 
+/* Centre the logo/title block */
 .terminal-logo {
     text-align: center;
 }
 
+/* Slightly larger title, centred.
+   The logo div holds both the site title link and the
+   breadcrumb span — we keep it as inline-flex so the
+   cursor pseudo-element on .terminal-prompt stays attached. */
 .terminal-logo .logo {
-    font-size: 1.2em;   /* slightly bigger title */
+    font-size: 1.2em;
     justify-content: center;
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    white-space: normal;
 }
 
-/* Nav links sit centred below title */
+/* Nav sits centred below title */
 .terminal-menu {
     text-align: center;
     margin-top: 4px;
 }
 
+/* Force nav links into a centred row */
 .terminal-menu ul {
     justify-content: center !important;
     flex-direction: row !important;
@@ -93,7 +99,7 @@
     margin: 0 1em !important;
 }
 
-/* Nav link colour: secondary/muted, distinct from teal title */
+/* Nav link colour: muted secondary, distinct from teal title */
 .terminal-menu li a:not(.btn) {
     color: var(--secondary-color);
     opacity: 0.85;
@@ -105,32 +111,103 @@
     opacity: 1;
 }
 
-/* Keep theme toggle inline with the title row */
+/* Theme toggle button sits inline in the title row */
 #theme-toggle {
     display: inline-flex;
     align-items: center;
 }
 
+/* Breadcrumb (:~#path/) — inline by default on all sizes.
+   Wraps onto a new line on mobile via the media query below. */
+.breadcrumb {
+    display: inline;
+    white-space: nowrap;
+}
 
-/* Removes backticks from code blocks */
+
+/* ============================================================
+   TERMINAL PROMPT — blinking cursor
+   The ::after cursor lives on .terminal-prompt (the .logo div).
+   We suppress it on mobile and re-attach it to .breadcrumb
+   so it stays glued to the path text.
+   ============================================================ */
+
+/* Animate the cursor block on desktop */
+.terminal-prompt::after {
+    -webkit-animation: cursor 1s infinite;
+    animation: cursor 1s infinite;
+    width: 10px;
+    margin-left: 0;
+    width: 10px;
+    bottom: 0px;
+    position: relative;
+}
+
+/* Remove default ">" prefix added by the theme */
+.terminal-prompt::before {
+    content: none;
+}
+
+
+/* ============================================================
+   POST LIST TITLES — double underline
+   Replaces the ==== pseudo-content which overflows on mobile.
+   Targets only h1s inside .post cards (the list view),
+   not page-level h1s like "posts" or "about".
+   ============================================================ */
+.post h1 a {
+    text-decoration: none;
+    border-bottom: 3px double var(--title-font-color);
+    padding-bottom: 2px;
+}
+
+.post h1 a:hover {
+    background: transparent;
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+
+/* ============================================================
+   CODE BLOCKS
+   ============================================================ */
+
+/* Remove auto-inserted backtick characters around inline code */
 code::before,
 code::after {
-  content: none;
+    content: none;
 }
 
-/* Fixes bold/italic font conflicts */
 
+/* ============================================================
+   TYPOGRAPHY FIXES
+   ============================================================ */
+
+/* Prevent bold-italic nesting from breaking italic style */
 .terminal em strong,
 .terminal strong em {
-  font-style: italic !important;
+    font-style: italic !important;
 }
 
+/* Sidebar headings — no caps or tracking */
 .sidebar-heading {
     text-transform: none;
     letter-spacing: 0;
     font-weight: 400;
 }
 
+strong {
+    font-weight: bold;
+}
+
+.logo {
+    font-weight: normal;
+}
+
+
+/* ============================================================
+   MASONRY / CARD COMPONENTS
+   ============================================================ */
 .box-masonry .box-masonry-image {
     background: #fff;
 }
@@ -144,18 +221,22 @@ code::after {
     font-family: var(--font-stack);
 }
 
-/* cat gif cursor */
 
+/* ============================================================
+   CURSORS — custom cat gif
+   ============================================================ */
 html {
     cursor: url('/files/cursors/cat.gif'), auto;
-
 }
 
 a:hover {
-    /* change cat gif cursor for hover */
     cursor: url('/files/cursors/cat_hover.gif'), auto;
 }
 
+
+/* ============================================================
+   BASE BODY & TYPOGRAPHY
+   ============================================================ */
 body {
     font-family: var(--font-stack);
     font-size: var(--global-font-size);
@@ -163,27 +244,25 @@ body {
     margin-bottom: 75px;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
     font-family: var(--font-stack);
     clear: both;
     font-size: var(--global-h1-size);
-
 }
 
+/* Default h1 bottom margin */
 h1 {
     margin-bottom: 150px;
+}
 
+/* Page-level title (e.g. "posts", "about") — centred, tighter spacing */
+h1.page-title {
+    display: block;
+    text-align: center;
+    padding-top: 0;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .content-column-content p,
@@ -209,9 +288,9 @@ h1 {
     color: #aaa;
 }
 
+/* Social icon links */
 p.social a {
     margin: 0 0 10px 0;
-    color: #fff;
     display: inline-block;
     width: 30px;
     height: 30px;
@@ -230,14 +309,10 @@ p.social a {
     text-decoration: underline;
 }
 
-strong {
-    font-weight: bold;
-}
 
-.logo {
-    font-weight: normal;
-}
-
+/* ============================================================
+   LAYOUT — figures, footer, image grid
+   ============================================================ */
 .terminal-menu li {
     margin-right: 30px;
 }
@@ -259,8 +334,6 @@ figure {
 
 .image-grid {
     display: grid;
-    grid-template-rows: auto;
-    display: grid;
     grid-gap: 1em;
     grid-template-rows: auto;
     grid-template-columns: repeat(
@@ -269,27 +342,27 @@ figure {
     );
 }
 
-.terminal-prompt::after {
-    -webkit-animation: cursor 1s infinite;
-    animation: cursor 1s infinite;
-    width: 10px;
-}
 
-.terminal-prompt::before {
-    content: none;
-}
-
+/* ============================================================
+   GALLERY
+   ============================================================ */
 .gallery-image {
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
+
+/* ============================================================
+   POSTS LIST — desktop layout
+   Left-indented with absolutely positioned date column
+   ============================================================ */
 .posts-list {
     position: relative;
     padding-left: 130px;
     top: 0;
 }
 
+/* Post card h1/h2 — no extra padding, tight margin */
 .post h1,
 .post h2 {
     padding-top: 0;
@@ -297,6 +370,7 @@ figure {
     margin-bottom: 5px;
 }
 
+/* Date column — pinned to left of posts-list */
 .posts-list .date {
     display: inline-block;
     position: absolute;
@@ -306,29 +380,79 @@ figure {
     padding-top: 0;
 }
 
+
+/* ============================================================
+   MOBILE — max-width 850px
+   ============================================================ */
 @media only screen and (max-width: 850px) {
+
+    /* Truncate long site names */
     .site-name {
         width: 2ch;
         overflow: hidden;
         display: inline-block;
     }
 
+    /* Stack nav elements, keep centred */
     .terminal-nav {
-        align-items: flex-start;
-        flex-direction: column;
-        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
     }
 
-    .terminal-menu ul {
-        align-items: flex-start;
-        display: flex;
-        flex-direction: row;
-        justify-content: left;
-        margin-top: 0;
+    /* Allow title text to wrap rather than overflow */
+    .terminal-prompt {
+        white-space: normal;
+        word-break: break-all;
     }
 
-    .terminal-menu li {
-        margin-right: 20px;
+    /* Hide the cursor on the outer .terminal-prompt —
+       it would orphan on its own line below the breadcrumb */
+    .terminal-logo .terminal-prompt::after {
+        display: none;
+    }
+
+    /* Breadcrumb drops to its own line below the title.
+       inline-flex keeps its own cursor pseudo-element
+       on the same line as the path text. */
+    .breadcrumb {
+        display: inline-flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        font-size: 0.85em;
+        white-space: nowrap;
+    }
+
+    /* All links inside breadcrumb match breadcrumb font size */
+    .breadcrumb a {
+        font-size: 1em;
+    }
+
+    /* Cursor re-attached to end of breadcrumb on mobile */
+    .breadcrumb::after {
+        content: "";
+        animation: cursor 800ms infinite;
+        background: var(--primary-color);
+        border-radius: 0;
+        display: inline-block;
+        height: 1em;
+        margin-left: 0;
+        width: 10px;
+        bottom: 0px;
+        position: relative;
+    }
+
+    /* Pin theme toggle to top-right corner */
+    #theme-toggle {
+        position: absolute;
+        top: 12px;
+        right: 16px;
+    }
+
+    /* Make header container the positioning parent for toggle */
+    .container:first-of-type {
+        position: relative;
     }
 
     .logo {
@@ -342,6 +466,7 @@ figure {
         margin-right: 30px;
     }
 
+    /* Remove date column indent — no room on mobile */
     .posts-list {
         position: relative;
         padding-left: 0;
@@ -353,14 +478,22 @@ figure {
         padding-top: 0;
     }
 
+    /* Suppress ==== overflow on mobile post list.
+       The border-bottom double underline on .post h1 a
+       handles decoration instead. */
+    .posts-list h1,
+    .posts-list h2 {
+        overflow: hidden;
+        max-width: 100%;
+    }
+
+    .posts-list h1::after,
+    .posts-list h2::after {
+        display: none;
+    }
+
+    /* Hide date column on mobile */
     .posts-list .date {
-        display: inline-block;
-        position: absolute;
-        left: 0px;
-        width: 150px;
-        z-index: 400;
-        font-weight: bold;
-        padding-top: 0;
         display: none;
     }
 
@@ -368,4 +501,33 @@ figure {
         margin-top: 50px;
         padding-top: 5px;
     }
+
+    /* Spread nav links evenly, allow wrapping to second row */
+    .terminal-menu ul {
+        justify-content: space-evenly !important;
+        flex-wrap: wrap;
+        gap: 0.4em 0;
+        margin-top: 4px;
+    }
+
+    .terminal-menu li {
+        margin: 0 0.6em !important;
+    }
+
+    /* Prevent blockquotes overflowing viewport */
+    blockquote {
+        max-width: 100%;
+        box-sizing: border-box;
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
+
+
+
+
+
+
+
+
+    
