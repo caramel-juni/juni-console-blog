@@ -37,7 +37,7 @@
                 <div class="logo terminal-prompt">
                     <a href="{{ .Site.BaseURL }}" class="no-style {{ with .Site.Params.TitleCutting }}site-name{{ end }}">
                     {{ .Site.Title }}
-                    </a>:~#
+                    </a><span class="breadcrumb">:~#
                     {{- $url := .RelPermalink -}}
                     {{- $scratch := newScratch -}}
                     {{- $scratch.Set "path" "" -}}
@@ -47,10 +47,11 @@
                     <a href="{{ $scratch.Get "path" | relURL }}">{{ $element }}</a>/
                     {{- end -}}
                     {{- end -}}
+                    </span>
                 </div>
             </header>
             <!-- button for theme toggle -->
-            <button id="theme-toggle" aria-label="Toggle dark mode" style="background: none; border: none; cursor: pointer; padding: 0;">
+            <button id="theme-toggle" aria-label="Toggle dark mode" style="background: none; border: none; cursor: pointer; padding: 1em; padding-right: 0.1em;">
                 <img src="/themetoggle.ico" alt="Toggle theme" style="width: 30px; height: 30px;">
             </button>
         </div>
