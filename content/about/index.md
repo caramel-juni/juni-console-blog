@@ -12,8 +12,10 @@ title = "whoami?"
   drowning in a lake of what some might call "existentialism" and .exe`s
 ```
 
-# > you can hopefully find me . . .
+# > you can (hopefully) find me...
+<br>
+
 ![amidst the cyborg flowers](/about/dreamcore-comp.gif)
-*(. . . but why would you want to?)*
+*(...but then again, why would you want to?)*
 
 <img src="https://juniblog.goatcounter.com/count?p=/about/" style="display: none">
