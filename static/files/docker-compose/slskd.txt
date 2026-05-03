@@ -1,0 +1,27 @@
+## SAVE THIS AS .YAML WHEN DEPLOYING
+
+services:
+  slskd:
+    container_name: slskd
+    environment:
+      - PUID=568
+      - PGID=568
+      - SLSKD_REMOTE_CONFIGURATION=true
+      - SLSKD_SLSK_USERNAME=SOULSEEKUSERNAME
+      - SLSKD_SLSK_PASSWORD=XXXXXX
+      - SLSKD_USERNAME=WEBUI-USERNAME
+      - SLSKD_PASSWORD=YYYYYYYYYY
+      - SLSKD_SHARED_DIR=/music
+      - SLSKD_DOWNLOADS_DIR=/music/00-slskd-downloads
+      - SLSKD_API_KEY=ZZZZZZZZZ
+      - SLSKD_API_KEY_ROLE=readwrite
+      - SLSKD_API_KEY_CIDR=192.168.0.0/24
+    image: slskd/slskd:latest
+    ports:
+      - '5030:5030' # HTTP - required for explo internal access, running own certs doesn't work with explo
+      - '5031:5031' # HTTPS
+      - '50300:50300' # soulseek network port
+    restart: always
+    volumes:
+      - /mnt/rei/configs/slskd:/app
+      - /mnt/tank/data/media/music:/music:rw

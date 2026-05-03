@@ -1,8 +1,10 @@
+## SAVE THIS AS .YAML WHEN DEPLOYING
+
 services:
   explo:
     container_name: explo
     environment:
-      - TZ=COUNTRY/CITY # change to your timezone
+      - TZ=COUNTRY/CITY # change to your timezone AND ensure it matches on listenbrainz profile
       - EXECUTE_ON_START=false
       - WEEKLY_EXPLORATION_SCHEDULE=15 00 * * 2
       - WEEKLY_EXPLORATION_FLAGS=
@@ -15,4 +17,5 @@ services:
     volumes:
       - /mnt/tank/configs/explo/.env:/opt/explo/.env # main explo config
       - /mnt/tank/data/media/music/00-EXPLO:/data/ # explo discovery folder
+      - /mnt/tank/configs/explo:/opt/explo/config # explo config folder
       - /mnt/tank/configs/explo/cookies.txt:/opt/explo/cookies.txt # cookies for yt-dlp client
