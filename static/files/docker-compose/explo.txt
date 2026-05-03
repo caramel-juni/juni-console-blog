@@ -8,7 +8,7 @@ services:
       - EXECUTE_ON_START=false
       - WEEKLY_EXPLORATION_SCHEDULE=15 00 * * 2
       - WEEKLY_EXPLORATION_FLAGS=
-      - WEEKLY_JAMS_SCHEDULE=30 00 * * 1
+      - WEEKLY_JAMS_SCHEDULE=30 00 * * 2
       - WEEKLY_JAMS_FLAGS=--playlist=weekly-jams --download-mode=normal
       - DAILY_JAMS_SCHEDULE=15 01 * * *
       - DAILY_JAMS_FLAGS=--playlist=daily-jams --download-mode=skip
