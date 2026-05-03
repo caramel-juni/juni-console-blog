@@ -1,0 +1,215 @@
+version: "2"
+type: list
+data:
+  Favorites:
+    - name: RADIO BOB! BOBs Alternative Rock
+      url: http://streams.radiobob.de/bob-alternative/mp3-192/streams.radiobob.de/
+      homepage: http://www.radiobob.de/
+      icon: ""
+      country: Germany
+      state: ""
+      language: german
+      tags: alternative,rock
+      id: 9618ca06-0601-11e8-ae97-52543be04c81
+      hue: 200
+    - name: MPR The Current
+      url: http://current.stream.publicradio.org/kcmp.mp3
+      homepage: http://www.thecurrent.org/
+      icon: http://www.thecurrent.org/apple-touch-icon.png
+      country: The United States Of America
+      state: Minnesota
+      language: english
+      tags: music,public radio
+      id: 961079a5-0601-11e8-ae97-52543be04c81
+      hue: 100
+    - name: Delicious Agony Progressive Rock Radio
+      url: http://deliciousagony.streamguys1.com/
+      homepage: http://www.deliciousagony.com/
+      icon: ""
+      country: The United States Of America
+      state: ""
+      language: english
+      tags: ""
+      id: 4e0e79ff-ceb8-470c-9a30-7727e5fadf11
+      hue: 280
+    - name: Psychedelicized Radio
+      url: https://cast1.asurahosting.com/proxy/psychedelicized/stream
+      homepage: https://psychedelicized.com/
+      icon: https://cdn-radiotime-logos.tunein.com/s155704q.png
+      country: The United Kingdom Of Great Britain And Northern Ireland
+      state: London, England
+      language: ""
+      tags: psychedelic rock
+      id: ded0682b-5b6b-4be7-a351-a03b765e91de
+      hue: 160
+    - name: No Life Radio
+      url: https://nolife-radio.com/radio/NoLife-radio.m3u
+      homepage: https://nolife-radio.com/
+      icon: ""
+      country: Australia
+      state: ""
+      language: ""
+      tags: retro
+      id: 0e6ffd8d-fd01-4589-928d-9c5e34ae00f9
+      hue: 120
+    - name: " Nightwave Plaza "
+      url: https://radio.plaza.one/ogg
+      homepage: https://plaza.one/
+      icon: ""
+      country: The Russian Federation
+      state: ""
+      language: english
+      tags: ambient,chillwave,citypop,disco,electronic,elevatormusic,futurefunk,japanesedisco,lofi,mallsoft,plunderphonics,retrowave,signalwave,slowed,synthwave,vaporwave
+      id: e35e3676-58e2-48ba-94bf-e32cc024b7cb
+      hue: 280
+    - name: Radio Krimi
+      url: https://radio13.pro-fhi.net/flux-nwsimjda2/stream
+      homepage: http://www.radiokrimi.com/
+      icon: ""
+      country: France
+      state: ""
+      language: ""
+      tags: ""
+      id: 247a9f2b-6deb-40ae-b130-59dc12c82f59
+      hue: 200
+    - name: Nightride FM
+      url: https://stream.nightride.fm/nightride.mp3
+      homepage: https://nightride.fm/
+      icon: https://nightride.fm/thumbnail.png
+      country: Germany
+      state: ""
+      language: ""
+      tags: outrun,retrowave,synthwave
+      id: 12e458f2-cf9b-426a-8d18-7cb07c75b07c
+      hue: 120
+    - name: INTERGALACTIC FM - Cybernetic Broadcasting System
+      url: http://radio.intergalactic.fm/1.m3u
+      homepage: https://www.intergalactic.fm/
+      icon: ""
+      country: The Netherlands
+      state: ""
+      language: ""
+      tags: ""
+      id: eaa07cbe-f03e-11e9-a96c-52543be04c81
+      hue: 20
+    - name: Radio Caroline 259 Gold
+      url: https://happy.radiocaroline.nl/listen/classic_rock/radio128.mp3
+      homepage: https://radiocaroline259.nl/
+      icon: https://radiocaroline259.nl/favicon.ico
+      country: The Netherlands
+      state: ""
+      language: english
+      tags: 60s,70s,80s,90s,album rock,classic rock
+      id: 9b7f745a-5025-430e-bc79-7226dcaeb35b
+      hue: 200
+    - name: BBC Radio 6 Music
+      url: http://as-hls-ww-live.akamaized.net/pool_81827798/live/ww/bbc_6music/bbc_6music.isml/bbc_6music-audio%3d320000.norewind.m3u8
+      homepage: https://www.bbc.co.uk/sounds/play/live:bbc_6music
+      icon: https://de8as167a043l.cloudfront.net/styles/images/logosplus/120x120xBBCR6.png
+      country: The United Kingdom Of Great Britain And Northern Ireland
+      state: ""
+      language: english
+      tags: alternative,blues,dance,eclectic,electronic,experimental,funk,grime,hip
+        hop,house,indie,jazz,metal,pop,punk,r&b,reggae,rock,ska,soul,techno,world
+      id: 1c6dcd6f-88c6-4fd4-8191-078435168e85
+      hue: 240
+    - name: Radio Anime Nexus
+      url: http://radio.animenexus.mx:8000/animenexus
+      homepage: https://www.animenexusla.com/
+      icon: ""
+      country: Mexico
+      state: ""
+      language: spanish
+      tags: anime,city pop,game,jpop,jrock,kpop
+      id: e271c4d7-be49-4a65-b025-d13397e17ac0
+      hue: 200
+    - name: Dark Ambient Radio (96k AAC+)
+      url: http://s3.viastreaming.net:8835/
+      homepage: http://www.darkambientradio.de/news.php
+      icon: ""
+      country: Germany
+      state: ""
+      language: german
+      tags: ambient,dark,deep ambient
+      id: 9641191e-0601-11e8-ae97-52543be04c81
+      hue: 280
+    - name: Echoes of Bluemars - Cryosleep
+      url: http://streams.echoesofbluemars.org:8000/cryosleep
+      homepage: http://echoesofbluemars.org/cryosleep.php
+      icon: http://echoesofbluemars.org/images/favicon.ico
+      country: The United States Of America
+      state: ""
+      language: ""
+      tags: ""
+      id: db9f38eb-9f35-4bdf-bdc9-00df1228de2f
+      hue: 300
+    - name: Radio Paradise Main Mix (EU) 320k AAC
+      url: http://stream-uk1.radioparadise.com/aac-320
+      homepage: https://radioparadise.com/
+      icon: https://radioparadise.com/apple-touch-icon.png
+      country: The United States Of America
+      state: California
+      language: english
+      tags: california,eclectic,free,internet,non-commercial,paradise,radio
+      id: 9617a958-0601-11e8-ae97-52543be04c81
+      hue: 200
+    - name: SomaFM Groove Salad (HLS FLAC)
+      url: https://hls.somafm.com/hls/groovesalad/FLAC/program.m3u8
+      homepage: https://somafm.com/groovesalad/
+      icon: https://somafm.com/img3/groovesalad-400.jpg
+      country: The United States Of America
+      state: California
+      language: english
+      tags: ambient,chillout,downtempo,groove,lounge,sleep
+      id: 000f6a5e-fdbb-489c-90c5-89fd4c9e1113
+      hue: 220
+    - name: dublab
+      url: http://dublab.out.airtime.pro:8000/dublab_a
+      homepage: https://www.dublab.com/
+      icon: ""
+      country: The United States Of America
+      state: ""
+      language: ""
+      tags: dj sets,independent,los angeles,multi genre
+      id: 0bb84fe1-e899-11e9-a96c-52543be04c81
+      hue: 280
+    - name: Rainwave Game
+      url: https://relay.rainwave.cc/game.ogg
+      homepage: https://rainwave.cc/game/
+      icon: ""
+      country: The United States Of America
+      state: ""
+      language: english
+      tags: video game music
+      id: 8bef19d1-6216-4af1-8f13-41c9ce78dbd6
+      hue: 200
+    - name: BBC Radio 1
+      url: http://a.files.bbci.co.uk/ms6/live/3441A116-B12E-4D2F-ACA8-C1984642FA4B/audio/simulcast/hls/nonuk/pc_hd_abr_v2/ak/bbc_radio_one.m3u8
+      homepage: http://www.bbc.co.uk/radio1
+      icon: https://cdn-radiotime-logos.tunein.com/s24939q.png
+      country: The United Kingdom Of Great Britain And Northern Ireland
+      state: ""
+      language: english
+      tags: ""
+      id: fdbdc2b0-c184-437b-8643-9a5bfa45c253
+      hue: 240
+    - name: Prog Palace Radio's The Courtyard
+      url: https://puma.streemlion.com:5045/stream
+      homepage: https://www.progpalaceradio.com/the-courtyard/
+      icon: https://www.progpalaceradio.com/favicon.ico
+      country: Canada
+      state: Ontario
+      language: ""
+      tags: prog rock,progressive rock
+      id: aa43f4c0-8081-4abd-b530-959fc8a6232e
+      hue: 160
+    - name: SomaFM DEF CON Radio (128k AAC)
+      url: https://somafm.com/defcon130.pls
+      homepage: https://somafm.com/defcon/
+      icon: https://somafm.com/img3/defcon400.png
+      country: The United States Of America
+      state: California
+      language: english
+      tags: ambient,chill,defcon,electronic,hacker,non-commercial
+      id: 5b59ea80-6ce9-11e8-b15b-52543be04c81
+      hue: 220

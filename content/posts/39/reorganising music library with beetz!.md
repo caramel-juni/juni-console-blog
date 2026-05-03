@@ -223,3 +223,71 @@ Keep a text file of these for manual tagging — tools like **MusicBrainz Picard
 |Tag cleanup|beets `scrub` plugin|
 
 The whole pipeline is well-supported and battle-tested for exactly this use case. The interactive import mode means you're always in control before anything gets moved.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### 3. Step Three: Automating the Tagger (Beets)
+
+To handle the "Inbox" workflow on TrueNAS and fix that Aphex Twin art once and for all, use this automated Beets setup.
+
+#### The "Watch" Script
+
+Instead of manually running MusicBrainz Picard, you can set a **Post-Processor** script.
+
+1. Install the **Beets** app (as described in the previous message).
+    
+2. In TrueNAS, go to **System Settings > Advanced > Cron Jobs**.
+    
+3. Add a job that runs every hour (or every morning):
+    
+
+**Command:**
+
+Bash
+
+```
+docker exec beets beet import -q /downloads
+```
+
+- `-q` (quiet) makes it run without asking you questions.
+    
+- Beets will see the files Explo/slskd dropped in `/00-EXPLO-INBOX`, tag them, embed the **correct** art into the file headers, and move them to your main `/music` folder.
+    
+
+---
+
+### Summary of the "Chain"
+
+1. **ListenBrainz:** Tells Explo what you like.
+    
+2. **Explo:** Searches for those tracks and tells **slskd** to grab them.
+    
+3. **slskd:** Downloads the files into the `INBOX`.
+    
+4. **Beets (Cron Job):** Wakes up, grabs the files, fixes the tags/art, and moves them to your main library.
+    
+5. **Navidrome:** Sees the perfect new files and updates your Symfonium playlist.
+    
+
+**The big win here:** By the time the files reach Navidrome, the artwork is **embedded inside the file**. Navidrome won't have to guess based on "helpful" folder images, and your Aphex Twin glitch will stay in the past.
+
+Does that layout make more sense for your TrueNAS setup?
+

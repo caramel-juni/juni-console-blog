@@ -32,6 +32,7 @@
     --code-font-color: #ffffff;
     --block-background-color: #151515;
     --title-font-color: #13b2a5;
+    --hover-font-color: #12ffeb;
 }
 
 /* ☀️ Light mode — activated via <html data-theme="light"> */
@@ -281,7 +282,7 @@ html {
 }
 
 a:hover {
-    filter: saturate(2) brightness(1.15);
+    color: var(--hover-font-color);
     background: transparent;
     cursor: url('/files/cursors/cat_hover.gif'), auto;
 }
