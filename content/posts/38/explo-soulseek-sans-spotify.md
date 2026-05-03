@@ -266,6 +266,9 @@ DOWNLOAD_SERVICES=slskd,youtube
 
 now, to test, set `EXECUTE_ON_START=TRUE` inside explo's `docker-compose`, press save, and watch the logs to see explo try and generate a new weekly recommended playlist with `slskd`!
 
+![](/posts/38/attachments/85737.png)
+
+
 ---
 
 # a few notes:
