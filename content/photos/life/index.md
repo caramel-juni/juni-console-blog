@@ -1,5 +1,5 @@
 +++
-image = "life-cover.jpeg"
+image = "lifecover.jpeg"
 date = "2025-10-07"
 title = "life"
 type = "gallery"
@@ -10,11 +10,59 @@ type = "gallery"
 **i do life.** sometimes, at least. allegedly . . .
 
 ---
-# 23/11/2025
+# 05/05/2025
+*film dump from last few months!*
 
-*captured - on film, this time — by the ever-lovely* ***vira***!
+![](/photos/life/life18.jpeg)
 
-![](/photos/life/moicoffee.jpg)
+![](/photos/life/life19.jpeg)
+
+![](/photos/life/life30.jpeg)
+
+![](/photos/life/life31.jpeg)
+
+![](/photos/life/life20.jpeg)
+
+![](/photos/life/life24.jpeg)
+
+![](/photos/life/life25.jpeg)
+
+![](/photos/life/life26.jpeg)
+
+![](/photos/life/life27.jpeg)
+
+![](/photos/life/life28.jpeg)
+
+![](/photos/life/life29.jpeg)
+
+![](/photos/life/life21.jpeg)
+
+![](/photos/life/life22.jpeg)
+
+![](/photos/life/life23.jpeg)
+
+
+
+---
+# 03/05/2025
+*film dump from last few months!*
+
+![](/photos/life/life33.jpeg)
+
+![](/photos/life/life38.jpeg)
+
+![](/photos/life/life34.jpeg)
+
+![](/photos/life/life35.jpeg)
+
+![](/photos/life/life36.jpeg)
+
+![](/photos/life/life37.jpeg)
+
+![](/photos/life/life39.jpeg)
+
+![](/photos/life/life32.jpeg)
+
 
 ---
 # 05/10/2025
