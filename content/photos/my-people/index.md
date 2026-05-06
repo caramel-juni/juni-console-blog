@@ -66,7 +66,7 @@ type = "gallery"
 
 ![](/photos/my-people/will2.jpeg)
 
-![](/photos/my-people/will3.jpg)
+![](/photos/my-people/will3.JPG)
 
 
 ---
@@ -95,4 +95,4 @@ type = "gallery"
 
 ***rest in peace, peanut butter and burgers, my darling <3***
 
-![](/photos/my-people/cookie.jpg)
+![](/photos/my-people/cookie.JPG)
