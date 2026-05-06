@@ -85,11 +85,9 @@ type = "gallery"
 
 ***two peas in a pod <3***
 
-![](/photos/my-people/belle-mandi1.jpeg)
-
 ![](/photos/my-people/belle-mandi2.jpeg)
 
-![](/photos/my-people/belle-mandi3.jpg)
+![](/photos/my-people/belle-mandi3.JPG)
 
 ---
 
