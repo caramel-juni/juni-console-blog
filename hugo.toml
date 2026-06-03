@@ -23,6 +23,10 @@ enableRobotsTXT = true
   url = "posts/"
   
   [[params.navlinks]]
+  name = "writeups/"
+  url = "writeups/"
+
+  [[params.navlinks]]
   name = "photos/"
   url = "photos/"
 

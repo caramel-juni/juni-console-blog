@@ -8,3 +8,4 @@ content/posts/future-posts/**/*.png
 content/posts/future-posts/**/*.jpeg
 content/posts/future-posts/**/*.jpg
 scripts/**
+/content/writeups/burp/*
