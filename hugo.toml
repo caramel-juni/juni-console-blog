@@ -1,5 +1,5 @@
 baseURL = "/"
-languageCode = "en-au"
+locale = "en-au"
 title = "*☆｡ﾟjuni's caramel tech café･ﾟ*☆"
 theme = "hugo-theme-console"
 ignoreFiles = ["/console-blog/content/posts/future-posts/*", "/console-blog/content/template.md"]
