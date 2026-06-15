@@ -14,5 +14,5 @@ i am (forever) learning how to poke, prod at and explore the weird and wonderful
 
 | Lab                                                 | % completed |
 | --------------------------------------------------- | ----------- |
-| [Portswigger Web Security Academy](https://github.com/caramel-juni/portswigger-writeups) | 72%         |
+| [Portswigger Web Security Academy](https://github.com/caramel-juni/portswigger-writeups) | 77%         |
 
