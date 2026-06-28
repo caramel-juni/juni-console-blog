@@ -13,6 +13,22 @@ timestamped to perfection, and updated routinely *(AKA whenever i remember)*.
 
 ---
 
+# 28/6/2026 - *slice 227!*
+
+![](/caramel-slice/gallery/slice227.jpg)
+
+
+---
+
+# 25/6/2026 - *slice 226!*
+
+*a blissful birthday slice with my broski <3*
+
+![](/caramel-slice/gallery/slice226.jpg)
+
+
+---
+
 # 20/6/2026 - *slice 225!*
 
 ![](/caramel-slice/gallery/slice225.jpg)
