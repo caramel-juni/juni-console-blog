@@ -113,15 +113,6 @@ type = "gallery"
 
 ---
 
-# cubie & matilda
-
-***we nerd out with fairy bread, tech memes and style ✨***
-
-![](/photos/my-people/cubiematilda2.JPG)
-![](/photos/my-people/cubiematilda1.JPG)
-
----
-
 # liv *(my simp sister)*
 
 ***i proudly present my powerpoint girlie and super-stan bestie <3***
