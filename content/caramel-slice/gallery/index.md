@@ -13,19 +13,25 @@ timestamped to perfection, and updated routinely *(AKA whenever i remember)*.
 
 ---
 
-# 4/6/2026 - *slice 230!*
+# 6/7/2026 - *slice 231!*
+
+![](/caramel-slice/gallery/slice231.jpg)
+
+---
+
+# 4/7/2026 - *slice 230!*
 
 ![](/caramel-slice/gallery/slice230.jpg)
 
 ---
 
-# 2/6/2026 - *slice 229!*
+# 2/7/2026 - *slice 229!*
 
 ![](/caramel-slice/gallery/slice229.jpg)
 
 ---
 
-# 1/6/2026 - *slice 228!*
+# 1/7/2026 - *slice 228!*
 
 ![](/caramel-slice/gallery/slice228.jpg)
 
