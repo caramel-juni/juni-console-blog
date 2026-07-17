@@ -30,7 +30,7 @@ this all started when my friend gave me a surprise care package at 8:11pm on a T
 <figcaption><i>A <a href="https://www.instructables.com/Digispark-DIY-The-smallest-USB-Arduino/">Digispark USB/microcontroller Module</a></i></figcaption>
 </div> 
 
-now, i didn't (and still don't) have the power to **turn circuit boards into plastic approximations of adorable semi-acquatic animals** (although that would admittedly be epic), so for those of you confused as to what a "rubber ducky" is, here's a link explaining it. 
+now, i didn't (and still don't) have the power to **turn circuit boards into plastic approximations of adorable semi-aquatic animals** (although that would admittedly be epic), so for those of you confused as to what a "rubber ducky" is, here's a link explaining it. 
 
 In short, a rubber ducky is a small programmable device (typically with a microcontroller) masquerading as a USB drive, intended to be left in communal/office spaces with the hopes of a curious soul discovering it and plugging it into their personal device. It will then automatically run a set of pre-defined keystrokes or commands on their machine, enabling... all sorts of bad things. Or, open a funny video on YouTube. **You decide.**
 
@@ -47,11 +47,11 @@ If you ever **buy** one of these DigiKeyboard modules off Aliexpress/online or o
 - **And only THEN connecting the USB**, to **first erase whatever might be on it with a fresh flash**. 
 During the first 5 seconds after insertion, **it is able to be flashed** & will *not* run the code on it (yet) - so use this time period to **wipe whatever nefarious shit might've been on there.**
 
-You might scoff at my paranoia, but I (thankfully) opened up a text file before plugging mine module in, to see whether there was anything on it. It was a stock $3 Digispark module from AliExpress but was *also* given to me by a friend, so due to the latter i implicitly trusted them & thus had some trust, by proxy, in the device itself to at least be clean...
+You might scoff at my paranoia, but I (thankfully) opened up a text file to capture any residual "gifts from the factory" before plugging my module in. It was a stock $3 Digispark module from AliExpress but was *also* given to me by a friend, so due to the latter fact that i trusted them & thus had some implicit trust, by proxy, in the device itself, i plugged it in to start developing...
 
 ...And well, after the ~5sec initialisation time, the following keystrokes were run:
 ![](/posts/40/attachments/Screenshot%202026-07-17%20at%2012.10.09%20am.png)
-So... yeah. Don't plug in ANY unknown USBs modules to your computer **without wiping them first**. Even when **you're the *supposedly* tech-literate one *trying* to make a Rubber Ducky to do *just this* in the first place 🦆** ... who knows what's already on there "from the factory".
+So... yeah. The rule stands: Don't plug in ANY unknown "USB" interfaces to your computer **without wiping them first**. Even when **you're the *supposedly* tech-literate one *trying* to make a Rubber Ducky to do *just this* in the first place 🦆** ... who knows what's already on there "from the factory".
 
 ---
 # The process:
@@ -71,7 +71,7 @@ Then, select `Settings --> Additional board manager URLs`, and add the following
 This is a (slightly... 2021 vs 2015) more up to date/maintained version of the Digispark board controller, as the [original one](https://raw.githubusercontent.com/digistump/arduino-boards-index/master/package_digistump_index.json) by Digistump (whose [website is now scrubbed](http://digistump.com/package_digistump_index.json)...) didn't seem to work for me on an M1 mac. Once you've pasted it in, select `OK` twice to save.
 ![](/posts/40/attachments/10008.png)
 
-Then click on the Arduino IDE's `Board Manager` on the left, and search for & install the `ATTTinyCore` package (for me, i used `v1.4.1`, which i arrived at after attempting to install the latest version, it failing, then trying earlier releases until i [got one that installed successfully](https://forum.arduino.cc/t/attiny-by-spencekonde/1434789)). This will install our means of talking to the microcontroller (the [`Attiny85`](https://www.etechnophiles.com/attiny85-pinout-specs-guide/)) on the Digispark board!
+Then click on the Arduino IDE's `Board Manager` on the left, and search for & install the `ATTinyCore` package (for me, i used `v1.4.1`, which i arrived at after attempting to install the latest version, it failing, then trying earlier releases until i [got one that installed successfully](https://forum.arduino.cc/t/attiny-by-spencekonde/1434789)). This will install our means of talking to the microcontroller (the [`Attiny85`](https://www.etechnophiles.com/attiny85-pinout-specs-guide/)) on the Digispark board!
 ![](/posts/40/attachments/17381.png)
 
 Once installed, select your `Board` as `ATTiny85` (or whatever `ATTiny` version corresponds with your physically-labelled chip), ignore the `PORTS`, and select `OK`.
@@ -88,7 +88,7 @@ So, I decided to **manually download + use the [archived Digispark git repo](htt
 I found & opened the default Arduino projects/sketchbook folder (`Settings --> Sketchbook location`), **downloaded + unzipped the [archived Digispark git repo](https://github.com/digistump/DigistumpArduino/archive/refs/heads/master.zip)**, and then copied the `libraries` folder into the root of my Arduino projects/sketchbook folder, as shown in the code below:
 ```bash 
 ## change to Arduino projects/sketchbook folder
-cd /path/to/arduino/project/folder
+cd /path/to/arduino/sketchbooks/folder
 
 ## Download & unzip old DigistumpArduino git repo
 curl -L -o DigistumpArduino.zip https://github.com/digistump/DigistumpArduino/archive/refs/heads/master.zip
@@ -195,7 +195,7 @@ void loop() {
 ```
 
 ### 4. Extending your scripting capabilities!
-Tweak these commands as you'd like, to run any set of keystrokes on the target device! Some more ideas can be found in the [article here](https://hacktronian.in/post/turning-your-arduino-into-a-rubber-ducky), and you can use a [converter](https://cedarctic.github.io/digiQuack/) to convert the Duckyscript samples to Digikeyboard-compatable code!
+Tweak these commands as you'd like, to run any set of keystrokes on the target device! Some more ideas can be found in the [article here](https://hacktronian.in/post/turning-your-arduino-into-a-rubber-ducky), and you can use a [converter](https://cedarctic.github.io/digiQuack/) to convert the Duckyscript samples to Digispark-compatible code!
 - [Digispark USB tutorial & further resources](https://docs.spacehuhn.com/badusb/build-and-setup/digispark/#using-it-as-a-keyboard)
 - [Null byte Digispark tutorial](https://null-byte.wonderhowto.com/how-to/run-usb-rubber-ducky-scripts-super-inexpensive-digispark-board-0198484/) (old but still very relevant!)
 - 📄👾 [Digispark Keyboard Scripts](https://github.com/CedArctic/DigiSpark-Scripts)
