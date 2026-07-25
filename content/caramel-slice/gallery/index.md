@@ -13,6 +13,24 @@ timestamped to perfection, and updated routinely *(AKA whenever i remember)*.
 
 ---
 
+# 25/7/2026 - *slice 237!*
+
+![](/caramel-slice/gallery/slice237.jpg)
+
+
+---
+
+# 20/7/2026 - *slice 236!*
+
+![](/caramel-slice/gallery/slice236.jpg)
+
+*my SECOND time baking **salted** caramel slice, for my first day back in the office (again!) after exteded medical leave. it is probably my GREATEST SUCCESS TO DATE with the white/dark choc marbling working beautifully (after burning half the chocolate :3 shhhhh. the ratio of caramel was a little off, but that's to work on next time!*
+
+here's a review from an officemate:
+> "***Nice chocolate marble. Chocolate has a nice "crack". Caramel is salted well. Base isn't crunchy. Caramel is slightly fudge-y and not runny.***"
+
+---
+
 # 18/7/2026 - *slice 235!*
 
 ![](/caramel-slice/gallery/slice235.jpg)
