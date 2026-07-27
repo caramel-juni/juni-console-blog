@@ -132,3 +132,21 @@ From here, we can browse through the system, analyse it's default security layou
 Going forward, the sky's the limit! *(along with my patience & lead fume tolerance ;)* 
 
 In any case, I'm *very* much still learning, & am sure as hell I will continue to do so as i dive deeper into the [wired... <3](https://lain.fandom.com/wiki/The_Wired).
+
+#### Follow-up: Labelling the wires & establishing a persistent connection
+
+After I revisited this, I tested (via process above_ & soldered on the wires in the following order, so I could plug in and out of the UART connection at will without holding pins on the board:
+
+<div style="text-align: center; margin-bottom: 1em">
+<img src="/posts/41/attachments/uart1.jpeg" style="width: 70%">
+<figcaption><i>...Router-side TX and RX Pins</i></figcaption></div>
+
+<div style="text-align: center; margin-bottom: 1em">
+<img src="/posts/41/attachments/uart3.jpeg" style="width: 70%">
+<figcaption><i>...Router-side Grounded (GND) point of contact</i></figcaption></div>
+
+<div style="text-align: center; margin-bottom: 1em">
+<img src="/posts/41/attachments/uart2.jpeg" style="width: 70%">
+<figcaption><i>USB-side TX, RX, GND, attached to incoming router-side RX, TX, GND.</i>
+<strong><i>Importantly, TX--> RX, and vice versa.</i></strong></figcaption></div>
+
