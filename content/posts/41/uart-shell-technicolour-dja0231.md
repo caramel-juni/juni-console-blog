@@ -23,7 +23,7 @@ and why not start with my **battle-tested, age-old Telstra Gen 2 "Smart Modem"?*
 so. **time to gut my old guardian and poke around at it's innards** (respectfully & good-naturedly, of course! 😋)
 
 <div style="text-align: center; margin-bottom: 1em">
-<img src="/posts/41/attachments/pic2.jpg" style="width: 70%" title="Digispark Module">
+<img src="/posts/41/attachments/pic1.jpg" style="width: 70%">
 <figcaption><i>The (somewhat) Before...</i></figcaption></div>
 
 
@@ -33,12 +33,12 @@ Determine where the `UART` port is (or JTAG, SPI, I2C etc. but they're less comm
 This is typically found by looking for 4-5 pins in a vertical/horizontal line. On my modem, this required just a *touch* of disassembly, but after prying it open (and only shearing one bit of plastic off in the process), I could slip out the internal circuit boards & found the pin row fairly easily:
 
 <div style="text-align: center; margin-bottom: 1em">
-<img src="/posts/41/attachments/pic4.jpg" style="width: 70%" title="Digispark Module">
+<img src="/posts/41/attachments/pic3.jpg" style="width: 70%">
 <figcaption><i>... and The After: freshly-skinned router...</i></figcaption></div>
 Some more techniques for determining what different UART ports look like across different device types can be seen [here](https://www.youtube.com/watch?v=s8s3gvZPc0c), and is a good reference. However, **safely powering it on & probing around at boot is typically the most successful method**.
 
 <div style="text-align: center; margin-bottom: 1em">
-<img src="/posts/41/attachments/pic3.jpg" style="width: 70%" title="Digispark Module">
+<img src="/posts/41/attachments/pic2.jpg" style="width: 70%">
 <figcaption><i>The identified UART pins (outlined in red)</i></figcaption></div>
 
 
@@ -70,7 +70,7 @@ diff plugged.txt unplugged.txt
 ```
 
 <div style="text-align: center; margin-bottom: 1em">
-<img src="/posts/41/attachments/Screenshot%202026-07-22%20at%2010.22.41%20pm.png" style="width: 90%" title="Digispark Module">
+<img src="/posts/41/attachments/dff.png" style="width: 90%">
 <figcaption><i></i></figcaption></div>
 
 
@@ -103,7 +103,7 @@ The baud rate of a device can be measured by hooking up an oscilloscope to the U
 *This is very close to the standard/typical `115200` baud rate, so we can assume the device uses that!*
 
 <div style="text-align: center; margin-bottom: 1em">
-<img src="/posts/41/attachments/pic1.jpg" style="width: 70%" title="Digispark Module">
+<img src="/posts/41/attachments/pic0.jpg" style="width: 70%">
 <figcaption><i>probing with the oscilloscope to see the binary pulse party !</i></figcaption></div>
 
 
@@ -119,11 +119,11 @@ If all is well, you should start to see boot logs flying past/down the screen! I
 Luckily enough for this gateway, after a few minutes of booting, we were dropped into a busybox `root` shell (likely indicated by `/ #`, see [here](https://stackoverflow.com/questions/41930997/what-is-the-name-of-the-or-signs-that-indicates-if-youre-root), but uncertain - should verify with any user command like `id`, `echo $USER`, or `whoami` that is installed inside a `/bin/ash` shell).
 
 <div style="text-align: center; margin-bottom: 1em">
-<img src="/posts/41/attachments/Screenshot%202026-07-22%20at%2011.41.35%20pm.png" style="width: 70%" title="Digispark Module">
+<img src="/posts/41/attachments/screenshot-logs.png" style="width: 70%">
 <figcaption><i>... and the skinned beast awakens!!!</i></figcaption></div>
 
 <div style="text-align: center; margin-bottom: 1em">
-<img src="/posts/41/attachments/Screenshot%202026-07-22%20at%2011.12.37%20pm.png" style="width: 70%" title="Digispark Module">
+<img src="/posts/41/attachments/screenshot-shell.png" style="width: 70%">
 <figcaption><i>...and after a few minutes, baby's first UART 🐚 :3</i></figcaption></div>
 
 
