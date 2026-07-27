@@ -70,7 +70,7 @@ diff plugged.txt unplugged.txt
 ```
 
 <div style="text-align: center; margin-bottom: 1em">
-<img src="/posts/41/attachments/dff.png" style="width: 90%">
+<img src="/posts/41/attachments/diff.png" style="width: 90%">
 <figcaption><i></i></figcaption></div>
 
 
