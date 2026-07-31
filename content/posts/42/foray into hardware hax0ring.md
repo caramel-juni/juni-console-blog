@@ -22,6 +22,14 @@ here are some of the helpful, assorted links i've found:
 Kits (to build & RE):
 - https://voidstarsec.training/products/pifex-full-kit
 
+#### HW Hacking Guides
+- [Full first UART comms lesson + finding chip voltage](https://riverloopsecurity.com/blog/2020/01/hw-101-uart/) so USB-to-UART can send appropriate `3.3V` or `5V` as the `HIGH` serial value when communicating, so doesn't overwhelm the chip.
+	- **To do so, identify GND on CPU/chip** (in multimeter continuity mode, touch one probe to the grounded shielding and use the other probe to touch each pin one at a time)
+	- Measure the max voltage diff **between this GND pin** and **whichever CPU/chip pin transmits data** (HIGH/LOW values, aka the TX) to determine which voltage level the chip operates at (typically `3.3V` or `5V`). Adjust accordingly on your USB-to-UART device (or chip flasher)
+- https://www.hardbreak.wiki/introduction/case-study-led-to-a-cve-update/general-case-study
+- [Going further post UART shell - dumping firmware](https://www.hardbreak.wiki/hardware-hacking/interface-interaction/uart/extract-firmware-using-uart)
+- [Firmware dump - via USB](https://hack-technicolor.readthedocs.io/en/stable/Resources/#making-dumps)
+
 
 
 #### Training:

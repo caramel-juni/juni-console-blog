@@ -35,7 +35,9 @@ This is typically found by looking for 4-5 pins in a vertical/horizontal line. O
 <div style="text-align: center; margin-bottom: 1em">
 <img src="/posts/41/attachments/pic3.jpg" style="width: 70%">
 <figcaption><i>... and The After: freshly-skinned router...</i></figcaption></div>
+
 Some more techniques for determining what different UART ports look like across different device types can be seen [here](https://www.youtube.com/watch?v=s8s3gvZPc0c), and is a good reference. However, **safely powering it on & probing around at boot is typically the most successful method**.
+
 
 <div style="text-align: center; margin-bottom: 1em">
 <img src="/posts/41/attachments/pic2.jpg" style="width: 70%">
