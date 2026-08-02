@@ -1,6 +1,6 @@
 ---
 title: part 2 - les vulnes
-date: 2026-08-01
+date: 2026-08-03
 description: ""
 toc: true
 math: true

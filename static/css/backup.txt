@@ -45,7 +45,7 @@
     --progress-bar-background: #727578;
     --progress-bar-fill: #151515;
     --code-bg-color: #e8e4b5;
-    --code-font-color: #3f1c1c;
+    --code-font-color: #b85bb2;
     --block-background-color: #151515;
     --title-font-color: #ca3386;
 }
