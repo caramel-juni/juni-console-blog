@@ -145,6 +145,18 @@ cat /dev/mtd3 > /var/config.bin
 cat /dev/mtd4 > /var/romfile.bin
 cat /dev/mtd5 > /var/rom.bin
 cat /dev/mtd6 > /var/radio.bin
+
+# or, if you wanna risk crashing your device/you have free space...
+cd /tmp
+for i in 0 1 2 3 4 5 6 7 8; do
+    echo "Extracting mtd$i..."
+    cat /dev/mtd$i > mtd$i.bin 
+    tftp -p -l mtd$i.bin -r mtd$i.bin 192.168.1.101
+    rm mtd$i.bin
+done
+echo "DONE!"
+# ^^ (credit to https://rotcee.github.io/posts/analyzing-the-mersusys-mb115-4g-router/?utm_source=tldrinfosec)
+
 ```
 
 Tedious, but how it had to be (unless performing an on/off-flash chip extraction, or you have a USB interface on your router to write to).

@@ -16,6 +16,7 @@ tags:
 - [ ] install ghidra & RE to find `%s` password - https://lachy.io/articles/properly-installing-ghidra-on-an-m1-mac
 - [ ] try and find own vulns (?)
 - [ ] [Discovering a Hardcoded Root Password - Hacking the VStarcam CB73 Security Camera](https://www.youtube.com/watch?v=lbSalKp_ldA&) (UART to bootloader to firmware extraction to RE in ghidra to hardcoded root creds)
+- [ ] https://jcjc-dev.com/2016/04/29/reversing-huawei-router-2-scouting-firmware/
 
 
 
