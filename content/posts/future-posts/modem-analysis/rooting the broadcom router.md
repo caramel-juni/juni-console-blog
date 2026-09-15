@@ -936,3 +936,77 @@ binwalk dump.bin
 and look for the known firmware structures.
 
 **So yes: picocom logging + automated serial reads + a parser can absolutely turn this into a firmware dump.** But I'd first dump the instructions around `0x83f84350`; that gives us a much safer and more reliable understanding of the read primitive before we point an automated script at a flash-sized address range.
+
+
+
+
+----
+
+## Encrypted flash dump:
+
+A few things clarify what's going on here.
+
+**The `-c` chip selection isn't your problem.** Those six "matches" (MX25L6405, 6405D, 6406E/6408E, 6436E/6445E/6465E, 6473E, 6473F) are all JEDEC-ID-identical or near-identical 8MB Macronix parts that share the same read/erase/write opcodes. flashrom just can't tell them apart from the ID bytes alone, but for a plain read operation they're functionally the same chip — that's exactly why you got byte-identical dumps no matter which one you picked. Your real chip, the MX25L6433F, isn't in flashrom's chip database at all, but it's electrically compatible with this family, so reading via `MX25L6473F` is fine and your dump is very likely accurate.
+
+**The real story is in the data, and it lines up with the hardware.** I looked up your board — this is a Netgear CM450-1TLAUS (Telstra-branded DOCSIS cable modem), built around a **Broadcom BCM3383** SoC, with exactly a Macronix 25L6433F SPI flash. That header you found at 0x400000 (`a119 0005...` followed by the filename string `CM450_1TLAUS_V1.01.03u_160812.bin`) is a variant of Broadcom's cable-modem firmware header format (similar in spirit to the `bcm_hcs` struct used on Broadcom's BCM33xx/63xx cable modem SoCs — magic/control/revision fields, build date, file length, load address, then an embedded filename). What that tells you: the entire firmware _update package_ — the same file Netgear would push as an OTA image — appears to have been written directly into flash as one blob, starting at 0x400000, with the bottom 4MB of the chip genuinely unprogrammed (all 0xFF). That's plausible and not a read error: cost-reduced modems like this sometimes reserve the lower half for a second/failsafe image bank that's simply never been used.
+
+**Why binwalk finds nothing after the header:** DOCSIS cable modems are required by CableLabs' code-verification rules to ship cryptographically signed (often encrypted) firmware images, specifically to prevent exactly what you're trying to do. The bytes immediately following the header in your hexdump are high-entropy noise, not compressed data with recognizable structure — that's consistent with AES-encrypted payload, not a filesystem or a standard compressor. You can confirm this quantitatively:
+
+```
+binwalk -E mx25l6433f.bin
+```
+
+If the entropy plot is flat and pinned near 8.0 bits/byte across that whole region, it's encrypted (compression usually shows some texture/variation; encryption doesn't).
+
+**What will actually get you further than blind flash reading:**
+
+1. **The onboard UART headers.** The teardown of this exact board (insideGadgets) found two labeled 4-pin headers: `UART0 (BBS)` and `UART1 (LINUX)`. That second one is huge — if you can get a serial console (115200 8N1 is the usual Broadcom default) onto the _running_ Linux side, the filesystem is necessarily decrypted in that context (Linux is mounting/executing it), so you can just `cat /dev/mtd0` or similar straight off the live system instead of fighting an encrypted flash image. On related BCM3383 devices, the bootloader console has also been documented as unlocked with memory read/dump and jump-to-address commands — worth checking `UART0` too.
+    
+2. **bcm2-utils** (github.com/jclehner/bcm2-utils) — purpose-built for exactly this family of Broadcom cable-modem SoC. `bcm2dump` can pull flash/RAM over serial or telnet once you have console access, and its README also points to Broadcom's own GPLv3 **ProgramStore** tool (github.com/Broadcom/aeolus/tree/master/ProgramStore), which actually understands this header format natively — far better than asking binwalk to guess at it.
+    
+3. **GPL source is public.** Netgear published the GPL source drop for this exact firmware version (`CM450_1TLAUS_V1.01.03_160812.zip`), mirrored on archive.org's `netgearfirmwaresgpl` collection. It won't contain the signing/encryption keys, but it will show you the real partition layout, kernel config, and rootfs contents your device is running — which may be enough for what you actually want (inspecting the rootfs) without needing to break the encrypted flash image at all.
+    
+
+Given all that, I'd try the GPL source first (it may just hand you the rootfs directly), and treat the UART1 Linux console as your real extraction path if you need the live, decrypted-in-place filesystem — rather than continuing to fight the raw SPI dump, which is working correctly but is very likely intentionally encrypted at rest.
+
+
+
+- `0x400000 – 0x40005B`: Broadcom-style image header (magic, control/rev fields, the embedded filename string you saw, a checksum field)
+- `0x40005C – 0x400060`: 5-byte LZMA header (`props` + `dict_size`)
+- `0x400061` onward: the raw LZMA compressed stream (length = 1,781,860 bytes per your bootloader log)
+
+---
+
+# IS AN ECOS DEVICE - no "rootfs" to explore
+
+eCos doesn't have a "rootfs" in the Linux sense. It's a monolithic RTOS image: application code, the DOCSIS stack, and config data all statically linked into one blob, not a mounted squashfs/jffs2 filesystem. So once you decompress `image2_decompressed.bin`, don't expect binwalk to find a filesystem to unpack — there isn't one to find. What you'll actually get is more like a flat executable/data image worth exploring with `strings`, `file`, and a disassembler (Ghidra handles MIPS eCos images reasonably well) if you want to dig into the DOCSIS/config internals, rather than something `unsquashfs` or similar would ever unpack.
+
+
+Can extract each half & inspect like so:
+
+``` bash
+# carve the raw LZMA stream (0x400061 = decimal 4194401)
+dd if=mx25l6433f.bin of=image2.lzma_stream bs=1 skip=4194401 count=1781860
+
+# rebuild a legacy .lzma file: 5-byte header + 8-byte "size unknown" marker + payload
+python3 -c "
+hdr = open('mx25l6433f.bin','rb').read()[0x40005C:0x400061]
+payload = open('image2.lzma_stream','rb').read()
+open('image2.lzma','wb').write(hdr + b'\xff'*8 + payload)
+"
+
+# decompress (xz-utils understands legacy .lzma / FORMAT_ALONE)
+xz --format=lzma -dc image2.lzma > image2_decompressed.bin
+```
+
+Gives:
+
+![](Screenshot%202026-09-14%20at%208.55.31%20pm.png)
+
+
+Can't explore filesystem per se, would need to decompile with ghidra first (or just using `strings`, `file` for secrets)
+
+## https://ecos.wtf/
+- https://ecos.wtf/2021/03/09/bcm2-utils-bootloader-dumping
+- [Full breakdown & extraction](https://www.scribd.com/document/910794188/Qkaiser-Brucon-Ecos)
+

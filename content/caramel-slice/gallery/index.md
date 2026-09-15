@@ -13,6 +13,38 @@ timestamped to perfection, and updated routinely *(AKA whenever i remember)*.
 
 ---
 
+# 12/9/2026 - *slice 249!*
+
+![](/caramel-slice/gallery/slice249.jpg)
+
+---
+
+# 06/9/2026 - *slice 248!*
+
+![](/caramel-slice/gallery/slice248.jpg)
+
+
+---
+
+# 05/9/2026 - *slice 247!*
+
+![](/caramel-slice/gallery/slice247.jpg)
+
+---
+
+# 30/8/2026 - *slice 246!*
+
+![](/caramel-slice/gallery/slice246.jpg)
+
+---
+
+# 29/8/2026 - *slice 245!*
+
+![](/caramel-slice/gallery/slice245.jpg)
+
+
+---
+
 # 22/8/2026 - *slice 244!*
 
 ![](/caramel-slice/gallery/slice244.jpg)
