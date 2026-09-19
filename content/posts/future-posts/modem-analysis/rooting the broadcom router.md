@@ -1009,4 +1009,6 @@ Can't explore filesystem per se, would need to decompile with ghidra first (or j
 ## https://ecos.wtf/
 - https://ecos.wtf/2021/03/09/bcm2-utils-bootloader-dumping
 - [Full breakdown & extraction](https://www.scribd.com/document/910794188/Qkaiser-Brucon-Ecos)
-
+- https://www.thyrasec.com/blog/firmware-reversing-and-analysis-tools/
+- https://www.thyrasec.com/blog/extracting-firmware-from-eeprom-flash-and-emmc/
+- https://github.com/ecos-wtf/recos
