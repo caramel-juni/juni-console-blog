@@ -11,6 +11,13 @@ type = "gallery"
 
 timestamped to perfection, and updated routinely *(AKA whenever i remember)*.
 
+
+---
+
+# 3/10/2026 - *slice 254!*
+
+![](/caramel-slice/gallery/slice254.jpg)
+
 ---
 
 # 27/9/2026 - *slice 253!*
