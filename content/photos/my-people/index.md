@@ -15,6 +15,28 @@ type = "gallery"
 
 *who knew that someone who you met, face down on a table in a first year elective class would come to* ***mean so much?***
 
+![](/photos/my-people/vira10.jpg)
+
+![](/photos/my-people/vira9.jpg)
+
+![](/photos/my-people/vira8.jpg)
+
+![](/photos/my-people/vira7.jpg)
+
+![](/photos/my-people/vira6.jpg)
+
+![](/photos/my-people/viramp3.jpg)
+
+![](/photos/my-people/vira2.jpg)
+
+![](/photos/my-people/vira4breannahayley.jpg)
+
+![](/photos/my-people/vira6ikea.jpg)
+
+![](/photos/my-people/vira5ikea.jpg)
+
+![](/photos/my-people/vira3kasey.jpg)
+
 ![](/photos/my-people/film-vira10.JPG)
 
 ![](/photos/my-people/film-vira9.jpeg)
@@ -47,9 +69,11 @@ type = "gallery"
 
 ---
 
-# jemmuel *(the smooth operator)*
+# jemmuel & kate *(the smooth operators)*
 
 ***-HE-he!***
+
+![](/photos/my-people/jemmuelkate.JPG)
 
 ![](/photos/my-people/jem6.JPG)
 
@@ -72,6 +96,8 @@ type = "gallery"
 
 ***the old but gold <3***
 
+![](/photos/my-people/will5.JPG)
+
 ![](/photos/my-people/will4.JPG)
 
 ![](/photos/my-people/will1.jpeg)
@@ -83,9 +109,11 @@ type = "gallery"
 
 ---
 
-# jonas *(the broski)*
+# jonas *(the broski)* & prue!
 
-***through thick and thin, he's been there <3***
+***through thick and thin, he's been there <3 and she's right alongside in full force and love***
+
+![](/photos/my-people/pruebirthday.JPG)
 
 ![](/photos/my-people/jonas3.JPG)
 
@@ -94,12 +122,28 @@ type = "gallery"
 ![](/photos/my-people/jonas1.jpeg)
 
 
+---
+
+# joelie *(the walking hug)*
+
+***collapsing into their arms and being whizzed around is one of my happy places.***
+
+![](/photos/my-people/joelie2.JPG)
+
+![](/photos/my-people/joelie.JPG)
+
 
 ---
 
-# bell & mandi *(the dynamic duo)*
+# belle & mandi *(the dynamic duo)*
 
 ***two peas in a pod <3***
+
+![](/photos/my-people/bellemandi9.JPG)
+
+![](/photos/my-people/bellemandi8.JPG)
+
+![](/photos/my-people/belle-mandi7.JPG)
 
 ![](/photos/my-people/belle-mandi6.JPG)
 
@@ -118,6 +162,8 @@ type = "gallery"
 
 ***i proudly present my powerpoint girlie and super-stan bestie <3***
 
+![](/photos/my-people/liv3.JPG)
+
 ![](/photos/my-people/liv.JPG)
 
 ![](/photos/my-people/liv2.JPG)
@@ -127,6 +173,8 @@ type = "gallery"
 
 ***we sure tore that john oliver comments section to shreds, girlie xx***
 
+![](/photos/my-people/gitalia3.JPG)
+![](/photos/my-people/gitalia4.JPG)
 ![](/photos/my-people/gitalia2.JPG)
 ![](/photos/my-people/gitalia.JPG)
 

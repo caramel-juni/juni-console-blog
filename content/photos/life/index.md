@@ -9,6 +9,34 @@ type = "gallery"
 
 **i do life.** sometimes, at least. allegedly . . .
 
+
+---
+# 10/10/2025
+*film dump from last few months!*
+
+![](/photos/life/artday1.JPG)
+
+![](/photos/life/artday2.JPG)
+
+![](/photos/life/onlyonjects4.JPG)
+
+![](/photos/life/onlyonjects2.JPG)
+
+![](/photos/life/onlyonjects6.JPG)
+
+![](/photos/life/ed&noah.JPG)
+
+![](/photos/life/connorbeard.JPG)
+
+![](/photos/life/caitlin.JPG)
+
+![](/photos/life/caitlin2.JPG)
+
+![](/photos/life/skye.JPG)
+
+![](/photos/life/000027.JPG)
+
+
 ---
 # 05/05/2025
 *film dump from last few months!*
