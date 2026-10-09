@@ -15,27 +15,29 @@ type = "gallery"
 
 *who knew that someone who you met, face down on a table in a first year elective class would come to* ***mean so much?***
 
-![](/photos/my-people/vira10.jpg)
+![](/photos/my-people/vira10.JPG)
 
-![](/photos/my-people/vira9.jpg)
+![](/photos/my-people/vira9.JPG)
 
-![](/photos/my-people/vira8.jpg)
+![](/photos/my-people/vira8.JPG)
 
-![](/photos/my-people/vira7.jpg)
+![](/photos/my-people/vira7.JPG)
 
-![](/photos/my-people/vira6.jpg)
+![](/photos/my-people/vira6.JPG)
 
-![](/photos/my-people/viramp3.jpg)
+![](/photos/my-people/viramp3.JPG)
 
-![](/photos/my-people/vira2.jpg)
+![](/photos/my-people/vira2.JPG)
 
-![](/photos/my-people/vira4breannahayley.jpg)
+![](/photos/my-people/vira4breannahayley.JPG)
 
-![](/photos/my-people/vira6ikea.jpg)
+![](/photos/my-people/vira6ikea.JPG)
 
-![](/photos/my-people/vira5ikea.jpg)
+![](/photos/my-people/vira5ikea.JPG)
 
-![](/photos/my-people/vira3kasey.jpg)
+![](/photos/my-people/vira3kasey.JPG)
+
+![](/photos/my-people/no-right-turn-vira.JPG)
 
 ![](/photos/my-people/film-vira10.JPG)
 
