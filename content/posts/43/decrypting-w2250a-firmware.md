@@ -16,7 +16,7 @@ tags:
 ---
 <img src="https://juniblog.goatcounter.com/count?p=/decrypting-w2250a-firmware/" style="display: none">
 
-Welcome to my first little foray into reverse engineering an AES ECB-128 decryption key found within an earlier version (v1.1) of the desired firmware (v2.2) for the W2250A wifi extender. This was uncovered by analysing the entropy of both the versions, which (upon comparison) shows that v2.2. is likely encrypted (high level of entropy) whereas v1.1 contains a readable/extractable filesystem that we can analyse.
+Welcome to my first little foray into reverse engineering an AES ECB-128 decryption key found within an earlier version (v1.1) of the desired firmware (v2.2) for the W2250A serial-to-wifi device server. This was ascertained by analysing the entropy of both the versions, which (upon comparison) shows that v2.2. is likely encrypted (high level of entropy) whereas v1.1 contains a readable/extractable filesystem that we can analyse.
 <div style="text-align: center; margin-bottom: 1em">
 <img src="https://web.archive.org/web/20090901175224im_/http://geocities.com/kirbo90/graficos/pika01.gif" style="width: 25%">
 <img src="https://web.archive.org/web/20090901175224im_/http://geocities.com/kirbo90/graficos/a_mail2.gif" style="width: 15%">
